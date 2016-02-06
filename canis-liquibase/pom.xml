@@ -22,7 +22,7 @@
         <artifactId>liquibase-maven-plugin</artifactId>
         <version>2.0.1</version>
         <configuration>
-          <changeLogFile>src/main/liquibase/db.changelog.xml</changeLogFile>
+          <changeLogFile>src/main/liquibase/db.changelog-master.xml</changeLogFile>
           <driver>${jdbc.driver}</driver>
           <url>${jdbc.url}</url>
           <username>root</username>
@@ -34,14 +34,6 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>sql-maven-plugin</artifactId>
         <version>1.5</version>
-        <configuration>
-          <driver>${jdbc.driver}</driver>
-          <url>${jdbc.url}</url>
-          <username>maestro_test</username>
-          <password>maestro_test</password>
-          <forceMojoExecution>true</forceMojoExecution>
-          <printResultSet>true</printResultSet>
-        </configuration>
         <dependencies>
           <dependency>
             <groupId>mysql</groupId>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+		
+
+		<include file="src/main/liquibase/001/schema.sql"  relativeToChangelogFile="false" />				
+		<include file="src/main/liquibase/001/schema-functions.xml"   relativeToChangelogFile="false"  />
+		<include file="src/main/liquibase/001/data-countries.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-shelters.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-breeders.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-dog-breeds-aux.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-dog-breeds.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-canada-geo.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-geo-china.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-geo-japan.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-geo-usa.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-geo-uk.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-text-resources.sql"    relativeToChangelogFile="false" />
+        <include file="src/main/liquibase/001/data-forums.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-news.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-videos.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-dog-breed-relations.sql"   relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-front-page.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-cats.sql"    relativeToChangelogFile="false" />
+
+</databaseChangeLog>
