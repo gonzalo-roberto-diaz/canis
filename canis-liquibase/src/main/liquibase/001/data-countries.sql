@@ -8,3 +8,5 @@ insert  into `COUNTRIES`(`ID`,`NAME`) values (3,'China');
 insert  into `COUNTRIES`(`ID`,`NAME`) values (4,'India');
 insert  into `COUNTRIES`(`ID`,`NAME`) values (5,'Japan');
 insert  into `COUNTRIES`(`ID`,`NAME`) values (6,'United Kingdom');
+
+--rollback DELETE FROM COUNTRIES;

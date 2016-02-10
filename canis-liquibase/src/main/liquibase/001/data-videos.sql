@@ -11,3 +11,4 @@ insert  into `VIDEOS`(`ID`,`GUID`,`VIDEO_TITLE`,`VIDEO_URL`,`VIDEO_TAGS`) values
 insert  into `VIDEOS`(`ID`,`GUID`,`VIDEO_TITLE`,`VIDEO_URL`,`VIDEO_TAGS`) values (7,'74b68994707abb86376f2499616e61d1','Dog Adopts and Protects Abandoned Kitten','Y2fIZmppHvM','dog, tender, kitten, adoption, adopt, cat, small');
 insert  into `VIDEOS`(`ID`,`GUID`,`VIDEO_TITLE`,`VIDEO_URL`,`VIDEO_TAGS`) values (8,'d6e150f8c2bb89e7ac6be5783638115c','Compilation of dogs waking up owners','CpbYBZKdi3s','dog, wake up, waking up, owner');
 
+--rollback DELETE FROM VIDEOS;

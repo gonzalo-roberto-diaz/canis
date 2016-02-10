@@ -112,3 +112,6 @@ insert  into `CAT_BREEDS`(`ID`,`GUID`,`CAT_BREED_NAME`) values (99,'22f961dda339
 insert  into `CAT_BREEDS`(`ID`,`GUID`,`CAT_BREED_NAME`) values (100,'84f14ca7c5488c0232490e971e06d073','Turkish Van\r\n');
 insert  into `CAT_BREEDS`(`ID`,`GUID`,`CAT_BREED_NAME`) values (101,'990ee861caddcf763ea40602c6c705dc','Ukrainian Levkoy\r\n');
 insert  into `CAT_BREEDS`(`ID`,`GUID`,`CAT_BREED_NAME`) values (102,'03d8be60fd7d70deb4a38272ae2fd8a1','York Chocolate');
+
+--rollback DELETE CAT_BREEDS;
+--rollback DELETE CAT_SIZES;

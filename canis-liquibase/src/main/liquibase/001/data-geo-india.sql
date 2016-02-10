@@ -38,3 +38,5 @@ insert  into `INDIA_STATES`(`ID`,`GUID`,`STATE_CODE`,`STATE_NAME`) values (33,'e
 insert  into `INDIA_STATES`(`ID`,`GUID`,`STATE_CODE`,`STATE_NAME`) values (34,'ed17728b5f2048fabcb98aa955c22246','ML','Meghalaya');
 insert  into `INDIA_STATES`(`ID`,`GUID`,`STATE_CODE`,`STATE_NAME`) values (35,'f26effc743e846da83249d05b35e246a','TN','Tamil Nadu');
 insert  into `INDIA_STATES`(`ID`,`GUID`,`STATE_CODE`,`STATE_NAME`) values (36,'f53414dcf1b540d8ab661b5064c4fc99','DN','Dadra and Nagar Haveli');
+
+--rollback DELETE FROM INDIA_STATES;

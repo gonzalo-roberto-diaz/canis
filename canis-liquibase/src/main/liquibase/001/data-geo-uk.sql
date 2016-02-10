@@ -178,3 +178,6 @@ insert  into `UK_REGIONS`(`ID`,`GUID`,`STATISTICAL_AREA`,`REGION_NAME`,`COUNTRY_
 insert  into `UK_REGIONS`(`ID`,`GUID`,`STATISTICAL_AREA`,`REGION_NAME`,`COUNTRY_NAME`) values (174,'fc92bda00a9f6e0ce34000e7e443272e','West and South','Cookstown','Northern Ireland');
 insert  into `UK_REGIONS`(`ID`,`GUID`,`STATISTICAL_AREA`,`REGION_NAME`,`COUNTRY_NAME`) values (175,'fe930c27-e05d-4119-85cc-8d50862d','Yorkshire and the Humber','East Riding of Yorkshire','England');
 insert  into `UK_REGIONS`(`ID`,`GUID`,`STATISTICAL_AREA`,`REGION_NAME`,`COUNTRY_NAME`) values (176,'ff968d10-0f50-4a84-86c8-50820c3c','North West England','Halton','England');
+
+
+--rollback DELETE FROM UK_REGIONS;

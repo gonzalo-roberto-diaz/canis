@@ -34,3 +34,9 @@ insert  into `DOG_SIZES`(`ID`,`NAME`,`ORDER`,`ENABLED`) values (4,'miniature',10
 insert  into `DOG_SIZES`(`ID`,`NAME`,`ORDER`,`ENABLED`) values (5,'small to medium',40,1);
 insert  into `DOG_SIZES`(`ID`,`NAME`,`ORDER`,`ENABLED`) values (6,'small',30,1);
 insert  into `DOG_SIZES`(`ID`,`NAME`,`ORDER`,`ENABLED`) values (7,'large',60,1);
+
+--rollback DELETE FROM DOG_PURPOSES;
+--rollback DELETE FROM DOG_SHEDDING_AMOUNTS;
+--rollback DELETE FROM DOG_SHEDDING_FREQUENCIES;
+--rollback DELETE FROM DOG_SIZES;
+
