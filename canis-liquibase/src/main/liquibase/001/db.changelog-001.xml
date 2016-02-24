@@ -26,5 +26,4 @@
 		<include file="src/main/liquibase/001/data-dog-breed-relations.sql"   relativeToChangelogFile="false" />
 		<include file="src/main/liquibase/001/data-front-page.sql"    relativeToChangelogFile="false" />
 		<include file="src/main/liquibase/001/data-cats.sql"    relativeToChangelogFile="false" />
-
 </databaseChangeLog>

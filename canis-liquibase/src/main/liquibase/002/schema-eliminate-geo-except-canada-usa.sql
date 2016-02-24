@@ -1,0 +1,13 @@
+--liquibase formatted sql
+
+--changeset gdiaz:schema-eliminate-geo-except-canada-usa
+
+DROP TABLE INDIA_STATES;
+
+DROP TABLE UK_REGIONS;
+
+DROP TABLE CHINA_ZIPS;
+DROP TABLE CHINA_PROVINCES;
+
+DROP TABLE JAPAN_ZIPS;
+DROP TABLE JAPAN_PREFECTURES;
