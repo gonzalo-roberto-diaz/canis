@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,15 +24,15 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 	/* (non-Javadoc)
 	 * @see com.canis.service.DogBreedsService#list(int, int)
 	 */
-	public List<DogBreed> list(int offset, int limit) {
-		return dogBreedsDAO.list(offset, limit);
+	public Page<DogBreed> list(int offset, int limit) {
+		return dogBreedsDAO.findAll(new PageRequest(offset, limit));
 	}
 	
 	/* (non-Javadoc)
 	 * @see com.canis.service.DogBreedsService#getCount()
 	 */
 	public long getCount() {
-		return dogBreedsDAO.getCount();
+		return dogBreedsDAO.count();
 	}
 	
 	/* (non-Javadoc)

@@ -16,7 +16,7 @@ import com.canis.domain.DogBreed;
 
 @Repository
 @Transactional
-public class DogBreedsDAOImpl implements DogBreedsDAO  {
+public class DogBreedsDAOImpl   {
 
 	@PersistenceContext
 	private EntityManager manager;
@@ -24,38 +24,38 @@ public class DogBreedsDAOImpl implements DogBreedsDAO  {
 	/* (non-Javadoc)
 	 * @see com.canis.dao.DogBreedsDAO#list(int, int)
 	 */
-	public List<com.canis.domain.DogBreed> list(int offset, int limit) {
-		CriteriaBuilder builder = manager.getCriteriaBuilder();
-		CriteriaQuery<DogBreed> criteria = builder.createQuery(DogBreed.class);
-		Root<DogBreed> cat = criteria.from(DogBreed.class);
-		criteria.select(cat).orderBy(builder.desc(cat.get("name")));
-		
-		TypedQuery<DogBreed> tq = manager.createQuery(criteria);
-		tq.setFirstResult(offset);
-		tq.setMaxResults(limit);
-		List<DogBreed> breeds = tq.getResultList();
-		return breeds;
-	}
+//	public List<com.canis.domain.DogBreed> list(int offset, int limit) {
+//		CriteriaBuilder builder = manager.getCriteriaBuilder();
+//		CriteriaQuery<DogBreed> criteria = builder.createQuery(DogBreed.class);
+//		Root<DogBreed> cat = criteria.from(DogBreed.class);
+//		criteria.select(cat).orderBy(builder.desc(cat.get("name")));
+//
+//		TypedQuery<DogBreed> tq = manager.createQuery(criteria);
+//		tq.setFirstResult(offset);
+//		tq.setMaxResults(limit);
+//		List<DogBreed> breeds = tq.getResultList();
+//		return breeds;
+//	}
 	
 	/* (non-Javadoc)
 	 * @see com.canis.dao.DogBreedsDAO#getCount()
 	 */
-	public long getCount() {
-		CriteriaBuilder cb = manager.getCriteriaBuilder();
-		CriteriaQuery<Long> cq = cb.createQuery(Long.class);
-		cq.select(cb.count(cq.from(DogBreed.class)));
-
-		TypedQuery<Long> tq = manager.createQuery(cq);
-		long count = tq.getSingleResult();
-		return count;
-	}
+//	public long getCount() {
+//		CriteriaBuilder cb = manager.getCriteriaBuilder();
+//		CriteriaQuery<Long> cq = cb.createQuery(Long.class);
+//		cq.select(cb.count(cq.from(DogBreed.class)));
+//
+//		TypedQuery<Long> tq = manager.createQuery(cq);
+//		long count = tq.getSingleResult();
+//		return count;
+//	}
 
 	/* (non-Javadoc)
 	 * @see com.canis.dao.DogBreedsDAO#findById(long)
 	 */
-	public DogBreed findById(long id) {
-		return manager.find(DogBreed.class, id);
-	}
+//	public DogBreed findById(long id) {
+//		return manager.find(DogBreed.class, id);
+//	}
 
 	/* (non-Javadoc)
 	 * @see com.canis.dao.DogBreedsDAO#nameExists(java.lang.String)

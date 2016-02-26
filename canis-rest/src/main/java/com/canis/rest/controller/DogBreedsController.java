@@ -3,6 +3,7 @@ package com.canis.rest.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,11 +30,11 @@ public class DogBreedsController {
      
     @RequestMapping(value = "/list/{offset}/{limit}", method = RequestMethod.GET)
     public ResponseEntity<List<DogBreed>> list(@PathVariable("offset") int offset, @PathVariable("limit") int limit) {
-        List<DogBreed> Breeds = service.list(offset, limit);
-        if(Breeds.isEmpty()){
+        Page<DogBreed> breeds = service.list(offset, limit);
+        if(!breeds.hasContent()){
             return new ResponseEntity<List<DogBreed>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
-        return new ResponseEntity<List<DogBreed>>(Breeds, HttpStatus.OK);
+        return new ResponseEntity<List<DogBreed>>(breeds.getContent(), HttpStatus.OK);
     }
     
     @RequestMapping(value = "/count", method = RequestMethod.GET)
@@ -82,7 +83,7 @@ public class DogBreedsController {
             return new ResponseEntity<DogBreed>(HttpStatus.NOT_FOUND);
         }
  
-        service.updateBreed(breed);
+        service.update(breed);
         return new ResponseEntity<DogBreed>(currentBreed, HttpStatus.OK);
     }
  

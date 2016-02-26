@@ -3,10 +3,11 @@ package com.canis.service;
 import java.util.List;
 
 import com.canis.domain.DogBreed;
+import org.springframework.data.domain.Page;
 
 public interface DogBreedsService {
 
-	List<DogBreed> list(int offset, int limit);
+	public Page<DogBreed> list(int offset, int limit);
 
 	long getCount();
 
@@ -14,7 +15,7 @@ public interface DogBreedsService {
 
 	void saveBreed(DogBreed user);
 
-	void updateBreed(DogBreed user);
+	void update(DogBreed user);
 
 	void deleteBreedById(long id);
 
