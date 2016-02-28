@@ -89,16 +89,30 @@ public class DogBreed {
     
     @Column(name="MAIN_FEATURES")
     private String mainFeatures;
-    
 
-    
-    
+	@Column(name="LIFESPAN_MAX")
+	private short lifespanMax;
 
-    
-    
-    
-    
-	
+	@Column(name="LIFESPAN_MIN")
+	private short lifespanMin;
+
+	public short getLifespanMax() {
+		return lifespanMax;
+	}
+
+	public void setLifespanMax(short lifespanMax) {
+		this.lifespanMax = lifespanMax;
+	}
+
+	public short getLifespanMin() {
+		return lifespanMin;
+	}
+
+	public void setLifespanMin(short lifespanMin) {
+		this.lifespanMin = lifespanMin;
+	}
+
+
 //    @ManyToOne(fetch = FetchType.EAGER,cascade={CascadeType.REFRESH})
 //    @JoinColumn(name = "DOG_SIZE_ID",referencedColumnName="ID",nullable=false)
 //	private DogSize size;
