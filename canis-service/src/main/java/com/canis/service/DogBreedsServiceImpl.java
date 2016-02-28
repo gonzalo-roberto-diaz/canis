@@ -70,7 +70,7 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 		return dogBreedsDAO.nameExists(name);
 	}
 
-
-
-
+	public void update(DogBreed dogBreed) {
+		dogBreedsDAO.update(dogBreed);
+	}
 }
