@@ -9,4 +9,6 @@
 
 
 		<include file="src/main/liquibase/002/schema-eliminate-geo-except-canada-usa.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/002/schema-add-dog-lifespan.sql"  relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/002/data-add-dog-lifespan.sql"   relativeToChangelogFile="false" />
 </databaseChangeLog>
