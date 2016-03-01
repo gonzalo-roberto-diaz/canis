@@ -9,16 +9,13 @@ import org.springframework.data.repository.query.Param;
 
 public interface DogBreedsDAO extends PagingAndSortingRepository<DogBreed, Long> {
 
-	long count();
 
-	DogBreed findById(long id);
+	DogBreed findById(Long id);
 
-    @Query("SELECT CASE WHEN COUNT(c) > 0 THEN true ELSE false END FROM DogBreed c WHERE c.name = :name")
+	DogBreed findByName(String name);
+
+    @Query("SELECT CASE WHEN COUNT(c) > 0 THEN true ELSE false END FROM com.canis.domain.DogBreed c WHERE c.name = :name")
     boolean nameExists(@Param("name") String companyName);
-
-	void update(DogBreed currentBreed);
-
-	void delete(long id);
 
 
 

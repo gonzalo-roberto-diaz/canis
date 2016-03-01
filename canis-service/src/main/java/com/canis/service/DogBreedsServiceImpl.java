@@ -50,13 +50,6 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 	}
 
 	/* (non-Javadoc)
-	 * @see com.canis.service.DogBreedsService#updateBreed(com.canis.domain.DogBreed)
-	 */
-	public void updateBreed(DogBreed user) {
-		dogBreedsDAO.update(user);
-	}
-
-	/* (non-Javadoc)
 	 * @see com.canis.service.DogBreedsService#deleteBreedById(long)
 	 */
 	public void deleteBreedById(long id) {
@@ -71,6 +64,6 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 	}
 
 	public void update(DogBreed dogBreed) {
-		dogBreedsDAO.update(dogBreed);
+		dogBreedsDAO.save(dogBreed);
 	}
 }
