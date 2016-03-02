@@ -13,11 +13,11 @@ public interface DogBreedsService {
 
 	DogBreed findById(long id);
 
-	void saveBreed(DogBreed user);
+	void save(DogBreed user);
 
 	void update(DogBreed user);
 
-	void deleteBreedById(long id);
+	void delete(long id);
 
 	boolean nameExists(String name);
 

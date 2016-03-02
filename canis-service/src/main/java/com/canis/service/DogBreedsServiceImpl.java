@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +18,7 @@ import com.canis.domain.DogBreed;
 @Transactional
 public class DogBreedsServiceImpl implements DogBreedsService{
 	
-	@Resource
+	@Autowired
 	DogBreedsDAO dogBreedsDAO;
 	
 
@@ -45,14 +46,14 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 	/* (non-Javadoc)
 	 * @see com.canis.service.DogBreedsService#saveBreed(com.canis.domain.DogBreed)
 	 */
-	public void saveBreed(DogBreed user) {
+	public void save(DogBreed user) {
 		dogBreedsDAO.save(user);
 	}
 
 	/* (non-Javadoc)
-	 * @see com.canis.service.DogBreedsService#deleteBreedById(long)
+	 * @see com.canis.service.DogBreedsService#delete(long)
 	 */
-	public void deleteBreedById(long id) {
+	public void delete(long id) {
 		dogBreedsDAO.delete(id);
 	}
 

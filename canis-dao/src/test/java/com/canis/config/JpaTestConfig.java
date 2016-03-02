@@ -1,4 +1,4 @@
-package com.canis.configuration;
+package com.canis.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

@@ -62,7 +62,7 @@ public class DogBreedsController {
             return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
         }
  
-        service.saveBreed(bean);
+        service.save(bean);
  
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(ucBuilder.path("/Breed/{id}").buildAndExpand(bean.getId()).toUri());
@@ -97,7 +97,7 @@ public class DogBreedsController {
             return new ResponseEntity<DogBreed>(HttpStatus.NOT_FOUND);
         }
  
-        service.deleteBreedById(id);
+        service.delete(id);
         return new ResponseEntity<DogBreed>(HttpStatus.NO_CONTENT);
     }
  

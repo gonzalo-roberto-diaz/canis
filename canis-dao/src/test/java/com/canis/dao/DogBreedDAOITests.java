@@ -2,7 +2,7 @@ package com.canis.dao;
 
 
 
-import com.canis.configuration.JpaTestConfig;
+import com.canis.config.JpaTestConfig;
 import com.canis.domain.DogBreed;
 import org.junit.After;
 import org.junit.Before;
@@ -14,7 +14,6 @@ import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**

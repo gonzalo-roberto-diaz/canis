@@ -5,6 +5,12 @@
 	<artifactId>canis-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<parent>
+		<groupId>com.canis</groupId>
+		<artifactId>canis-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.canis</groupId>
