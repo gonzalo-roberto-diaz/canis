@@ -13,7 +13,7 @@ public interface DogBreedsService {
 
 	DogBreed findById(long id);
 
-	void save(DogBreed user);
+	DogBreed save(DogBreed user);
 
 	void update(DogBreed user);
 

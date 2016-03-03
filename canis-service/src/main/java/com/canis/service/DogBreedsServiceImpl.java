@@ -46,8 +46,8 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 	/* (non-Javadoc)
 	 * @see com.canis.service.DogBreedsService#saveBreed(com.canis.domain.DogBreed)
 	 */
-	public void save(DogBreed user) {
-		dogBreedsDAO.save(user);
+	public DogBreed save(DogBreed user) {
+		return dogBreedsDAO.save(user);
 	}
 
 	/* (non-Javadoc)

@@ -56,17 +56,17 @@ public class DogBreedsController {
      
     
     @RequestMapping(value = "/create/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> create(@RequestBody DogBreed bean,    UriComponentsBuilder ucBuilder) {
+    public ResponseEntity<DogBreed> create(@RequestBody DogBreed bean,    UriComponentsBuilder ucBuilder) {
  
         if (service.nameExists(bean.getName())) {
-            return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<DogBreed>(HttpStatus.BAD_REQUEST);
         }
  
-        service.save(bean);
+        bean = service.save(bean);
  
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(ucBuilder.path("/Breed/{id}").buildAndExpand(bean.getId()).toUri());
-        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+        return new ResponseEntity<DogBreed>(bean, HttpStatus.CREATED);
     }
  
      
@@ -90,15 +90,16 @@ public class DogBreedsController {
     //------------------- Delete a Breed --------------------------------------------------------
      
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<DogBreed> delete(@PathVariable("id") long id) {
+    public ResponseEntity<String> delete(@PathVariable("id") long id) {
  
         DogBreed Breed = service.findById(id);
         if (Breed == null) {
-            return new ResponseEntity<DogBreed>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
         }
  
         service.delete(id);
-        return new ResponseEntity<DogBreed>(HttpStatus.NO_CONTENT);
+        //NO_CONTENT indicates success, but leaving the response deliberately empty
+        return new ResponseEntity<String>(HttpStatus.NO_CONTENT);
     }
  
      
