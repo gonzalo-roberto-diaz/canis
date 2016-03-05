@@ -35,7 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = RestTestApplication.class)
 @WebAppConfiguration
-public class DogBreedsUTest {
+public class DogBreedsTest {
 
     @Mock
     DogBreedsService todoServiceMock;
@@ -77,4 +77,6 @@ public class DogBreedsUTest {
         verify(todoServiceMock, times(1)).list(0, 100);
         verifyNoMoreInteractions(todoServiceMock);
     }
+
+
 }

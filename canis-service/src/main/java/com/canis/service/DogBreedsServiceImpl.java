@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,8 +26,9 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 	/* (non-Javadoc)
 	 * @see com.canis.service.DogBreedsService#list(int, int)
 	 */
-	public Page<DogBreed> list(int offset, int limit) {
-		return dogBreedsDAO.findAll(new PageRequest(offset, limit));
+	public Page<DogBreed> list(int offset, int limit, String property) {
+		Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, property));
+		return dogBreedsDAO.findAll(new PageRequest(offset, limit), sort);
 	}
 	
 	/* (non-Javadoc)

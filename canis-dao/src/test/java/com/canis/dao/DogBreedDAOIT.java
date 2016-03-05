@@ -14,6 +14,7 @@ import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
@@ -22,21 +23,29 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = JpaTestConfig.class)
 @IntegrationTest
-public class DogBreedDAOITests {
+public class DogBreedDAOIT {
 
     @Autowired
     DogBreedsDAO repository;
 
     @Test
     public void count(){
-        assertEquals(repository.count(), 2);
+        assertEquals(repository.count(), 3);
     }
 
     @Test
     public void findAll(){
         Page<DogBreed> page = repository.findAll(new PageRequest(0, 100));
         assertNotNull(page);
-        assertEquals(page.getTotalElements(), 2);
+        assertEquals(page.getTotalElements(), 3);
+    }
+
+    @Test
+    public void testOrder(){
+        PageRequest pageRequest = new PageRequest(0, 100, Sort.Direction.ASC, "name");
+        Page<DogBreed> page = repository.findAll(pageRequest);
+        DogBreed secondWithA = page.getContent().get(1);
+        assertEquals(secondWithA.getName(), "Akita");
     }
 
     @Test
@@ -45,12 +54,12 @@ public class DogBreedDAOITests {
         DogBreed akita = repository.findByName("Akita");
         assertNotNull(akita);
         repository.delete(akita);
-        assertEquals(repository.count(), 1);
+        assertEquals(repository.count(), 2);
         //delete by ID
         DogBreed bulldog = repository.findByName("Bulldog");
         assertNotNull(bulldog);
         repository.delete(bulldog.getId());
-        assertEquals(repository.count(), 0);
+        assertEquals(repository.count(), 1);
     }
 
     @Test
@@ -76,8 +85,13 @@ public class DogBreedDAOITests {
         DogBreed dogBreed2 = new DogBreed();
         dogBreed2.setName("Bulldog");
 
+        DogBreed dogBreed3  = new DogBreed();
+        dogBreed3.setName("Affenpinscher");
+
         repository.save(dogBreed1);
         repository.save(dogBreed2);
+        repository.save(dogBreed3);
+
     }
 
     @After

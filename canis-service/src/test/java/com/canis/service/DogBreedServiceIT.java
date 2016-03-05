@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = ServiceTestConfig.class)
 @IntegrationTest
-public class DogBreedServiceITests {
+public class DogBreedServiceIT {
 
     @Autowired
     DogBreedsService service;

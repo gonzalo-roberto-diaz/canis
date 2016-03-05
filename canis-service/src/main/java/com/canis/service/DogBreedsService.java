@@ -7,7 +7,7 @@ import org.springframework.data.domain.Page;
 
 public interface DogBreedsService {
 
-	public Page<DogBreed> list(int offset, int limit);
+	public Page<DogBreed> list(int offset, int limit, String property);
 
 	long getCount();
 

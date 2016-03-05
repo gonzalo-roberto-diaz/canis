@@ -38,7 +38,7 @@ import com.canis.RestTestApplication;
 @SpringApplicationConfiguration(classes = RestTestApplication.class)
 @WebAppConfiguration
 @IntegrationTest({"server.port=0"})
-public class DogBreedsControllerITest {
+public class DogBreedsControllerIT {
 
     @Value("${local.server.port}")
     private int port;
@@ -124,5 +124,15 @@ public class DogBreedsControllerITest {
 
         ResponseEntity<List> response = template.getForEntity(base.toString() + "/list/0/100", List.class);
         assertEquals(response.getBody().size(), 1);
+    }
+
+    @Test
+    public void createWithExistingName() throws Exception{
+        DogBreed newAkita = insertedAkita.getBody();
+        newAkita.setName("Akita");
+
+        RequestEntity request = RequestEntity.post(new URI(base.toString() + "/create/")).accept(MediaType.APPLICATION_JSON).body(newAkita);
+        ResponseEntity<DogBreed> res= template.exchange(request, DogBreed.class);
+        assertEquals(res.getStatusCode(), HttpStatus.BAD_REQUEST);
     }
 }
