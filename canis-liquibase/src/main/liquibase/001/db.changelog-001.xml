@@ -26,4 +26,7 @@
 		<include file="src/main/liquibase/001/data-dog-breed-relations.sql"   relativeToChangelogFile="false" />
 		<include file="src/main/liquibase/001/data-front-page.sql"    relativeToChangelogFile="false" />
 		<include file="src/main/liquibase/001/data-cats.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/schema-eliminate-geo-except-canada-usa.sql"    relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/schema-add-dog-lifespan.sql"  relativeToChangelogFile="false" />
+		<include file="src/main/liquibase/001/data-add-dog-lifespan.sql"   relativeToChangelogFile="false" />
 </databaseChangeLog>
