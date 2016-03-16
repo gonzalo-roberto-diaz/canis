@@ -1,0 +1,4 @@
+java -jar /C/Users/Gonzalo/.m2/repository/org/liquibase/liquibase-core/3.2.0/liquibase-core-3.2.0.jar  --driver=com.mysql.jdbc.Driver --classpath=/C/Users/Gonzalo/.m2/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar --changeLogFile=/C/dev/canis/canis-liquibase/doc/new.changelog-schema-base.xml --url=jdbc:mysql://localhost:3306/canis-new --username=root --password=  --diffTypes=columns,primarykeys,uniqueconstraints,foreignkeys,indexes,tables,views  generateChangeLog
+
+java -jar /C/Users/Gonzalo/.m2/repository/org/liquibase/liquibase-core/3.2.0/liquibase-core-3.2.0.jar  --driver=com.mysql.jdbc.Driver --classpath=/C/Users/Gonzalo/.m2/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar --changeLogFile=/C/dev/canis/canis-liquibase/doc/new.changelog-data.xml --url=jdbc:mysql://localhost:3306/canis-new --username=root --password=   --diffTypes=data generateChangeLog
+

@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+    <changeSet author="Gonzalo (generated)" id="1458114932733-1">
+        <createTable tableName="BREEDERS">
+            <column autoIncrement="true" name="ID" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="COUNTRY_ID" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ZIP_CODE" type="CHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="URL" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="URL_ENCODED" type="VARCHAR(100)"/>
+            <column name="LOGO_URL" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EMAIL" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PHONE" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STREET_ADDRESS" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="0" name="PO_BOX" type="INT(10)"/>
+            <column name="LATITUDE" type="DECIMAL(11, 8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LONGITUDE" type="DECIMAL(11, 8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" type="VARCHAR(100)"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" type="VARCHAR(100)"/>
+            <column name="COLLOQUIAL_AREA" type="VARCHAR(100)"/>
+            <column name="LOCALITY" type="VARCHAR(100)"/>
+            <column name="SUBLOCALITY_LEVEL_1" type="VARCHAR(100)"/>
+            <column name="META_DESCRIPCION" type="TEXT"/>
+            <column name="META_KEYWORDS" type="TEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-2">
+        <createTable tableName="CANADA_PROVINCES">
+            <column autoIncrement="true" name="ID" type="INT(10) UNSIGNED">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PROVINCE_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PROVINCE_CODE" type="CHAR(2)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-3">
+        <createTable tableName="CANADA_ZIPS">
+            <column autoIncrement="true" name="ID" type="INT(10) UNSIGNED">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ZIP_CODE" type="CHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LOCATION_ID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LATITUDE" type="DECIMAL(10, 6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LONGITUDE" type="DECIMAL(10, 6)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-4">
+        <createTable tableName="COUNTRIES">
+            <column autoIncrement="true" name="ID" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-5">
+        <createTable tableName="DOG_BREEDS">
+            <column autoIncrement="true" name="ID" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COLORS" type="VARCHAR(200)"/>
+            <column name="SIZE_MIN" type="DECIMAL(6, 2)"/>
+            <column name="SIZE_MAX" type="DECIMAL(6, 2)"/>
+            <column name="WEIGHT_MIN" type="DECIMAL(6, 2)"/>
+            <column name="WEIGHT_MAX" type="DECIMAL(6, 2)"/>
+            <column defaultValueNumeric="1.00" name="SERVING_MIN" type="DECIMAL(6, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1.00" name="SERVING_MAX" type="DECIMAL(6, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FRIENDLY_RANK" type="SMALLINT(5)"/>
+            <column name="FRIENDLY_TEXT" type="TEXT"/>
+            <column name="ACTIVE_RANK" type="SMALLINT(5)"/>
+            <column name="ACTIVE_TEXT" type="TEXT"/>
+            <column name="HEALTHY_RANK" type="SMALLINT(5)"/>
+            <column name="HEALTHY_TEXT" type="TEXT"/>
+            <column name="TRAINING_RANK" type="SMALLINT(5)"/>
+            <column name="TRAINING_TEXT" type="TEXT"/>
+            <column name="GUARDIAN_RANK" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GUARDIAN_TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GROOMING_RANK" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GROOMING_TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PICTURE_URL" type="VARCHAR(200)"/>
+            <column name="VIDEO_URL" type="VARCHAR(300)"/>
+            <column defaultValueNumeric="0" name="APARTMENTS" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="KIDS" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1" name="ENABLED" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DOG_SIZE_ID" type="INT(10)"/>
+            <column name="DOG_SHEDDING_AMOUNT_ID" type="INT(10)"/>
+            <column name="SHEDDING_TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SHEDDING_RANK" type="SMALLINT(5)"/>
+            <column name="LIFESPAN_MIN" type="SMALLINT(5)"/>
+            <column name="LIFESPAN_MAX" type="SMALLINT(5)"/>
+            <column name="DOG_TYPE_ID" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-6">
+        <createTable tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" type="INT(10)"/>
+            <column name="BREEDER_ID" type="INT(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-7">
+        <createTable tableName="DOG_BREEDS_BY_FORUM">
+            <column name="DOG_BREED_ID" type="INT(10)"/>
+            <column name="FORUM_ID" type="INT(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-8">
+        <createTable tableName="DOG_BREEDS_BY_SHELTER">
+            <column name="DOG_BREED_ID" type="INT(10)"/>
+            <column name="SHELTER_ID" type="INT(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-9">
+        <createTable tableName="DOG_SIZES">
+            <column autoIncrement="true" name="ID" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ORDER" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1" name="ENABLED" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-10">
+        <createTable tableName="DOG_TYPES">
+            <column autoIncrement="true" name="ID" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LEVEL" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PARENT" type="INT(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-11">
+        <createTable tableName="FRONT_PAGE">
+            <column name="NEWS_1_ID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NEWS_2_ID" type="CHAR(32)"/>
+            <column name="NEWS_3_ID" type="CHAR(32)"/>
+            <column name="NEWS_4_ID" type="CHAR(32)"/>
+            <column name="NEWS_1_CUT" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NEWS_2_CUT" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NEWS_3_CUT" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NEWS_4_CUT" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VIDEO_1_ID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VIDEO_2_ID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VIDEO_3_ID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DOG_BREED_1_ID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DOG_BREED_2_ID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DOG_BREED_3_ID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-12">
+        <createTable tableName="NEWS">
+            <column autoIncrement="true" name="ID" type="INT(10) UNSIGNED">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NEWS_TITLE" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="URL_ENCODED" type="VARCHAR(200)"/>
+            <column name="NEWS_TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NEWS_SOURCE" type="VARCHAR(200)"/>
+            <column name="NEWS_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="CUT_POSITION" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-13">
+        <createTable tableName="PET_FORUMS">
+            <column autoIncrement="true" name="ID" type="INT(10) UNSIGNED">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FORUM_NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ENCODED_NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FORUM_URL" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PICTURE_URL" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="META_DESCRIPCION" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="META_KEYWORDS" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FORUM_DESCRIPTION" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-14">
+        <createTable tableName="SHELTERS">
+            <column autoIncrement="true" name="ID" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COUNTRY_ID" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ZIP_CODE" type="CHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="URL" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="URL_ENCODED" type="VARCHAR(100)"/>
+            <column name="LOGO_URL" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EMAIL" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PHONE" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="LONGTEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STREET_ADDRESS" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="0" name="PO_BOX" type="INT(10)"/>
+            <column name="LATITUDE" type="DECIMAL(11, 8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LONGITUDE" type="DECIMAL(11, 8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" type="VARCHAR(100)"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" type="VARCHAR(100)"/>
+            <column name="COLLOQUIAL_AREA" type="VARCHAR(100)"/>
+            <column name="LOCALITY" type="VARCHAR(100)"/>
+            <column name="SUBLOCALITY_LEVEL_1" type="VARCHAR(100)"/>
+            <column name="META_DESCRIPCION" type="TEXT"/>
+            <column name="META_KEYWORDS" type="TEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-15">
+        <createTable tableName="TEXT_RESOURCES">
+            <column autoIncrement="true" name="ID" type="INT(10) UNSIGNED">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TEXT_RES_KEY" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TEXT_RESOURCE" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-16">
+        <createTable tableName="USA_CITIES">
+            <column autoIncrement="true" name="ID" type="INT(10) UNSIGNED">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CITY_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COUNTY_ID" type="INT(10) UNSIGNED"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-17">
+        <createTable tableName="USA_COUNTIES">
+            <column autoIncrement="true" name="ID" type="INT(10) UNSIGNED">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COUNTY_NAME" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STATE_ID" type="INT(10) UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-18">
+        <createTable tableName="USA_STATES">
+            <column autoIncrement="true" name="ID" type="INT(10) UNSIGNED">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STATE_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STATE_CODE" type="CHAR(2)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-19">
+        <createTable tableName="USA_ZIPS">
+            <column autoIncrement="true" name="ID" type="INT(10) UNSIGNED">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ZIP_CODE" type="CHAR(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LOCATION_ID" type="CHAR(32)"/>
+            <column name="LATITUDE" type="DECIMAL(10, 6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LONGITUDE" type="DECIMAL(10, 6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CITY_ID" type="INT(10) UNSIGNED"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-20">
+        <createTable tableName="VIDEOS">
+            <column autoIncrement="true" name="ID" type="INT(10) UNSIGNED">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="GUID" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VIDEO_TITLE" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VIDEO_URL" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VIDEO_TAGS" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-21">
+        <addPrimaryKey columnNames="NEWS_1_ID" constraintName="PRIMARY" tableName="FRONT_PAGE"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-22">
+        <addUniqueConstraint columnNames="NAME" constraintName="DOG_BREED_NAME" deferrable="false" disabled="false" initiallyDeferred="false" tableName="DOG_BREEDS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-23">
+        <addUniqueConstraint columnNames="GUID" constraintName="GUID" deferrable="false" disabled="false" initiallyDeferred="false" tableName="DOG_TYPES"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-24">
+        <addUniqueConstraint columnNames="NEWS_TITLE" constraintName="NEWS_TITLE" deferrable="false" disabled="false" initiallyDeferred="false" tableName="NEWS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-25">
+        <addUniqueConstraint columnNames="ID" constraintName="NUMBER" deferrable="false" disabled="false" initiallyDeferred="false" tableName="BREEDERS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-26">
+        <addUniqueConstraint columnNames="TEXT_RES_KEY" constraintName="TEXT_RES_KEY" deferrable="false" disabled="false" initiallyDeferred="false" tableName="TEXT_RESOURCES"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-27">
+        <addUniqueConstraint columnNames="ZIP_CODE" constraintName="zip_code" deferrable="false" disabled="false" initiallyDeferred="false" tableName="USA_ZIPS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-28">
+        <addForeignKeyConstraint baseColumnNames="COUNTRY_ID" baseTableName="BREEDERS" constraintName="FK_BREEDERS_COUNTRIES" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="COUNTRIES"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-29">
+        <addForeignKeyConstraint baseColumnNames="BREEDER_ID" baseTableName="DOG_BREEDS_BY_BREEDER" constraintName="FK_DOG_BREEDS_BY_BREEDER_BREEDERS" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="BREEDERS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-30">
+        <addForeignKeyConstraint baseColumnNames="DOG_BREED_ID" baseTableName="DOG_BREEDS_BY_BREEDER" constraintName="FK_DOG_BREEDS_BY_BREEDER_DOG_BREEDS" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="DOG_BREEDS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-31">
+        <addForeignKeyConstraint baseColumnNames="DOG_BREED_ID" baseTableName="DOG_BREEDS_BY_SHELTER" constraintName="FK_DOG_BREEDS_BY_SHELTER_DOG_BREEDS" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="DOG_BREEDS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-32">
+        <addForeignKeyConstraint baseColumnNames="SHELTER_ID" baseTableName="DOG_BREEDS_BY_SHELTER" constraintName="FK_DOG_BREEDS_BY_SHELTER_SHELTER_ID" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="SHELTERS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-33">
+        <addForeignKeyConstraint baseColumnNames="DOG_SIZE_ID" baseTableName="DOG_BREEDS" constraintName="FK_DOG_BREEDS_DOG_SIZES" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="DOG_SIZES"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-34">
+        <addForeignKeyConstraint baseColumnNames="DOG_TYPE_ID" baseTableName="DOG_BREEDS" constraintName="FK_DOG_BREEDS_DOG_TYPES" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="DOG_TYPES"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-35">
+        <addForeignKeyConstraint baseColumnNames="COUNTY_ID" baseTableName="USA_CITIES" constraintName="FK_USA_CITIES_USA_COUNTIES" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="USA_COUNTIES"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-36">
+        <addForeignKeyConstraint baseColumnNames="STATE_ID" baseTableName="USA_COUNTIES" constraintName="FK_USA_COUNTIES_USA_STATES" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="USA_STATES"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-37">
+        <addForeignKeyConstraint baseColumnNames="CITY_ID" baseTableName="USA_ZIPS" constraintName="FK_USA_ZIPS_USA_CITIES" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="USA_CITIES"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-38">
+        <createIndex indexName="latitude" tableName="BREEDERS" unique="false">
+            <column name="LATITUDE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-39">
+        <createIndex indexName="latitude" tableName="SHELTERS" unique="false">
+            <column name="LATITUDE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-40">
+        <createIndex indexName="longitude" tableName="BREEDERS" unique="false">
+            <column name="LONGITUDE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-41">
+        <createIndex indexName="longitude" tableName="SHELTERS" unique="false">
+            <column name="LONGITUDE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-42">
+        <createIndex indexName="zip_code" tableName="CANADA_ZIPS" unique="true">
+            <column name="ZIP_CODE"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>
