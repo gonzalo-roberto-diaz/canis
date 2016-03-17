@@ -65,6 +65,12 @@ public class DogBreed {
     
     @Column(name="GROOMING_TEXT")
     private String groomingText;
+
+	@Column(name="SHEDDING_RANK")
+	private int sheddingRank;
+
+	@Column(name="SHEDDING_TEXT")
+	private String sheddingText;
     
     @Column(name="SERVING_MIN")
     private BigDecimal servingMin;
@@ -74,7 +80,7 @@ public class DogBreed {
     
     @Column(name="SIZE_MIN")
     private BigDecimal sizeMin;
-    
+
     @Column(name="SIZE_MAX")
     private BigDecimal sizeMax;
     
@@ -96,241 +102,269 @@ public class DogBreed {
 	@Column(name="LIFESPAN_MIN")
 	private short lifespanMin;
 
-	public short getLifespanMax() {
-		return lifespanMax;
-	}
-
-	public void setLifespanMax(short lifespanMax) {
-		this.lifespanMax = lifespanMax;
-	}
-
-	public short getLifespanMin() {
-		return lifespanMin;
-	}
-
-	public void setLifespanMin(short lifespanMin) {
-		this.lifespanMin = lifespanMin;
-	}
+    @ManyToOne
+    @JoinColumn(name="DOG_TYPE_ID", referencedColumnName = "ID", nullable = false)
+    private DogType dogType;
 
 
-//    @ManyToOne(fetch = FetchType.EAGER,cascade={CascadeType.REFRESH})
-//    @JoinColumn(name = "DOG_SIZE_ID",referencedColumnName="ID",nullable=false)
-//	private DogSize size;
-//    
-//    @ManyToOne(fetch = FetchType.EAGER,cascade={CascadeType.REFRESH})
-//    @JoinColumn(name = "DOG_PURPOSE_ID",referencedColumnName="ID",nullable=false)
-//	private DogPurpose purpose;
+    public Long getId() {
+        return id;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public DogBreed setId(Long id) {
+        this.id = id;
+        return this;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public DogBreed setName(String name) {
+        this.name = name;
+        return this;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
 
-	public String getPictureUrl() {
-		return pictureUrl;
-	}
+    public DogBreed setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+        return this;
+    }
 
-	public void setPictureUrl(String pictureUrl) {
-		this.pictureUrl = pictureUrl;
-	}
+    public String getVideoUrl() {
+        return videoUrl;
+    }
 
-	public String getVideoUrl() {
-		return videoUrl;
-	}
+    public DogBreed setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+        return this;
+    }
 
-	public void setVideoUrl(String videoUrl) {
-		this.videoUrl = videoUrl;
-	}
+    public boolean isAptForApartments() {
+        return isAptForApartments;
+    }
 
-	public boolean isAptForApartments() {
-		return isAptForApartments;
-	}
+    public DogBreed setAptForApartments(boolean aptForApartments) {
+        isAptForApartments = aptForApartments;
+        return this;
+    }
 
-	public void setAptForApartments(boolean isAptForApartments) {
-		this.isAptForApartments = isAptForApartments;
-	}
+    public boolean isSafeAroundKids() {
+        return isSafeAroundKids;
+    }
 
-	public boolean isSafeAroundKids() {
-		return isSafeAroundKids;
-	}
+    public DogBreed setSafeAroundKids(boolean safeAroundKids) {
+        isSafeAroundKids = safeAroundKids;
+        return this;
+    }
 
-	public void setSafeAroundKids(boolean isSafeAroundKids) {
-		this.isSafeAroundKids = isSafeAroundKids;
-	}
+    public int getGuardianRank() {
+        return guardianRank;
+    }
 
-	public int getGuardianRank() {
-		return guardianRank;
-	}
+    public DogBreed setGuardianRank(int guardianRank) {
+        this.guardianRank = guardianRank;
+        return this;
+    }
 
-	public void setGuardianRank(int guardianRank) {
-		this.guardianRank = guardianRank;
-	}
+    public String getGuardianText() {
+        return guardianText;
+    }
 
-	public String getGuardianText() {
-		return guardianText;
-	}
+    public DogBreed setGuardianText(String guardianText) {
+        this.guardianText = guardianText;
+        return this;
+    }
 
-	public void setGuardianText(String guardianText) {
-		this.guardianText = guardianText;
-	}
+    public int getFriendlyRank() {
+        return friendlyRank;
+    }
 
-	public int getFriendlyRank() {
-		return friendlyRank;
-	}
+    public DogBreed setFriendlyRank(int friendlyRank) {
+        this.friendlyRank = friendlyRank;
+        return this;
+    }
 
-	public void setFriendlyRank(int friendlyRank) {
-		this.friendlyRank = friendlyRank;
-	}
+    public String getFriendlyText() {
+        return friendlyText;
+    }
 
-	public String getFriendlyText() {
-		return friendlyText;
-	}
+    public DogBreed setFriendlyText(String friendlyText) {
+        this.friendlyText = friendlyText;
+        return this;
+    }
 
-	public void setFriendlyText(String friendlyText) {
-		this.friendlyText = friendlyText;
-	}
+    public int getActiveRank() {
+        return activeRank;
+    }
 
-	public int getActiveRank() {
-		return activeRank;
-	}
+    public DogBreed setActiveRank(int activeRank) {
+        this.activeRank = activeRank;
+        return this;
+    }
 
-	public void setActiveRank(int activeRank) {
-		this.activeRank = activeRank;
-	}
+    public String getActiveText() {
+        return activeText;
+    }
 
-	public String getActiveText() {
-		return activeText;
-	}
+    public DogBreed setActiveText(String activeText) {
+        this.activeText = activeText;
+        return this;
+    }
 
-	public void setActiveText(String activeText) {
-		this.activeText = activeText;
-	}
+    public int getTrainingRank() {
+        return trainingRank;
+    }
 
-	public int getTrainingRank() {
-		return trainingRank;
-	}
+    public DogBreed setTrainingRank(int trainingRank) {
+        this.trainingRank = trainingRank;
+        return this;
+    }
 
-	public void setTrainingRank(int trainingRank) {
-		this.trainingRank = trainingRank;
-	}
+    public String getTrainingText() {
+        return trainingText;
+    }
 
-	public String getTrainingText() {
-		return trainingText;
-	}
+    public DogBreed setTrainingText(String trainingText) {
+        this.trainingText = trainingText;
+        return this;
+    }
 
-	public void setTrainingText(String trainingText) {
-		this.trainingText = trainingText;
-	}
+    public int getGroomingRank() {
+        return groomingRank;
+    }
 
-	public int getGroomingRank() {
-		return groomingRank;
-	}
+    public DogBreed setGroomingRank(int groomingRank) {
+        this.groomingRank = groomingRank;
+        return this;
+    }
 
-	public void setGroomingRank(int groomingRank) {
-		this.groomingRank = groomingRank;
-	}
+    public String getGroomingText() {
+        return groomingText;
+    }
 
-	public String getGroomingText() {
-		return groomingText;
-	}
+    public DogBreed setGroomingText(String groomingText) {
+        this.groomingText = groomingText;
+        return this;
+    }
 
-	public void setGroomingText(String groomingText) {
-		this.groomingText = groomingText;
-	}
+    public int getSheddingRank() {
+        return sheddingRank;
+    }
 
-	public BigDecimal getServingMin() {
-		return servingMin;
-	}
+    public DogBreed setSheddingRank(int sheddingRank) {
+        this.sheddingRank = sheddingRank;
+        return this;
+    }
 
-	public void setServingMin(BigDecimal servingMin) {
-		this.servingMin = servingMin;
-	}
+    public String getSheddingText() {
+        return sheddingText;
+    }
 
-	public BigDecimal getServingMax() {
-		return servingMax;
-	}
+    public DogBreed setSheddingText(String sheddingText) {
+        this.sheddingText = sheddingText;
+        return this;
+    }
 
-	public void setServingMax(BigDecimal servingMax) {
-		this.servingMax = servingMax;
-	}
+    public BigDecimal getServingMin() {
+        return servingMin;
+    }
 
-	public BigDecimal getSizeMin() {
-		return sizeMin;
-	}
+    public DogBreed setServingMin(BigDecimal servingMin) {
+        this.servingMin = servingMin;
+        return this;
+    }
 
-	public void setSizeMin(BigDecimal sizeMin) {
-		this.sizeMin = sizeMin;
-	}
+    public BigDecimal getServingMax() {
+        return servingMax;
+    }
 
-	public BigDecimal getSizeMax() {
-		return sizeMax;
-	}
+    public DogBreed setServingMax(BigDecimal servingMax) {
+        this.servingMax = servingMax;
+        return this;
+    }
 
-	public void setSizeMax(BigDecimal sizeMax) {
-		this.sizeMax = sizeMax;
-	}
+    public BigDecimal getSizeMin() {
+        return sizeMin;
+    }
 
-	public BigDecimal getWeightMin() {
-		return weightMin;
-	}
+    public DogBreed setSizeMin(BigDecimal sizeMin) {
+        this.sizeMin = sizeMin;
+        return this;
+    }
 
-	public void setWeightMin(BigDecimal weightMin) {
-		this.weightMin = weightMin;
-	}
+    public BigDecimal getSizeMax() {
+        return sizeMax;
+    }
 
-	public BigDecimal getWeightMax() {
-		return weightMax;
-	}
+    public DogBreed setSizeMax(BigDecimal sizeMax) {
+        this.sizeMax = sizeMax;
+        return this;
+    }
 
-	public void setWeightMax(BigDecimal weightMax) {
-		this.weightMax = weightMax;
-	}
+    public BigDecimal getWeightMin() {
+        return weightMin;
+    }
 
-	public String getColors() {
-		return colors;
-	}
+    public DogBreed setWeightMin(BigDecimal weightMin) {
+        this.weightMin = weightMin;
+        return this;
+    }
 
-	public void setColors(String colors) {
-		this.colors = colors;
-	}
+    public BigDecimal getWeightMax() {
+        return weightMax;
+    }
 
-	public String getMainFeatures() {
-		return mainFeatures;
-	}
+    public DogBreed setWeightMax(BigDecimal weightMax) {
+        this.weightMax = weightMax;
+        return this;
+    }
 
-	public void setMainFeatures(String mainFeatures) {
-		this.mainFeatures = mainFeatures;
-	}
+    public String getColors() {
+        return colors;
+    }
 
-//	public DogSize getSize() {
-//		return size;
-//	}
-//
-//	public void setSize(DogSize size) {
-//		this.size = size;
-//	}
-//
-//	public DogPurpose getPurpose() {
-//		return purpose;
-//	}
-//
-//	public void setPurpose(DogPurpose purpose) {
-//		this.purpose = purpose;
-//	}
-	
-	
-	
-	
+    public DogBreed setColors(String colors) {
+        this.colors = colors;
+        return this;
+    }
 
+    public String getMainFeatures() {
+        return mainFeatures;
+    }
+
+    public DogBreed setMainFeatures(String mainFeatures) {
+        this.mainFeatures = mainFeatures;
+        return this;
+    }
+
+    public short getLifespanMax() {
+        return lifespanMax;
+    }
+
+    public DogBreed setLifespanMax(short lifespanMax) {
+        this.lifespanMax = lifespanMax;
+        return this;
+    }
+
+    public short getLifespanMin() {
+        return lifespanMin;
+    }
+
+    public DogBreed setLifespanMin(short lifespanMin) {
+        this.lifespanMin = lifespanMin;
+        return this;
+    }
+
+    public DogType getDogType() {
+        return dogType;
+    }
+
+    public DogBreed setDogType(DogType dogType) {
+        this.dogType = dogType;
+        return this;
+    }
 }

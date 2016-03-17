@@ -17,11 +17,14 @@ import java.util.List;
 import java.util.Map;
 
 import com.canis.domain.DogBreed;
+import com.canis.domain.DogType;
+import com.canis.service.DogTypesService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -40,6 +43,9 @@ import com.canis.RestTestApplication;
 @IntegrationTest({"server.port=0"})
 public class DogBreedsControllerIT {
 
+    @Autowired
+    DogTypesService dogTypesService;
+
     @Value("${local.server.port}")
     private int port;
 
@@ -50,16 +56,26 @@ public class DogBreedsControllerIT {
 
     @Before
     public void setUp() throws Exception {
+        //add types for the breeds to be tested
+        DogType molossers = new DogType().setId(3L);
+        dogTypesService.save(molossers);
+
+        DogType primitives = new DogType().setId(6L);
+        dogTypesService.save(primitives);
+
+
         this.base = new URL("http://localhost:" + port + "/DogBreed");
         template = new TestRestTemplate();
 
         //post a couple. A reference to the return values is kept
         DogBreed akita = new DogBreed();
         akita.setName("Akita");
+        akita.setDogType(new DogType().setId(6L));
         insertedAkita = template.postForEntity(base.toString().concat("/create/"), akita, DogBreed.class, emptyMap() );
 
         DogBreed bulldog = new DogBreed();
         bulldog.setName("Bulldog");
+        bulldog.setDogType(new DogType().setId(3L));
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), bulldog, DogBreed.class, emptyMap() );
     }
 
@@ -73,6 +89,7 @@ public class DogBreedsControllerIT {
             RequestEntity request = RequestEntity.delete(new URI(base.toString() + "/delete/" +  Integer.toString(id))).build();
             template.delete(base.toString() + "/delete/" +  Integer.toString(id));
         }
+        dogTypesService.deleteAll();
     }
 
 

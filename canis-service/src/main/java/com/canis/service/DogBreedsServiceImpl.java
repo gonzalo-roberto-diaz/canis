@@ -28,7 +28,7 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 	 */
 	public Page<DogBreed> list(int offset, int limit, String property) {
 		Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, property));
-		return dogBreedsDAO.findAll(new PageRequest(offset, limit), sort);
+		return dogBreedsDAO.findAll(new PageRequest(offset, limit, sort));
 	}
 	
 	/* (non-Javadoc)

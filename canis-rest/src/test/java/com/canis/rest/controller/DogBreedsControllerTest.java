@@ -35,7 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = RestTestApplication.class)
 @WebAppConfiguration
-public class DogBreedsTest {
+public class DogBreedsControllerTest {
 
     @Mock
     DogBreedsService todoServiceMock;
@@ -63,7 +63,7 @@ public class DogBreedsTest {
 
         Page<DogBreed> page = new PageImpl<DogBreed>(Arrays.asList(akita, bulldog));
 
-        when(todoServiceMock.list(anyInt(), anyInt())).thenReturn(page);
+        when(todoServiceMock.list(anyInt(), anyInt(), anyString())).thenReturn(page);
 
         mockMvc.perform(get("/DogBreed/list/0/100"))
                 .andExpect(status().isOk())
@@ -74,7 +74,7 @@ public class DogBreedsTest {
                 .andExpect(jsonPath("$[1].id", is(2)))
                 .andExpect(jsonPath("$[1].name", is("Bulldog")));
 
-        verify(todoServiceMock, times(1)).list(0, 100);
+        verify(todoServiceMock, times(1)).list(0, 100, "name");
         verifyNoMoreInteractions(todoServiceMock);
     }
 

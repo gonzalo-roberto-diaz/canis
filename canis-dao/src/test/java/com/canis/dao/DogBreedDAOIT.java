@@ -4,6 +4,7 @@ package com.canis.dao;
 
 import com.canis.config.JpaTestConfig;
 import com.canis.domain.DogBreed;
+import com.canis.domain.DogType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,6 +28,10 @@ public class DogBreedDAOIT {
 
     @Autowired
     DogBreedsDAO repository;
+
+    @Autowired
+    DogTypesDAO typesRepository;
+
 
     @Test
     public void count(){
@@ -79,24 +84,32 @@ public class DogBreedDAOIT {
 
     @Before
     public void setUp() {
-        DogBreed dogBreed1 = new DogBreed();
-        dogBreed1.setName("Akita");
+        DogType primitivesType = new DogType().setId(6l);
+        typesRepository.save(primitivesType);
+        DogBreed akita = new DogBreed().setName("Akita").setDogType(primitivesType);
+        repository.save(akita);
 
-        DogBreed dogBreed2 = new DogBreed();
-        dogBreed2.setName("Bulldog");
+        DogType molossiansType = new DogType().setId(3l);
+        typesRepository.save(molossiansType);
+        DogBreed bulldog = new DogBreed().setName("Bulldog").setDogType(molossiansType);
+        repository.save(bulldog);
 
-        DogBreed dogBreed3  = new DogBreed();
-        dogBreed3.setName("Affenpinscher");
+        DogType pinschers = new DogType().setId(2l);
+        typesRepository.save(pinschers);
+        DogBreed affenpinscher = new DogBreed().setName("Affenpinscher").setDogType(pinschers);
+        repository.save(affenpinscher);
 
-        repository.save(dogBreed1);
-        repository.save(dogBreed2);
-        repository.save(dogBreed3);
+        repository.save(akita);
+        repository.save(bulldog);
+        repository.save(affenpinscher);
 
     }
 
     @After
     public void tearDown(){
+
         repository.deleteAll();
+        typesRepository.deleteAll();
     }
 
 }

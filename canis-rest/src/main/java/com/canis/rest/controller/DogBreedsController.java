@@ -30,7 +30,7 @@ public class DogBreedsController {
      
     @RequestMapping(value = "/list/{offset}/{limit}", method = RequestMethod.GET)
     public ResponseEntity<List<DogBreed>> list(@PathVariable("offset") int offset, @PathVariable("limit") int limit) {
-        Page<DogBreed> breeds = service.list(offset, limit);
+        Page<DogBreed> breeds = service.list(offset, limit, "name");
         if(!breeds.hasContent()){
             return new ResponseEntity<List<DogBreed>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }

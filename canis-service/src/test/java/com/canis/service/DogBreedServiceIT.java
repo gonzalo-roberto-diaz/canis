@@ -3,7 +3,9 @@ package com.canis.service;
 
 import com.canis.config.ServiceTestConfig;
 import com.canis.domain.DogBreed;
+import com.canis.domain.DogType;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,18 +30,23 @@ public class DogBreedServiceIT {
     @Autowired
     DogBreedsService service;
 
+    @Autowired
+    DogTypesService dogTypessService;
+
+
     void list(){
-        Page<DogBreed> page = service.list(0, 100);
+        Page<DogBreed> page = service.list(0, 100, "name");
         assertEquals(page.getNumberOfElements(), 2);
     }
 
     @After
     public void tearDown(){
-        Page<DogBreed> page = service.list(0, 100);
+        Page<DogBreed> page = service.list(0, 100, "name");
         List<DogBreed> beans = page.getContent();
         for (DogBreed bean: beans) {
             service.delete(bean.getId());
         }
+        dogTypessService.deleteAll();
     }
 
 
@@ -50,7 +57,7 @@ public class DogBreedServiceIT {
 
     @Test
     public void findAll(){
-        Page<DogBreed> page = service.list(0, 100);
+        Page<DogBreed> page = service.list(0, 100, "name");
         assertNotNull(page);
         assertEquals(page.getTotalElements(), 2);
     }
@@ -58,7 +65,7 @@ public class DogBreedServiceIT {
     @Test
     public void delete(){
         //delete by whole reference
-        DogBreed first = service.list(0, 100).iterator().next();
+        DogBreed first = service.list(0, 100, "name").iterator().next();
         service.delete(first.getId());
         assertEquals(service.getCount(), 1);
     }
@@ -72,14 +79,15 @@ public class DogBreedServiceIT {
 
     @Before
     public void setUp() {
-        DogBreed dogBreed1 = new DogBreed();
-        dogBreed1.setName("Akita");
+        DogType primitivesType = new DogType().setId(6l);
+        dogTypessService.save(primitivesType);
+        DogBreed akita = new DogBreed().setName("Akita").setDogType(primitivesType);
+        service.save(akita);
 
-        DogBreed dogBreed2 = new DogBreed();
-        dogBreed2.setName("Bulldog");
-
-        service.save(dogBreed1);
-        service.save(dogBreed2);
+        DogType molossiansType = new DogType().setId(3l);
+        dogTypessService.save(molossiansType);
+        DogBreed bulldog = new DogBreed().setName("Buldog").setDogType(molossiansType);
+        service.save(bulldog);
     }
 
 
