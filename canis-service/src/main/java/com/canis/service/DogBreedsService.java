@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.canis.domain.DogBreed;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface DogBreedsService {
 
@@ -20,5 +21,9 @@ public interface DogBreedsService {
 	void delete(long id);
 
 	boolean nameExists(String name);
+
+	Page<DogBreed> findByDogType(long dogTypeId, int offset, int limit,  String sortProperty);
+
+	Page<DogBreed> findByNameSubstring(String nameSubstring, int offset, int limit, String sortProperty);
 
 }

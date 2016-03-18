@@ -1,13 +1,8 @@
 package com.canis.service;
 
-import java.util.List;
-
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -68,5 +63,16 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 
 	public void update(DogBreed dogBreed) {
 		dogBreedsDAO.save(dogBreed);
+	}
+
+	public Page<DogBreed> findByDogType(long dogTypeId, int offset, int limit, String sortProperty){
+		Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, sortProperty));
+		return dogBreedsDAO.findByDogTypeId(new PageRequest(offset, limit, sort), dogTypeId);
+	}
+
+	public Page<DogBreed> findByNameSubstring(String nameSubstring, int offset, int limit, String sortProperty){
+        Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, sortProperty));
+        PageRequest pageRequest = new PageRequest(offset, limit, sort);
+		return dogBreedsDAO.findByNameSubstring("%".concat(nameSubstring.toUpperCase()).concat("%"), pageRequest);
 	}
 }

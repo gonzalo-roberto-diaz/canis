@@ -52,12 +52,38 @@ public class DogBreedServiceIT {
 
     @Test
     public void count(){
-        assertEquals(service.getCount(), 2);
+        assertEquals(service.getCount(), 3);
     }
 
     @Test
     public void findAll(){
         Page<DogBreed> page = service.list(0, 100, "name");
+        assertNotNull(page);
+        assertEquals(page.getTotalElements(), 3);
+    }
+
+
+    @Test
+    public void findByDogType(){
+        Long primitives= 6L;
+        Page<DogBreed> page = service.findByDogType(primitives, 0, 100,  "name");
+        assertNotNull(page);
+        assertEquals(page.getTotalElements(), 1);
+        DogBreed akita = page.iterator().next();
+        assertEquals("The dog type of the result should be primitives", akita.getDogType().getId(), primitives);
+    }
+
+    @Test
+    public void findByDogNameSubstring(){
+        String substring ="aki";
+        Page<DogBreed> page = service.findByNameSubstring(substring,  0, 100, "name");
+        assertNotNull(page);
+        assertEquals(page.getTotalElements(), 1);
+        DogBreed akita = page.iterator().next();
+        assertTrue("The dog name does not contain the substring", akita.getName().toUpperCase().contains(substring.toUpperCase()));
+
+        substring ="bull";
+        page = service.findByNameSubstring(substring,  0, 100, "name");
         assertNotNull(page);
         assertEquals(page.getTotalElements(), 2);
     }
@@ -67,7 +93,7 @@ public class DogBreedServiceIT {
         //delete by whole reference
         DogBreed first = service.list(0, 100, "name").iterator().next();
         service.delete(first.getId());
-        assertEquals(service.getCount(), 1);
+        assertEquals(service.getCount(), 2);
     }
 
     @Test
@@ -86,8 +112,11 @@ public class DogBreedServiceIT {
 
         DogType molossiansType = new DogType().setId(3l);
         dogTypessService.save(molossiansType);
-        DogBreed bulldog = new DogBreed().setName("Buldog").setDogType(molossiansType);
+        DogBreed bulldog = new DogBreed().setName("Bulldog").setDogType(molossiansType);
         service.save(bulldog);
+
+        DogBreed bullmastiff = new DogBreed().setName("Bullaaamastiff").setDogType(molossiansType);
+        service.save(bullmastiff);
     }
 
 
