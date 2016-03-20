@@ -92,9 +92,6 @@ public class DogBreed {
     
     @Column(name="COLORS")
     private String colors;
-    
-    @Column(name="MAIN_FEATURES")
-    private String mainFeatures;
 
 	@Column(name="LIFESPAN_MAX")
 	private short lifespanMax;
@@ -329,15 +326,6 @@ public class DogBreed {
 
     public DogBreed setColors(String colors) {
         this.colors = colors;
-        return this;
-    }
-
-    public String getMainFeatures() {
-        return mainFeatures;
-    }
-
-    public DogBreed setMainFeatures(String mainFeatures) {
-        this.mainFeatures = mainFeatures;
         return this;
     }
 
