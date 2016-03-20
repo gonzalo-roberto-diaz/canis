@@ -89,6 +89,16 @@ public class DogBreedServiceIT {
     }
 
     @Test
+    public void findByInitialNameSubstring(){
+        String initialSubstring ="a";
+        Page<DogBreed> page = service.findByNameInitialSubstring(initialSubstring,  0, 100, "name");
+        assertNotNull(page);
+        assertEquals(page.getTotalElements(), 1);
+        DogBreed akita = page.iterator().next();
+        assertTrue("The dog name does start with the substring", akita.getName().toUpperCase().contains(initialSubstring.toUpperCase()));
+    }
+
+    @Test
     public void delete(){
         //delete by whole reference
         DogBreed first = service.list(0, 100, "name").iterator().next();

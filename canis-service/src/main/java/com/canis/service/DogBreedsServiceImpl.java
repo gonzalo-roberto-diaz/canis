@@ -13,10 +13,10 @@ import com.canis.domain.DogBreed;
 @Service
 @Transactional
 public class DogBreedsServiceImpl implements DogBreedsService{
-	
+
 	@Autowired
 	DogBreedsDAO dogBreedsDAO;
-	
+
 
 	/* (non-Javadoc)
 	 * @see com.canis.service.DogBreedsService#list(int, int)
@@ -25,21 +25,21 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 		Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, property));
 		return dogBreedsDAO.findAll(new PageRequest(offset, limit, sort));
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see com.canis.service.DogBreedsService#getCount()
 	 */
 	public long getCount() {
 		return dogBreedsDAO.count();
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see com.canis.service.DogBreedsService#findById(long)
 	 */
 	public DogBreed findById(long id) {
 		return dogBreedsDAO.findById(id);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see com.canis.service.DogBreedsService#saveBreed(com.canis.domain.DogBreed)
 	 */
@@ -71,8 +71,14 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 	}
 
 	public Page<DogBreed> findByNameSubstring(String nameSubstring, int offset, int limit, String sortProperty){
-        Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, sortProperty));
-        PageRequest pageRequest = new PageRequest(offset, limit, sort);
+		Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, sortProperty));
+		PageRequest pageRequest = new PageRequest(offset, limit, sort);
 		return dogBreedsDAO.findByNameSubstring("%".concat(nameSubstring.toUpperCase()).concat("%"), pageRequest);
+	}
+
+	public Page<DogBreed> findByNameInitialSubstring(String initialNameSubstring, int offset, int limit, String sortProperty){
+		Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, sortProperty));
+		PageRequest pageRequest = new PageRequest(offset, limit, sort);
+		return dogBreedsDAO.findByNameSubstring(initialNameSubstring.toUpperCase().concat("%"), pageRequest);
 	}
 }

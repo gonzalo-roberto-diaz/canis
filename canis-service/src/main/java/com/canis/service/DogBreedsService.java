@@ -26,4 +26,6 @@ public interface DogBreedsService {
 
 	Page<DogBreed> findByNameSubstring(String nameSubstring, int offset, int limit, String sortProperty);
 
+	Page<DogBreed> findByNameInitialSubstring(String initialNameSubstring, int offset, int limit, String sortProperty);
+
 }
