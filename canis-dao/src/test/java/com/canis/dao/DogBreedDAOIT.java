@@ -2,7 +2,7 @@ package com.canis.dao;
 
 
 
-import com.canis.config.JpaTestConfig;
+import com.canis.CanisDAOApplication;
 import com.canis.domain.DogBreed;
 import com.canis.domain.DogType;
 import org.junit.After;
@@ -16,14 +16,16 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * Created by Gonzalo on 2/29/2016.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = JpaTestConfig.class)
+@SpringApplicationConfiguration(classes = CanisDAOApplication.class)
 @IntegrationTest
+@ActiveProfiles("test")
 public class DogBreedDAOIT {
 
     @Autowired
