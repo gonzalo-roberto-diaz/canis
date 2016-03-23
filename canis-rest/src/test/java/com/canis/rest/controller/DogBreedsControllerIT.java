@@ -75,6 +75,12 @@ public class DogBreedsControllerIT {
         bulldog.setName("Bulldog");
         bulldog.setDogType(new DogType().setId(3L));
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), bulldog, DogBreed.class, emptyMap() );
+
+        DogBreed boxer = new DogBreed();
+        boxer.setName("Boxer");
+        boxer.setDogType(new DogType().setId(3L));
+        insertedBulldog = template.postForEntity(base.toString().concat("/create/"), boxer, DogBreed.class, emptyMap() );
+
     }
 
     @After
@@ -101,6 +107,14 @@ public class DogBreedsControllerIT {
             String name = dogBreedMap.get("name");
             assertThat(dogBreedMap.get("name"), anyOf(is("Akita"), is("Bulldog")));
         }
+    }
+
+    @Test
+    public void findByDogType() throws Exception {
+        ResponseEntity response = template.getForEntity(base.toString() + "/findByDogType/3/0/100", List.class);
+        System.out.print(response);
+
+
     }
 
     @Test
@@ -138,7 +152,7 @@ public class DogBreedsControllerIT {
         assertEquals(res.getStatusCode(), HttpStatus.NO_CONTENT);
 
         ResponseEntity<List> response = template.getForEntity(base.toString() + "/list/0/100", List.class);
-        assertEquals(response.getBody().size(), 1);
+        assertEquals(response.getBody().size(), 2);
     }
 
     @Test

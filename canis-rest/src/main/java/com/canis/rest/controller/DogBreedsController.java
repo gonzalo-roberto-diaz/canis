@@ -24,9 +24,16 @@ public class DogBreedsController {
  
     @Autowired
     DogBreedsService service;  //Service which will do all data retrieval/manipulation work
- 
-     
-    //-------------------Retrieve a list--------------------------------------------------------
+
+
+    @RequestMapping(value = "/readByDogType/{offset}/{limit}", method = RequestMethod.GET)
+    public ResponseEntity<List<DogBreed>> readByDogType(@PathVariable("dogTypeId")long dogTypeId, @PathVariable("offset") int offset, @PathVariable("limit") int limit) {
+        Page<DogBreed> breeds = service.findByDogType(dogTypeId, offset, limit, "name");
+        if(!breeds.hasContent()){
+            return new ResponseEntity<List<DogBreed>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+        }
+        return new ResponseEntity<List<DogBreed>>(breeds.getContent(), HttpStatus.OK);
+    }
      
     @RequestMapping(value = "/list/{offset}/{limit}", method = RequestMethod.GET)
     public ResponseEntity<List<DogBreed>> list(@PathVariable("offset") int offset, @PathVariable("limit") int limit) {
