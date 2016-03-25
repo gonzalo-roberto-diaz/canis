@@ -19,9 +19,9 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 
 
 	/* (non-Javadoc)
-	 * @see com.canis.service.DogBreedsService#list(int, int)
+	 * @see com.canis.service.DogBreedsService#read(int, int)
 	 */
-	public Page<DogBreed> list(int offset, int limit, String property) {
+	public Page<DogBreed> read(int offset, int limit, String property) {
 		Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, property));
 		return dogBreedsDAO.findAll(new PageRequest(offset, limit, sort));
 	}
@@ -70,13 +70,13 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 		return dogBreedsDAO.findByDogTypeId(new PageRequest(offset, limit, sort), dogTypeId);
 	}
 
-	public Page<DogBreed> findByNameSubstring(String nameSubstring, int offset, int limit, String sortProperty){
+	public Page<DogBreed> readByNameSubstring(String nameSubstring, int offset, int limit, String sortProperty){
 		Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, sortProperty));
 		PageRequest pageRequest = new PageRequest(offset, limit, sort);
 		return dogBreedsDAO.findByNameSubstring("%".concat(nameSubstring.toUpperCase()).concat("%"), pageRequest);
 	}
 
-	public Page<DogBreed> findByNameInitialSubstring(String initialNameSubstring, int offset, int limit, String sortProperty){
+	public Page<DogBreed> readByNameInitialSubstring(String initialNameSubstring, int offset, int limit, String sortProperty){
 		Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, sortProperty));
 		PageRequest pageRequest = new PageRequest(offset, limit, sort);
 		return dogBreedsDAO.findByNameSubstring(initialNameSubstring.toUpperCase().concat("%"), pageRequest);

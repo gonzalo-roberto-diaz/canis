@@ -11,9 +11,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.propertyeditors.StringArrayPropertyEditor;
 import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.TestRestTemplate;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
@@ -27,11 +29,13 @@ import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static java.util.Collections.emptyMap;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -81,11 +85,16 @@ public class DogBreedsControllerIT {
         boxer.setDogType(new DogType().setId(3L));
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), boxer, DogBreed.class, emptyMap() );
 
+        DogBreed frenchBulldog = new DogBreed();
+        frenchBulldog.setName("French Bulldog");
+        frenchBulldog.setDogType(new DogType().setId(3L));
+        insertedBulldog = template.postForEntity(base.toString().concat("/create/"), frenchBulldog, DogBreed.class, emptyMap() );
+
     }
 
     @After
     public void tearDown() throws Exception{
-        ResponseEntity<List> response = template.getForEntity(base.toString() + "/list/0/100", List.class);
+        ResponseEntity<List> response = template.getForEntity(base.toString() + "/read/0/100", List.class);
         for (Object d: response.getBody()){
             HashMap<String, Object> dogBreed = (HashMap<String, Object>)d;
             Integer id = (Integer)dogBreed.get("id");
@@ -99,23 +108,72 @@ public class DogBreedsControllerIT {
 
 
     @Test
-    public void getList() throws Exception {
-        ResponseEntity<List> response = template.getForEntity(base.toString() + "/list/0/100", List.class);
-        assertThat(response.getBody().size(), equalTo(2));
+    public void read() throws Exception {
+        ResponseEntity<List> response = template.getForEntity(base.toString() + "/read/0/100", List.class);
+        assertThat(response.getBody().size(), equalTo(4));
         List<HashMap>  responseDogBreeds=  response.getBody();
         for (HashMap<String, String> dogBreedMap:responseDogBreeds ) {
             String name = dogBreedMap.get("name");
-            assertThat(dogBreedMap.get("name"), anyOf(is("Akita"), is("Bulldog")));
+            assertThat(dogBreedMap.get("name"), anyOf(is("Akita"), is("Bulldog"), is("Boxer"), is("French Bulldog")));
         }
     }
 
     @Test
-    public void findByDogType() throws Exception {
-        ResponseEntity response = template.getForEntity(base.toString() + "/findByDogType/3/0/100", List.class);
-        System.out.print(response);
+    public void readByDogType() throws Exception {
+        ResponseEntity<List> response = template.getForEntity(base.toString() + "/readByDogType/3/0/100", List.class);
+        List<HashMap>  responseList=  response.getBody();
+        assertThat(responseList.size(), equalTo(3));
+        for (HashMap<String, Object> entryMap : responseList ) {
+            Map<String, Object> dogType = (Map<String, Object>)entryMap.get("dogType");
+            Integer typeId = (Integer)dogType.get("id");
+            assertEquals(typeId, Integer.valueOf(3));
+        }
+    }
+
+    @Test
+    public void readByNameInitial() throws Exception {
+        ResponseEntity<List> response = template.getForEntity(base.toString() + "/readByNameInitial/B/0/100", List.class);
+        List<HashMap>  responseList=  response.getBody();
+        assertThat(responseList.size(), equalTo(2));
+        for (HashMap<String, Object> entryMap : responseList ) {
+           String name = (String)entryMap.get("name");
+            assertTrue(name.startsWith("B"));
+        }
+
+        //try lowercase
+        response = template.getForEntity(base.toString() + "/readByNameInitial/a/0/100", List.class);
+        responseList=  response.getBody();
+        assertThat(responseList.size(), equalTo(1));
+        for (HashMap<String, Object> entryMap : responseList ) {
+            String name = (String)entryMap.get("name");
+            assertTrue(name.startsWith("A"));
+        }
 
 
     }
+
+    @Test
+    public void readByNameSubstring() throws Exception {
+        ResponseEntity<List> response = template.getForEntity(base.toString() + "/readByNameSubstring/Bull/0/100", List.class);
+        List<HashMap>  responseList=  response.getBody();
+        assertThat(responseList.size(), equalTo(2));
+        for (HashMap<String, Object> entryMap : responseList ) {
+            String name = (String)entryMap.get("name");
+            assertTrue(name.contains("Bull"));
+        }
+
+        //try lowercase
+        response = template.getForEntity(base.toString() + "/readByNameSubstring/ITA/0/100", List.class);
+        responseList=  response.getBody();
+        assertThat(responseList.size(), equalTo(1));
+        for (HashMap<String, Object> entryMap : responseList ) {
+            String name = (String)entryMap.get("name");
+            assertTrue(name.contains("ita"));
+        }
+
+
+    }
+
 
     @Test
     public void get() throws Exception {
@@ -151,8 +209,8 @@ public class DogBreedsControllerIT {
         ResponseEntity res= template.exchange(request, ResponseEntity.class);
         assertEquals(res.getStatusCode(), HttpStatus.NO_CONTENT);
 
-        ResponseEntity<List> response = template.getForEntity(base.toString() + "/list/0/100", List.class);
-        assertEquals(response.getBody().size(), 2);
+        ResponseEntity<List> response = template.getForEntity(base.toString() + "/read/0/100", List.class);
+        assertEquals(response.getBody().size(), 3);
     }
 
     @Test

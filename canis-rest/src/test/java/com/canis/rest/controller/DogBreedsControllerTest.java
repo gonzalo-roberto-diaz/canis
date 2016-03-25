@@ -63,9 +63,9 @@ public class DogBreedsControllerTest {
 
         Page<DogBreed> page = new PageImpl<DogBreed>(Arrays.asList(akita, bulldog));
 
-        when(todoServiceMock.list(anyInt(), anyInt(), anyString())).thenReturn(page);
+        when(todoServiceMock.read(anyInt(), anyInt(), anyString())).thenReturn(page);
 
-        mockMvc.perform(get("/DogBreed/list/0/100"))
+        mockMvc.perform(get("/DogBreed/read/0/100"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$", hasSize(2)))
@@ -74,7 +74,7 @@ public class DogBreedsControllerTest {
                 .andExpect(jsonPath("$[1].id", is(2)))
                 .andExpect(jsonPath("$[1].name", is("Bulldog")));
 
-        verify(todoServiceMock, times(1)).list(0, 100, "name");
+        verify(todoServiceMock, times(1)).read(0, 100, "name");
         verifyNoMoreInteractions(todoServiceMock);
     }
 

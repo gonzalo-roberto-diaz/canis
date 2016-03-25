@@ -36,13 +36,13 @@ public class DogBreedServiceIT {
 
 
     void list(){
-        Page<DogBreed> page = service.list(0, 100, "name");
+        Page<DogBreed> page = service.read(0, 100, "name");
         assertEquals(page.getNumberOfElements(), 2);
     }
 
     @After
     public void tearDown(){
-        Page<DogBreed> page = service.list(0, 100, "name");
+        Page<DogBreed> page = service.read(0, 100, "name");
         List<DogBreed> beans = page.getContent();
         for (DogBreed bean: beans) {
             service.delete(bean.getId());
@@ -58,7 +58,7 @@ public class DogBreedServiceIT {
 
     @Test
     public void findAll(){
-        Page<DogBreed> page = service.list(0, 100, "name");
+        Page<DogBreed> page = service.read(0, 100, "name");
         assertNotNull(page);
         assertEquals(page.getTotalElements(), 3);
     }
@@ -77,14 +77,14 @@ public class DogBreedServiceIT {
     @Test
     public void findByDogNameSubstring(){
         String substring ="aki";
-        Page<DogBreed> page = service.findByNameSubstring(substring,  0, 100, "name");
+        Page<DogBreed> page = service.readByNameSubstring(substring,  0, 100, "name");
         assertNotNull(page);
         assertEquals(page.getTotalElements(), 1);
         DogBreed akita = page.iterator().next();
         assertTrue("The dog name does not contain the substring", akita.getName().toUpperCase().contains(substring.toUpperCase()));
 
         substring ="bull";
-        page = service.findByNameSubstring(substring,  0, 100, "name");
+        page = service.readByNameSubstring(substring,  0, 100, "name");
         assertNotNull(page);
         assertEquals(page.getTotalElements(), 2);
     }
@@ -92,7 +92,7 @@ public class DogBreedServiceIT {
     @Test
     public void findByInitialNameSubstring(){
         String initialSubstring ="a";
-        Page<DogBreed> page = service.findByNameInitialSubstring(initialSubstring,  0, 100, "name");
+        Page<DogBreed> page = service.readByNameInitialSubstring(initialSubstring,  0, 100, "name");
         assertNotNull(page);
         assertEquals(page.getTotalElements(), 1);
         DogBreed akita = page.iterator().next();
@@ -102,7 +102,7 @@ public class DogBreedServiceIT {
     @Test
     public void delete(){
         //delete by whole reference
-        DogBreed first = service.list(0, 100, "name").iterator().next();
+        DogBreed first = service.read(0, 100, "name").iterator().next();
         service.delete(first.getId());
         assertEquals(service.getCount(), 2);
     }

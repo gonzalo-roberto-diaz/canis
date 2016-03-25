@@ -26,7 +26,7 @@ public class DogBreedsController {
     DogBreedsService service;  //Service which will do all data retrieval/manipulation work
 
 
-    @RequestMapping(value = "/readByDogType/{offset}/{limit}", method = RequestMethod.GET)
+    @RequestMapping(value = "/readByDogType/{dogTypeId}/{offset}/{limit}", method = RequestMethod.GET)
     public ResponseEntity<List<DogBreed>> readByDogType(@PathVariable("dogTypeId")long dogTypeId, @PathVariable("offset") int offset, @PathVariable("limit") int limit) {
         Page<DogBreed> breeds = service.findByDogType(dogTypeId, offset, limit, "name");
         if(!breeds.hasContent()){
@@ -34,10 +34,29 @@ public class DogBreedsController {
         }
         return new ResponseEntity<List<DogBreed>>(breeds.getContent(), HttpStatus.OK);
     }
-     
-    @RequestMapping(value = "/list/{offset}/{limit}", method = RequestMethod.GET)
-    public ResponseEntity<List<DogBreed>> list(@PathVariable("offset") int offset, @PathVariable("limit") int limit) {
-        Page<DogBreed> breeds = service.list(offset, limit, "name");
+
+    @RequestMapping(value = "/readByNameInitial/{initial}/{offset}/{limit}", method = RequestMethod.GET)
+    public ResponseEntity<List<DogBreed>> readByNameInitial(@PathVariable("initial")String initial, @PathVariable("offset") int offset, @PathVariable("limit") int limit) {
+        Page<DogBreed> breeds = service.readByNameInitialSubstring(initial, offset, limit, "name");
+        if(!breeds.hasContent()){
+            return new ResponseEntity<List<DogBreed>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+        }
+        return new ResponseEntity<List<DogBreed>>(breeds.getContent(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/readByNameSubstring/{substring}/{offset}/{limit}", method = RequestMethod.GET)
+    public ResponseEntity<List<DogBreed>> readByNameSubstring(@PathVariable("substring")String substring, @PathVariable("offset") int offset, @PathVariable("limit") int limit) {
+        Page<DogBreed> breeds = service.readByNameSubstring(substring, offset, limit, "name");
+        if(!breeds.hasContent()){
+            return new ResponseEntity<List<DogBreed>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+        }
+        return new ResponseEntity<List<DogBreed>>(breeds.getContent(), HttpStatus.OK);
+    }
+
+
+    @RequestMapping(value = "/read/{offset}/{limit}", method = RequestMethod.GET)
+    public ResponseEntity<List<DogBreed>> read(@PathVariable("offset") int offset, @PathVariable("limit") int limit) {
+        Page<DogBreed> breeds = service.read(offset, limit, "name");
         if(!breeds.hasContent()){
             return new ResponseEntity<List<DogBreed>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }

@@ -8,7 +8,7 @@ import org.springframework.data.domain.PageRequest;
 
 public interface DogBreedsService {
 
-	public Page<DogBreed> list(int offset, int limit, String property);
+	public Page<DogBreed> read(int offset, int limit, String property);
 
 	long getCount();
 
@@ -24,8 +24,8 @@ public interface DogBreedsService {
 
 	Page<DogBreed> findByDogType(long dogTypeId, int offset, int limit,  String sortProperty);
 
-	Page<DogBreed> findByNameSubstring(String nameSubstring, int offset, int limit, String sortProperty);
+	Page<DogBreed> readByNameSubstring(String nameSubstring, int offset, int limit, String sortProperty);
 
-	Page<DogBreed> findByNameInitialSubstring(String initialNameSubstring, int offset, int limit, String sortProperty);
+	Page<DogBreed> readByNameInitialSubstring(String initialNameSubstring, int offset, int limit, String sortProperty);
 
 }
