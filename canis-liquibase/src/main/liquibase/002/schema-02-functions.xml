@@ -9,29 +9,6 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <changeSet id="canis-01-02-schema-functions" author="gdiaz">
-        <sql><![CDATA[DROP FUNCTION IF EXISTS DISTANCE_PYT;]]></sql>
-        <sql splitStatements="false"><![CDATA[
-CREATE FUNCTION `DISTANCE_PYT`(`deg_lat1` DECIMAL(10,6), `deg_lng1` DECIMAL(10,6), `deg_lat2` DECIMAL(10,6), `deg_lng2` DECIMAL(10,6)) RETURNS double
-    SQL SECURITY INVOKER
-BEGIN
-  DECLARE x DOUBLE;
-  DECLARE y DOUBLE; 
-  DECLARE distance DOUBLE; 
-  SET DISTANCE = 0;
-  
-  
-  /* si la longitud y la latitud parámetros son 0, que no calcule nada */
-  IF deg_lat1 <> 0 AND deg_lng1 <> 0 THEN
-    SET x = radians(deg_lng2 - deg_lng1) * cos(0.5 * radians(deg_lat2+deg_lat1)) ;
-    SET y = radians(deg_lat2 - deg_lat1);
-    SET distance = 6371 * sqrt( x*x + y*y);
-    
-  END IF;  
-  RETURN DISTANCE;
-END
-]]>
-</sql>
- 
         <sql><![CDATA[DROP FUNCTION IF EXISTS GETDISTANCE;]]></sql>
         <sql splitStatements="false"><![CDATA[
 CREATE FUNCTION `GETDISTANCE`(`deg_lat1` DECIMAL(10,6), `deg_lng1` DECIMAL(10,6), `deg_lat2` DECIMAL(10,6), `deg_lng2` DECIMAL(10,6)) RETURNS double
