@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 public class DogBreedMapperTest {
 
     @Test
-    public void jpaDomainToRequestModel(){
+    public void daoDomainToRestModel(){
         DogType type = new DogType();
         type.setId(3L).setName("Molossers");
         DogBreed dogBreed = new DogBreed()
