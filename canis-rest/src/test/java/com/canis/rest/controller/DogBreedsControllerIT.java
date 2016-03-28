@@ -4,6 +4,9 @@ package com.canis.rest.controller;
 import com.canis.CanisRestApplication;
 import com.canis.domain.DogBreed;
 import com.canis.domain.DogType;
+import com.canis.mappers.DogBreedMapper;
+import com.canis.requestmodels.DogBreedRequestModel;
+import com.canis.requestmodels.DogTypeRequestModel;
 import com.canis.service.DogTypesService;
 import org.junit.After;
 import org.junit.Before;
@@ -70,24 +73,24 @@ public class DogBreedsControllerIT {
         template = new TestRestTemplate();
 
         //post a couple. A reference to the return values is kept
-        DogBreed akita = new DogBreed();
+        DogBreedRequestModel akita = new DogBreedRequestModel();
         akita.setName("Akita");
-        akita.setDogType(new DogType().setId(6L));
+        akita.setDogType(new DogTypeRequestModel().setId(6L));
         insertedAkita = template.postForEntity(base.toString().concat("/create/"), akita, DogBreed.class, emptyMap() );
 
-        DogBreed bulldog = new DogBreed();
+        DogBreedRequestModel bulldog = new DogBreedRequestModel();
         bulldog.setName("Bulldog");
-        bulldog.setDogType(new DogType().setId(3L));
+        bulldog.setDogType(new DogTypeRequestModel().setId(3L));
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), bulldog, DogBreed.class, emptyMap() );
 
-        DogBreed boxer = new DogBreed();
+        DogBreedRequestModel boxer = new DogBreedRequestModel();
         boxer.setName("Boxer");
-        boxer.setDogType(new DogType().setId(3L));
+        boxer.setDogType(new DogTypeRequestModel().setId(3L));
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), boxer, DogBreed.class, emptyMap() );
 
-        DogBreed frenchBulldog = new DogBreed();
+        DogBreedRequestModel frenchBulldog = new DogBreedRequestModel();
         frenchBulldog.setName("French Bulldog");
-        frenchBulldog.setDogType(new DogType().setId(3L));
+        frenchBulldog.setDogType(new DogTypeRequestModel().setId(3L));
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), frenchBulldog, DogBreed.class, emptyMap() );
 
     }
@@ -185,16 +188,17 @@ public class DogBreedsControllerIT {
     @Test
     public void update() throws Exception {
         DogBreed newAkita = insertedAkita.getBody();
-        newAkita.setName("New Akita");
+        DogBreedRequestModel newAkitaModel = DogBreedMapper.domainToRequest(newAkita);
+        newAkitaModel.setName("New Akita");
 
-        RequestEntity request = RequestEntity.put(new URI(base.toString() + "/update/")).accept(MediaType.APPLICATION_JSON).body(newAkita);
+        RequestEntity request = RequestEntity.put(new URI(base.toString() + "/update/")).accept(MediaType.APPLICATION_JSON).body(newAkitaModel);
         //preferred over template.put because the response status can be checked
         ResponseEntity<DogBreed> res= template.exchange(request, DogBreed.class);
         assertEquals(res.getStatusCode(), HttpStatus.OK);
         assertEquals(res.getBody().getName(), "New Akita");
 
 
-        DogBreed nonExistent = new DogBreed();
+        DogBreedRequestModel nonExistent = new DogBreedRequestModel();
         nonExistent.setId(Long.MAX_VALUE);
         nonExistent.setName("Nonexistent name");
         request = RequestEntity.put(new URI(base.toString() + "/update/")).accept(MediaType.APPLICATION_JSON).body(nonExistent);
@@ -216,7 +220,8 @@ public class DogBreedsControllerIT {
     @Test
     public void createWithExistingName() throws Exception{
         DogBreed newAkita = insertedAkita.getBody();
-        newAkita.setName("Akita");
+        DogBreedRequestModel newAkitaModel = DogBreedMapper.domainToRequest(newAkita);
+        newAkitaModel.setName("Akita");
 
         RequestEntity request = RequestEntity.post(new URI(base.toString() + "/create/")).accept(MediaType.APPLICATION_JSON).body(newAkita);
         ResponseEntity<DogBreed> res= template.exchange(request, DogBreed.class);

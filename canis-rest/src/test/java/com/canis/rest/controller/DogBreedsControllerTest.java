@@ -6,6 +6,8 @@ package com.canis.rest.controller;
 
 import com.canis.CanisRestApplication;
 import com.canis.domain.DogBreed;
+import com.canis.domain.DogType;
+import com.canis.requestmodels.DogBreedRequestModel;
 import com.canis.service.DogBreedsService;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,10 +58,16 @@ public class DogBreedsControllerTest {
         DogBreed akita = new DogBreed();
         akita.setId(1L);
         akita.setName("Akita");
+        DogType primitives = new DogType();
+        primitives.setId(3L);
+        akita.setDogType(new DogType());
 
         DogBreed bulldog = new DogBreed();
         bulldog.setId(2L);
         bulldog.setName("Bulldog");
+        DogType molossers = new DogType();
+        molossers.setId(6L);
+        bulldog.setDogType(molossers);
 
         Page<DogBreed> page = new PageImpl<DogBreed>(Arrays.asList(akita, bulldog));
 

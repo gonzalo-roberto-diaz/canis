@@ -2,6 +2,8 @@ package com.canis.rest.controller;
  
 import java.util.List;
 
+import com.canis.mappers.DogBreedMapper;
+import com.canis.requestmodels.DogBreedRequestModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
@@ -27,40 +29,44 @@ public class DogBreedsController {
 
 
     @RequestMapping(value = "/readByDogType/{dogTypeId}/{offset}/{limit}", method = RequestMethod.GET)
-    public ResponseEntity<List<DogBreed>> readByDogType(@PathVariable("dogTypeId")long dogTypeId, @PathVariable("offset") int offset, @PathVariable("limit") int limit) {
+    public ResponseEntity<List<DogBreedRequestModel>> readByDogType(@PathVariable("dogTypeId")long dogTypeId, @PathVariable("offset") int offset, @PathVariable("limit") int limit) {
         Page<DogBreed> breeds = service.findByDogType(dogTypeId, offset, limit, "name");
+        Page<DogBreedRequestModel> models = DogBreedMapper.domainPageToRequestPage(breeds);
         if(!breeds.hasContent()){
-            return new ResponseEntity<List<DogBreed>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+            return new ResponseEntity<List<DogBreedRequestModel>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
-        return new ResponseEntity<List<DogBreed>>(breeds.getContent(), HttpStatus.OK);
+        return new ResponseEntity<List<DogBreedRequestModel>>(models.getContent(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/readByNameInitial/{initial}/{offset}/{limit}", method = RequestMethod.GET)
-    public ResponseEntity<List<DogBreed>> readByNameInitial(@PathVariable("initial")String initial, @PathVariable("offset") int offset, @PathVariable("limit") int limit) {
+    public ResponseEntity<List<DogBreedRequestModel>> readByNameInitial(@PathVariable("initial")String initial, @PathVariable("offset") int offset, @PathVariable("limit") int limit) {
         Page<DogBreed> breeds = service.readByNameInitialSubstring(initial, offset, limit, "name");
+        Page<DogBreedRequestModel> models = DogBreedMapper.domainPageToRequestPage(breeds);
         if(!breeds.hasContent()){
-            return new ResponseEntity<List<DogBreed>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+            return new ResponseEntity<List<DogBreedRequestModel>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
-        return new ResponseEntity<List<DogBreed>>(breeds.getContent(), HttpStatus.OK);
+        return new ResponseEntity<List<DogBreedRequestModel>>(models.getContent(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/readByNameSubstring/{substring}/{offset}/{limit}", method = RequestMethod.GET)
-    public ResponseEntity<List<DogBreed>> readByNameSubstring(@PathVariable("substring")String substring, @PathVariable("offset") int offset, @PathVariable("limit") int limit) {
+    public ResponseEntity<List<DogBreedRequestModel>> readByNameSubstring(@PathVariable("substring")String substring, @PathVariable("offset") int offset, @PathVariable("limit") int limit) {
         Page<DogBreed> breeds = service.readByNameSubstring(substring, offset, limit, "name");
+        Page<DogBreedRequestModel> models = DogBreedMapper.domainPageToRequestPage(breeds);
         if(!breeds.hasContent()){
-            return new ResponseEntity<List<DogBreed>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+            return new ResponseEntity<List<DogBreedRequestModel>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
-        return new ResponseEntity<List<DogBreed>>(breeds.getContent(), HttpStatus.OK);
+        return new ResponseEntity<List<DogBreedRequestModel>>(models.getContent(), HttpStatus.OK);
     }
 
 
     @RequestMapping(value = "/read/{offset}/{limit}", method = RequestMethod.GET)
-    public ResponseEntity<List<DogBreed>> read(@PathVariable("offset") int offset, @PathVariable("limit") int limit) {
+    public ResponseEntity<List<DogBreedRequestModel>> read(@PathVariable("offset") int offset, @PathVariable("limit") int limit) {
         Page<DogBreed> breeds = service.read(offset, limit, "name");
+        Page<DogBreedRequestModel> models = DogBreedMapper.domainPageToRequestPage(breeds);
         if(!breeds.hasContent()){
-            return new ResponseEntity<List<DogBreed>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+            return new ResponseEntity<List<DogBreedRequestModel>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
-        return new ResponseEntity<List<DogBreed>>(breeds.getContent(), HttpStatus.OK);
+        return new ResponseEntity<List<DogBreedRequestModel>>(models.getContent(), HttpStatus.OK);
     }
     
     @RequestMapping(value = "/count", method = RequestMethod.GET)

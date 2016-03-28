@@ -6,6 +6,7 @@ import com.canis.requestmodels.DogBreedRequestModel;
 import com.canis.requestmodels.DogTypeRequestModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.domain.Page;
 
 /**
  * Created by Gonzalo on 3/27/2016.
@@ -25,5 +26,11 @@ public class DogBreedMapper {
         return model;
     }
 
-
+    public static Page<DogBreedRequestModel> domainPageToRequestPage (Page<DogBreed> page){
+        Page<DogBreedRequestModel> models = page.map(e->{
+            DogBreedRequestModel model = domainToRequest(e);
+            return model;
+        });
+        return models;
+    }
 }

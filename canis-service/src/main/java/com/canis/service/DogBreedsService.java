@@ -3,6 +3,7 @@ package com.canis.service;
 import java.util.List;
 
 import com.canis.domain.DogBreed;
+import com.canis.requestmodels.DogBreedRequestModel;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
@@ -14,9 +15,9 @@ public interface DogBreedsService {
 
 	DogBreed findById(long id);
 
-	DogBreed save(DogBreed user);
+	DogBreed save(DogBreed model);
 
-	void update(DogBreed user);
+	void update(DogBreed model);
 
 	void delete(long id);
 
