@@ -3,6 +3,7 @@ package com.canis.service;
 
 import com.canis.CanisServiceApplication;
 import com.canis.domain.DogBreed;
+import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
 import org.junit.After;
 import org.junit.Before;
@@ -29,10 +30,13 @@ import static org.junit.Assert.*;
 public class DogBreedServiceIT {
 
     @Autowired
-    DogBreedsService service;
+    private DogBreedsService service;
 
     @Autowired
-    DogTypesService dogTypessService;
+    private DogTypesService dogTypesService;
+
+    @Autowired
+    private DogSizesService dogSizesService;
 
 
     void list(){
@@ -47,7 +51,7 @@ public class DogBreedServiceIT {
         for (DogBreed bean: beans) {
             service.delete(bean.getId());
         }
-        dogTypessService.deleteAll();
+        dogTypesService.deleteAll();
     }
 
 
@@ -116,17 +120,29 @@ public class DogBreedServiceIT {
 
     @Before
     public void setUp() {
-        DogType primitivesType = new DogType().setId(6l);
-        dogTypessService.save(primitivesType);
-        DogBreed akita = new DogBreed().setName("Akita").setDogType(primitivesType);
+        DogType primitivesType = new DogType().setId(6L);
+        DogType molossiansType = new DogType().setId(3L);
+
+        dogTypesService.save(primitivesType);
+        dogTypesService.save(molossiansType);
+
+        DogSize largeSize = new DogSize().setId(7L);
+        DogSize mediumSize = new DogSize().setId(5L);
+
+        dogSizesService.save(largeSize);
+        dogSizesService.save(mediumSize);
+
+
+
+
+        DogBreed akita = new DogBreed().setName("Akita").setDogType(primitivesType).setDogSize(largeSize);
         service.save(akita);
 
-        DogType molossiansType = new DogType().setId(3l);
-        dogTypessService.save(molossiansType);
-        DogBreed bulldog = new DogBreed().setName("Bulldog").setDogType(molossiansType);
+
+        DogBreed bulldog = new DogBreed().setName("Bulldog").setDogType(molossiansType).setDogSize(mediumSize);
         service.save(bulldog);
 
-        DogBreed bullmastiff = new DogBreed().setName("Bullaaamastiff").setDogType(molossiansType);
+        DogBreed bullmastiff = new DogBreed().setName("Bullmastiff").setDogType(molossiansType).setDogSize(largeSize);
         service.save(bullmastiff);
     }
 

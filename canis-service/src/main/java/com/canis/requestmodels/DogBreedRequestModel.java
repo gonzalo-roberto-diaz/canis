@@ -1,5 +1,6 @@
 package com.canis.requestmodels;
 
+import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
 
 import javax.persistence.*;
@@ -90,6 +91,17 @@ public class DogBreedRequestModel {
 
 
     private DogTypeRequestModel dogType;
+
+    public DogSizeRequestModel getDogSize() {
+        return dogSize;
+    }
+
+    public DogBreedRequestModel setDogSize(DogSizeRequestModel dogSize) {
+        this.dogSize = dogSize;
+        return this;
+    }
+
+    private DogSizeRequestModel dogSize;
 
 
     public Long getId() {

@@ -104,6 +104,11 @@ public class DogBreed {
     private DogType dogType;
 
 
+    @ManyToOne
+    @JoinColumn(name="DOG_SIZE_ID", referencedColumnName = "ID", nullable = false)
+    private DogSize dogSize;
+
+
     public Long getId() {
         return id;
     }
@@ -355,4 +360,14 @@ public class DogBreed {
         this.dogType = dogType;
         return this;
     }
+
+    public DogSize getDogSize() {
+        return dogSize;
+    }
+
+    public DogBreed setDogSize(DogSize dogSize) {
+        this.dogSize = dogSize;
+        return this;
+    }
+
 }

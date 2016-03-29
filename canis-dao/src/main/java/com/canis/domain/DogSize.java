@@ -11,15 +11,26 @@ public class DogSize {
 	
 	@Id
     @Column(name="ID")
-	String id;
+	private Long id;
 	
 	@Column(name="NAME")
-	String name;
-	
-	@Column(name="ORDER")
-	int order;
-	
-	@Column(name="ENABLED")
-	boolean enabled;
+	private String name;
 
+	public Long getId() {
+		return id;
+	}
+
+	public DogSize setId(Long id) {
+		this.id = id;
+		return this;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public DogSize setName(String name) {
+		this.name = name;
+		return this;
+	}
 }

@@ -34,8 +34,9 @@ public class DogType {
         return name;
     }
 
-    public void setName(String name) {
+    public DogType setName(String name) {
         this.name = name;
+        return this;
     }
 
     public int getLevel() {

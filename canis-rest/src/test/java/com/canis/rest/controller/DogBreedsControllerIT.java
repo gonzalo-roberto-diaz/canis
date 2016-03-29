@@ -3,10 +3,13 @@ package com.canis.rest.controller;
 
 import com.canis.CanisRestApplication;
 import com.canis.domain.DogBreed;
+import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
 import com.canis.mappers.DogBreedMapper;
 import com.canis.requestmodels.DogBreedRequestModel;
+import com.canis.requestmodels.DogSizeRequestModel;
 import com.canis.requestmodels.DogTypeRequestModel;
+import com.canis.service.DogSizesService;
 import com.canis.service.DogTypesService;
 import org.junit.After;
 import org.junit.Before;
@@ -49,48 +52,53 @@ import static org.junit.Assert.assertTrue;
 public class DogBreedsControllerIT {
 
     @Autowired
-    DogTypesService dogTypesService;
+    private DogTypesService dogTypesService;
+
+    @Autowired
+    private DogSizesService dogSizesService;
 
     @Value("${local.server.port}")
     private int port;
 
     private URL base;
     private RestTemplate template;
-    ResponseEntity<DogBreed> insertedAkita;
-    ResponseEntity<DogBreed> insertedBulldog;
+    private ResponseEntity<DogBreed> insertedAkita;
+    private ResponseEntity<DogBreed> insertedBulldog;
 
     @Before
     public void setUp() throws Exception {
-        //add types for the breeds to be tested
-        DogType molossers = new DogType().setId(3L);
-        dogTypesService.save(molossers);
+        //add types and sizes for the breeds to be tested
+        dogTypesService.save(new DogType().setId(3L).setName("Molossers"));
+        dogTypesService.save(new DogType().setId(6L).setName("Primitives"));
 
-        DogType primitives = new DogType().setId(6L);
-        dogTypesService.save(primitives);
+        dogSizesService.save(new DogSize().setId(7L).setName("large"));
+        dogSizesService.save(new DogSize().setId(5L).setName("medium"));
 
 
         this.base = new URL("http://localhost:" + port + "/DogBreed");
         template = new TestRestTemplate();
 
         //post a couple. A reference to the return values is kept
-        DogBreedRequestModel akita = new DogBreedRequestModel();
-        akita.setName("Akita");
-        akita.setDogType(new DogTypeRequestModel().setId(6L));
+        DogTypeRequestModel molossersModel = new DogTypeRequestModel().setId(3L).setName("Molossers");
+        DogTypeRequestModel primitivesModel = new DogTypeRequestModel().setId(6L).setName("Primitives");
+        DogSizeRequestModel largeModel = new DogSizeRequestModel().setId(7L).setName("large");
+        DogSizeRequestModel mediumModel = new DogSizeRequestModel().setId(5L).setName("medium");
+
+
+        DogBreedRequestModel akita = new DogBreedRequestModel().setName("Akita")
+                .setDogType(primitivesModel).setDogSize(largeModel);
         insertedAkita = template.postForEntity(base.toString().concat("/create/"), akita, DogBreed.class, emptyMap() );
 
-        DogBreedRequestModel bulldog = new DogBreedRequestModel();
-        bulldog.setName("Bulldog");
-        bulldog.setDogType(new DogTypeRequestModel().setId(3L));
+        DogBreedRequestModel bulldog = new DogBreedRequestModel().setName("Bulldog")
+                .setDogType(molossersModel).setDogSize(mediumModel);
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), bulldog, DogBreed.class, emptyMap() );
 
-        DogBreedRequestModel boxer = new DogBreedRequestModel();
-        boxer.setName("Boxer");
-        boxer.setDogType(new DogTypeRequestModel().setId(3L));
+        DogBreedRequestModel boxer = new DogBreedRequestModel().setName("Boxer")
+                .setDogType(molossersModel).setDogSize(mediumModel);
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), boxer, DogBreed.class, emptyMap() );
 
-        DogBreedRequestModel frenchBulldog = new DogBreedRequestModel();
-        frenchBulldog.setName("French Bulldog");
-        frenchBulldog.setDogType(new DogTypeRequestModel().setId(3L));
+        DogBreedRequestModel frenchBulldog = new DogBreedRequestModel().setName("French Bulldog")
+                .setDogType(molossersModel).setDogSize(mediumModel);
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), frenchBulldog, DogBreed.class, emptyMap() );
 
     }
@@ -106,6 +114,7 @@ public class DogBreedsControllerIT {
             template.delete(base.toString() + "/delete/" +  Integer.toString(id));
         }
         dogTypesService.deleteAll();
+        dogSizesService.deleteAll();
     }
 
 
@@ -114,9 +123,9 @@ public class DogBreedsControllerIT {
     public void read() throws Exception {
         ResponseEntity<List> response = template.getForEntity(base.toString() + "/read/0/100", List.class);
         assertThat(response.getBody().size(), equalTo(4));
-        List<HashMap>  responseDogBreeds=  response.getBody();
-        for (HashMap<String, String> dogBreedMap:responseDogBreeds ) {
-            String name = dogBreedMap.get("name");
+        List<HashMap<String, Object>>  responseDogBreeds=  response.getBody();
+        for (HashMap<String, Object> dogBreedMap:responseDogBreeds ) {
+            String name = (String)dogBreedMap.get("name");
             assertThat(dogBreedMap.get("name"), anyOf(is("Akita"), is("Bulldog"), is("Boxer"), is("French Bulldog")));
         }
     }
@@ -124,7 +133,7 @@ public class DogBreedsControllerIT {
     @Test
     public void readByDogType() throws Exception {
         ResponseEntity<List> response = template.getForEntity(base.toString() + "/readByDogType/3/0/100", List.class);
-        List<HashMap>  responseList=  response.getBody();
+        List<HashMap<String, Object>>  responseList=  response.getBody();
         assertThat(responseList.size(), equalTo(3));
         for (HashMap<String, Object> entryMap : responseList ) {
             Map<String, Object> dogType = (Map<String, Object>)entryMap.get("dogType");
@@ -136,7 +145,7 @@ public class DogBreedsControllerIT {
     @Test
     public void readByNameInitial() throws Exception {
         ResponseEntity<List> response = template.getForEntity(base.toString() + "/readByNameInitial/B/0/100", List.class);
-        List<HashMap>  responseList=  response.getBody();
+        List<HashMap<String, Object>>  responseList=  response.getBody();
         assertThat(responseList.size(), equalTo(2));
         for (HashMap<String, Object> entryMap : responseList ) {
            String name = (String)entryMap.get("name");
@@ -158,7 +167,7 @@ public class DogBreedsControllerIT {
     @Test
     public void readByNameSubstring() throws Exception {
         ResponseEntity<List> response = template.getForEntity(base.toString() + "/readByNameSubstring/Bull/0/100", List.class);
-        List<HashMap>  responseList=  response.getBody();
+        List<HashMap<String, Object>>  responseList=  response.getBody();
         assertThat(responseList.size(), equalTo(2));
         for (HashMap<String, Object> entryMap : responseList ) {
             String name = (String)entryMap.get("name");
@@ -189,18 +198,23 @@ public class DogBreedsControllerIT {
     public void update() throws Exception {
         DogBreed newAkita = insertedAkita.getBody();
         DogBreedRequestModel newAkitaModel = DogBreedMapper.domainToRequest(newAkita);
-        newAkitaModel.setName("New Akita");
+        newAkitaModel.setName("New medium Molosser Akita");
+        newAkitaModel.setDogSize(new DogSizeRequestModel().setName("medium").setId(5L));
+        newAkitaModel.setDogType(new DogTypeRequestModel().setName("Molosser").setId(3L));
+
 
         RequestEntity request = RequestEntity.put(new URI(base.toString() + "/update/")).accept(MediaType.APPLICATION_JSON).body(newAkitaModel);
         //preferred over template.put because the response status can be checked
         ResponseEntity<DogBreed> res= template.exchange(request, DogBreed.class);
         assertEquals(res.getStatusCode(), HttpStatus.OK);
-        assertEquals(res.getBody().getName(), "New Akita");
+        assertEquals(res.getBody().getName(), "New medium Molosser Akita");
+        assertEquals(res.getBody().getDogSize().getName(), "medium");
+        assertEquals(res.getBody().getDogType().getName(), "Molossers");
 
 
-        DogBreedRequestModel nonExistent = new DogBreedRequestModel();
-        nonExistent.setId(Long.MAX_VALUE);
-        nonExistent.setName("Nonexistent name");
+
+        DogBreedRequestModel nonExistent = new DogBreedRequestModel().setId(Long.MAX_VALUE).setName("Nonexistent name")
+                .setDogSize(new DogSizeRequestModel().setId(6L)).setDogType(new DogTypeRequestModel().setId(3L));
         request = RequestEntity.put(new URI(base.toString() + "/update/")).accept(MediaType.APPLICATION_JSON).body(nonExistent);
         res= template.exchange(request, DogBreed.class);
         assertEquals(res.getStatusCode(), HttpStatus.NOT_FOUND);

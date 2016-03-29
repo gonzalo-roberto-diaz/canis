@@ -1,15 +1,17 @@
 package com.canis.mappers;
 
 import com.canis.domain.DogBreed;
+import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
 import com.canis.requestmodels.DogBreedRequestModel;
+import com.canis.requestmodels.DogSizeRequestModel;
 import com.canis.requestmodels.DogTypeRequestModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 
 /**
- * Created by Gonzalo on 3/27/2016.
+ * Mapper between Dog Breed REST request models and JPA domain beans
  */
 public class DogBreedMapper {
 
@@ -20,8 +22,12 @@ public class DogBreedMapper {
         DogType dogType = domain.getDogType();
         DogTypeRequestModel dogTypeModel = new DogTypeRequestModel();
         BeanUtils.copyProperties(dogType, dogTypeModel);
-
         model.setDogType(dogTypeModel);
+
+        DogSize dogSize = domain.getDogSize();
+        DogSizeRequestModel dogSizeModel = new DogSizeRequestModel();
+        BeanUtils.copyProperties(dogSize, dogSizeModel);
+        model.setDogSize(dogSizeModel);
 
         return model;
     }

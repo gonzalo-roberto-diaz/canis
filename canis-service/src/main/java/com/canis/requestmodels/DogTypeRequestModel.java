@@ -30,8 +30,9 @@ public class DogTypeRequestModel {
         return name;
     }
 
-    public void setName(String name) {
+    public DogTypeRequestModel setName(String name) {
         this.name = name;
+        return this;
     }
 
     public int getLevel() {

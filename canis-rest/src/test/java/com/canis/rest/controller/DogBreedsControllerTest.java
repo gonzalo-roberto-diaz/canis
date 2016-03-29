@@ -1,11 +1,13 @@
 package com.canis.rest.controller;
 
 /**
+ * Tests for the Dog Breed controller
  * Created by Gonzalo on 3/3/2016.
  */
 
 import com.canis.CanisRestApplication;
 import com.canis.domain.DogBreed;
+import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
 import com.canis.requestmodels.DogBreedRequestModel;
 import com.canis.service.DogBreedsService;
@@ -55,21 +57,15 @@ public class DogBreedsControllerTest {
 
     @Test
     public void list() throws Exception {
-        DogBreed akita = new DogBreed();
-        akita.setId(1L);
-        akita.setName("Akita");
-        DogType primitives = new DogType();
-        primitives.setId(3L);
-        akita.setDogType(new DogType());
+        DogType primitives = new DogType().setId(6L).setName("Primitives");
+        DogSize large = new DogSize().setId(7L).setName("large");
+        DogBreed akita = new DogBreed().setId(1L).setName("Akita").setDogType(primitives).setDogSize(large);
 
-        DogBreed bulldog = new DogBreed();
-        bulldog.setId(2L);
-        bulldog.setName("Bulldog");
-        DogType molossers = new DogType();
-        molossers.setId(6L);
-        bulldog.setDogType(molossers);
+        DogType molossers = new DogType().setId(6L).setName("Molossers");
+        DogSize medium = new DogSize().setId(5L).setName("medium");
+        DogBreed bulldog = new DogBreed().setId(2L).setDogType(molossers).setName("Bulldog").setDogSize(medium);
 
-        Page<DogBreed> page = new PageImpl<DogBreed>(Arrays.asList(akita, bulldog));
+        Page<DogBreed> page = new PageImpl<>(Arrays.asList(akita, bulldog));
 
         when(todoServiceMock.read(anyInt(), anyInt(), anyString())).thenReturn(page);
 
@@ -79,8 +75,12 @@ public class DogBreedsControllerTest {
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].id", is(1)))
                 .andExpect(jsonPath("$[0].name", is("Akita")))
+                .andExpect(jsonPath("$[0].dogType.name", is("Primitives")))
+                .andExpect(jsonPath("$[0].dogSize.name", is("large")))
                 .andExpect(jsonPath("$[1].id", is(2)))
-                .andExpect(jsonPath("$[1].name", is("Bulldog")));
+                .andExpect(jsonPath("$[1].name", is("Bulldog")))
+                .andExpect(jsonPath("$[1].dogType.name", is("Molossers")))
+                .andExpect(jsonPath("$[1].dogSize.name", is("medium")));
 
         verify(todoServiceMock, times(1)).read(0, 100, "name");
         verifyNoMoreInteractions(todoServiceMock);
