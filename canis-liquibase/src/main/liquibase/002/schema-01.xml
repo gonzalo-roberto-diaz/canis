@@ -187,12 +187,6 @@
             <column defaultValue="" name="NAME" type="VARCHAR(50)">
                 <constraints nullable="false"/>
             </column>
-            <column name="ORDER" type="SMALLINT(5)">
-                <constraints nullable="false"/>
-            </column>
-            <column defaultValueNumeric="1" name="ENABLED" type="SMALLINT(5)">
-                <constraints nullable="false"/>
-            </column>
         </createTable>
     </changeSet>
     <changeSet author="Gonzalo (generated)" id="1458114932733-10">

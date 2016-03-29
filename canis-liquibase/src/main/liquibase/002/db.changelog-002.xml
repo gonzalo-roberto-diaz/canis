@@ -12,7 +12,20 @@
 		<include file="src/main/liquibase/002/schema-01.xml"  relativeToChangelogFile="false" />
 	    <include file="src/main/liquibase/002/schema-02-functions.xml"  relativeToChangelogFile="false" />
 	    <include file="src/main/liquibase/002/data-01-disable-fks.xml"  relativeToChangelogFile="false" />
-	    <include file="src/main/liquibase/002/data-02.xml"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-breeders.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-countries.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-canada-geo.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-geo-usa.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-shelters.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-dog-sizes.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-dog-breeds.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-text-resources.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-forums.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-videos.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-news.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-dog-types.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-dog-breed-relations.sql"  relativeToChangelogFile="false" />
+	    <include file="src/main/liquibase/002/data-front-page.sql"  relativeToChangelogFile="false" />
 	    <include file="src/main/liquibase/002/data-03-enable-fks.xml"  relativeToChangelogFile="false" />
 
 </databaseChangeLog>

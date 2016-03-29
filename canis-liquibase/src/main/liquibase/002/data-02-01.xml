@@ -1,0 +1,1717 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+    <changeSet author="Gonzalo (generated)" id="1458114948424-1">
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="16"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="63ce9ea9880a12695a97b1e7f17eb644"/>
+            <column name="NAME" value="McGregors' Bulldogs"/>
+            <column name="ZIP_CODE" value="V1M 3P2"/>
+            <column name="URL" value="http://www.mcgregorsbulldogs.com/"/>
+            <column name="URL_ENCODED" value="McGregors_Bulldogs"/>
+            <column name="LOGO_URL" value="mc_gregor_bulldogs.png"/>
+            <column name="EMAIL" value="sharon.studs@gmail.com"/>
+            <column name="PHONE" value="778 839 7857"/>
+            <column name="DESCRIPTION" value="Our bulldogs live with us in beautiful Fraser Valley of British Columbia.  Our bulldogs come from multiple Euopean and  U.S.  championship bloodlines. We actove;u [artoco[ate om CKC amd AKC conformation shows.  Our dogs are part of our family and are cared for as such.  We strive to breed our puppies to be genetically healthy,  top quality bulldogs,  conforming to the breed standards.  We are members in good standing with the Canadian Kennel Club and can supply references upon request.  Please enjoy the pictures of our dogs&#10;&#10;Catherine &amp; Sharon"/>
+            <column name="STREET_ADDRESS" value="24888 80th Avenue "/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="49.14938920"/>
+            <column name="LONGITUDE" valueNumeric="-122.53621540"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="British Columbia"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Greater Vancouver"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Langley"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="McGregors' Bulldogs pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="17"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="21fa0c650dd139281a9b670649cf4fd7"/>
+            <column name="NAME" value="Iroc Bulldogs"/>
+            <column name="ZIP_CODE" value="T8A 3K4"/>
+            <column name="URL" value="http://www.irocbulldogs.com/"/>
+            <column name="URL_ENCODED" value="Iroc_Bulldogs"/>
+            <column name="LOGO_URL" value="iroc_adphoto_anime.gif"/>
+            <column name="EMAIL" value="irocbulldogs@gmail.com"/>
+            <column name="PHONE" value="780-467-1971"/>
+            <column name="DESCRIPTION" value=" Twenty six acres of fenced rolling hills just south of Edmonton, Alberta, Canada is where our bulldogs have their playground. Bulldogs are a marvelous breed with their kindly disposition, resolute spirit, and the unconditional love they have for their owners. They quickly become a member of your family you couldn't do without.&#10;&#10; &#10;&#10;Our bulldogs are a part of our big happy family. They love to herd ducks and goats, plus they get along well with the cats. There are plenty of activities for everyone to enjoy. Being raised underfoot of such a big and loving family ensures proper socialization and training. They develop personalities just like a person would.&#10;&#10; &#10;&#10;We are dedicated breeders of the English (style) Bulldogs. We're members of the Canadian Kennel Club, the Bulldog Club of Central Canada, and the Bulldog Club of America. We take so much pride in each and every one of our bulldogs. And we're privileged to show these dogs and we do have some of the top show bulldogs in Canada. Even though we show them, they are our pets and companions first and we enjoy seeing our dogs go to pet homes as members of the family.&#10;&#10; &#10;&#10;As bulldog breeders we breed to the Ideal of Standard and for Health and Temperament. Our beautiful bulldogs have all features and colors, including fawn with black mask. We offer Champion Stud Service with approved mates. And with dedication we strive to strengthen the Bulldog breed's genetic soundness by importing Champion Bloodlines from other countries such as Europe and Belgium. Chilled and frozen Iroc Bulldog semen is available.&#10;&#10; &#10;&#10;All Iroc Bulldog pups are placed with a written health guarantee. We're here to help and support anyone who wants to become part of the Bulldog family. Once a puppy is placed we're available for any information you may need to help you in raising your Bulldog. We want to make sure that both you and the puppy have a smooth transition.&#10;&#10; &#10;&#10;    Iroc Bulldogs are confident, happy, and healthy. This combination makes them the ideal companion for people of all ages. We hope you feel the same passion for the Bulldog breed that we do. Even though we may not always have puppies, please contact us for future availability and future breeding plans. We have so much love and pride for our bulldogs and hope that you feel the same.&#10;"/>
+            <column name="STREET_ADDRESS"/>
+            <column name="PO_BOX" valueNumeric="27"/>
+            <column name="LATITUDE" valueNumeric="53.54410770"/>
+            <column name="LONGITUDE" valueNumeric="-113.29219070"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Alberta"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Division No. 11"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Sherwood Park"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Iroc Bulldogs pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="18"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="773b671462eea744b0b262c899659a01"/>
+            <column name="NAME" value="Wilhardt Bulldogs"/>
+            <column name="ZIP_CODE" value="S0K2A0"/>
+            <column name="URL" value="http://www.wilhardtbulldogs.ca"/>
+            <column name="URL_ENCODED" value="Wilhardt_Bulldogs"/>
+            <column name="LOGO_URL" value="wilhardt_bulldogs_logo.png"/>
+            <column name="EMAIL" value="dawn682@hotmail.com"/>
+            <column name="PHONE" value="(306) 682-2792"/>
+            <column name="DESCRIPTION" value="&#10;&#10;Joe and I were both born in Humboldt, Saskatchewan, in the heart of the prairies. We both grew up here and went to school here. We live about 20 minutes outside of Humboldt, Sask. where Joe farms and I raise my dogs. The dogs love it out hereâ€¦ where they can roam and investigate all day long!!! At night they are put in a run if they need to play outside just to avoid the prairie rodents that may wander into the yard. lol Safety is important to us. We do hope to build a kennel at some point for taking in rescues and boarding&#10;&#10;Joe and I got together later in life and decided to open Wilhardt Bulldogs. We are not a kennel, but a small hobby breeder. Our goal is to raise healthy, sound, beautiful bulldogs. All our dogs live in the house with us and are underfoot.&#10;&#10;My love of dogs goes back to when I was a kid. I grew up with dogs and canâ€™t imagine being without. Although we raise bulldogs, we also enjoy our boxers, Molly our brindle girl and Charlie our daughterâ€™s fawn boy. They keep us busy and they, like our bulldogs, are quite the characters! All our dogs have enriched our lives and completed our family.&#10;&#10;I had always loved the look of the English Bulldogs and decided to start looking into the breed. About a year later, and a lot of research into the breed, I found Aldars Bulldogs in Ontario, who are now my mentors. They have been extremely patient with me as I started to raise and learn more about the breed. I give great thanks to Al and Darlene Eschelboeck for gifting me with Lizzie and Mia. They are my dream come true and the love of my life!!! Bulldogs are full of fun and a lot of laughs and I am so grateful to Aldars for giving me the chance to raise two of her beautiful puppies. I also want to give thanks to Joe, without his help, there would never have been Wilhardt Bulldogs. So, that is how it all began for us.&#10;&#10;Please feel free to contact us if you are looking for a bully and if we donâ€™t have any available, I will let you know of someone that does. Our dogs are CKC registered and do come with a guarantee. I breed for conformation, temperament and maintaining the breed standard. We love to take our dogs to shows and show them off!!!&#10;&#10;Welcome to our site and we hope you enjoy it!&#10;"/>
+            <column name="STREET_ADDRESS"/>
+            <column name="PO_BOX" valueNumeric="932"/>
+            <column name="LATITUDE" valueNumeric="52.17014220"/>
+            <column name="LONGITUDE" valueNumeric="-105.11316330"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Saskatchewan"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Division No. 15"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Humboldt"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Wilhardt Bulldogs pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="19"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="0242d7882589616e82c81cdad8c27e8a"/>
+            <column name="NAME" value="Aldar's Bulldogs and Boston Terriers"/>
+            <column name="ZIP_CODE" value="N0G 1M0"/>
+            <column name="URL" value="http://www.aldarsbulliesandbostons.com/"/>
+            <column name="URL_ENCODED" value="Aldars_Bulldogs_and_Boston_Terriers"/>
+            <column name="LOGO_URL" value="aldairs_english_bulldogs_and_boston_terriers.jpg"/>
+            <column name="EMAIL" value="aldar@sonicwaves.ca"/>
+            <column name="PHONE" value="519-338-3107"/>
+            <column name="DESCRIPTION" value="We  strive to breed healthy, top quality dogs. We are looking for responsible people to take one of our dogs&#10;into their home and love them. We are members in good standing of the Canadian Kennel Club, members of&#10;the Bulldog Club of Central Canada and also the Boston Terrier Club.&#10;&#10;***OUR DOGS DO NOT LIVE IN A KENNEL***all of our puppies are raised in our home.&#10;&#10;We pride ourselves on giving our new owners as much support as they want or&#10;need.&#10;We will not sell a puppy without some background information and we ask that&#10;you do not buy them as a gift for someone else unless that person has requested&#10;a bulldog. Sometimes surprises are unwelcome and we want our bullies to be a&#10;welcomed addition in your home.&#10;Come to our home and visit puppies and parents and see where they come&#10;from...Also gives us a chance to meet you as well. We ask that you do not visit&#10;another breeder on the same day and DO NOT go into a pet store that sells&#10;puppies and then come here!!!!!!!!&#10;&#10;***If your circumstances change and you can no longer care for your bully, you&#10;must return them to us and we will find them a new home***NEVER MUST ONE&#10;OF MY DOGS BE SURRENDERED TO A SHELTER FOR ANY REASON"/>
+            <column name="STREET_ADDRESS" value="9820 Ski Rd, Clifford"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="43.99362450"/>
+            <column name="LONGITUDE" valueNumeric="-80.87936210"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Ontario"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Wellington County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Minto"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Aldar's Bulldogs and Boston Terriers pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="20"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="6a13e013a96153e539de5dfa2df2e2b7"/>
+            <column name="NAME" value="Bulldacious Bulldogs"/>
+            <column name="ZIP_CODE" value="N5C 3J7"/>
+            <column name="URL" value="http://www.bulldaciousbulldogs.com/"/>
+            <column name="URL_ENCODED" value="Bulldacious_Bulldogs"/>
+            <column name="LOGO_URL" value="bulldacious_bulldogs.png"/>
+            <column name="EMAIL" value="tammymcallister@me.com"/>
+            <column name="PHONE" value="519-425-2629"/>
+            <column name="DESCRIPTION" value="Welcome to Bulldacious Bulldogs.  Located in Southwestern Ontario, Canada&#10;&#10;&#10;Home of NV, pictured above, currently the number one Female Bulldog and the 2013 Bulldog Club of America Nationals Best of Winners.   Our boy Marshall was the top Bulldog in Canada in 2012, ranking 5th in the Non-Sporting Group.&#10;&#10;&#10;Our focus is on producing top quality bulldogs that can perform in both the Conformation and Performance rings with special attention being on health and health testing. "/>
+            <column name="STREET_ADDRESS" value="Culloden Road"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="43.01110610"/>
+            <column name="LONGITUDE" valueNumeric="-80.90418170"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Ontario"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Oxford County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Ingersoll"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Bulldacious Bulldogs pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="21"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="418a9dff1fd08f971a2aa8cd6f951837"/>
+            <column name="NAME" value="Vidics Bullies"/>
+            <column name="ZIP_CODE" value="N0G 2P0"/>
+            <column name="URL" value="http://www.vidicsbullies.ca/"/>
+            <column name="URL_ENCODED" value="Vidics_Bullies"/>
+            <column name="LOGO_URL" value="vidics_bullies.png"/>
+            <column name="EMAIL" value="info@vidicsbullies.ca"/>
+            <column name="PHONE" value="519-343-3185 "/>
+            <column name="DESCRIPTION" value="Vidics Bullies are a small family owned breeder of quality purebred English Bulldogs. We are in good standing with the Canadian Kennel Club and are members of The Bulldog Club of Central Canada. Together, with our love of the English Bulldog breed and the help of other breeders, we set out to produce beautiful, healthy companions while always trying to improve the breed for the people who love these guys as much as we do!&#10;&#10;All puppies go home with their CKC registration, a two year health guarantee, lifetime support and more!! "/>
+            <column name="STREET_ADDRESS" value="260 Inkerman Street "/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="43.83496500"/>
+            <column name="LONGITUDE" valueNumeric="-80.85130380"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Ontario"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Wellington County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Palmerston"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Vidics Bullies pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="22"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="6f608fa7d4f659be69a62c530b4a42ef"/>
+            <column name="NAME" value="Honorbul Bulldogs Reg"/>
+            <column name="ZIP_CODE" value="T5A 0A7"/>
+            <column name="URL" value="http://www.honorbuls.ca/"/>
+            <column name="URL_ENCODED" value="Honorbul_Bulldogs_Reg"/>
+            <column name="LOGO_URL" value="honorbuls.jpg"/>
+            <column name="EMAIL" value="info@vidicsbullies.ca"/>
+            <column name="PHONE" value="(519) 343-3185 "/>
+            <column name="DESCRIPTION" value="Dedicated to breeding happy, healthy english bulldog puppies, in our home near Edmonton, Alberta. &#10;&#10;The priorities we live by for our dogs:&#10;&#10;Our bulldogs are pets and family members first as such, an excellent temperment is a must.     &#10;&#10;Show dogs second, we strive to breed dogs that adhere as closely as possible to the written standard for our breed. &#10;&#10;Breeding stock third.  As we only breed when we want a puppy to keep for ourselves, health is of the utmost importance.  We health screen our dogs - C.E.R.F., OFA heart, thyroid, knees as well as x-ray the trachea.  Check out www.offa.org and search health test results for 1000's of bulldogs! &#10;&#10;We invite you to give either one of us a shout, or tap an email anytime!"/>
+            <column name="STREET_ADDRESS" value="Edmonton, Alberta"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="53.59085330"/>
+            <column name="LONGITUDE" valueNumeric="-113.42549710"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Alberta"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Division No. 11"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Edmonton"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Honorbul Bulldogs Reg pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="23"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="67013afccb1daf989f4394a97998b579"/>
+            <column name="NAME" value="BrotherhoodBully"/>
+            <column name="ZIP_CODE" value="J0G 1R0"/>
+            <column name="URL" value="http://www.brotherhoodbullys.com/"/>
+            <column name="URL_ENCODED" value="BrotherhoodBully"/>
+            <column name="LOGO_URL" value="brotherhood_bully.jpg"/>
+            <column name="EMAIL" value="brotherhoodbullys@hotmail.com"/>
+            <column name="PHONE" value="450-880-0235 "/>
+            <column name="DESCRIPTION" value="Nous sommes une Ã©levage de Bulldog Anglais et de Elkhound NorvÃ©gien en milieu familial situer sur la rive-sud. &#10;&#10;Nous sommes trÃ¨s sÃ©lectif sur nos reproducteur pour reprÃ©senter au meilleur de la race, La santÃ© la conformation et le caractÃ¨re se sont les critÃ¨re sur quoi nous nous basons."/>
+            <column name="STREET_ADDRESS" value="St-Pie-De-Guire, Quebec "/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="45.99237200"/>
+            <column name="LONGITUDE" valueNumeric="-72.75954210"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Quebec"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Drummond Regional County Municipality"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Saint-Pie-de-Guire"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="BrotherhoodBully pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="24"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="5afc3b853e8e975b82ef287c799669c7"/>
+            <column name="NAME" value="Kingbull Bulldogs"/>
+            <column name="ZIP_CODE" value="J4J 2S7"/>
+            <column name="URL" value="http://kingbull.webs.com/"/>
+            <column name="URL_ENCODED" value="Kingbull_Bulldogs"/>
+            <column name="LOGO_URL" value="kingbull_bulldogs_montreal.jpg"/>
+            <column name="EMAIL" value="roy.meli@hotmail.com"/>
+            <column name="PHONE" value="(514) 503-9387"/>
+            <column name="DESCRIPTION" value="We wish you a pleasant visit at Kingbull  &#10;&#10;Kingbull is a family based, English bulldog breeding program situated on the South-Shore of Montreal.&#10;Jean-Marc tranferred his passion and experience of more than 15 years with this breed from father to daughter.  His daughter, Melissa had experience as a handler from her childhood with bulldogs in conformation competition in Canada. &#10;&#10;We believe in improving the breed and the health of our bulldogs is a crucial factor for us.  We always keep pushing forward with our choice of breeding stock.  All come from Champion Canadian and American bloodlines who participate and perform actively in Canada and the USA. &#10;&#10;We enjoying presenting our bulldogs in the show ring, 2011 was the year of our return to this passion. We are always striving to improve our next generation. "/>
+            <column name="STREET_ADDRESS" value="South Shore of Montreal."/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="45.53471860"/>
+            <column name="LONGITUDE" valueNumeric="-73.47180600"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Quebec"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Champlain"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Longueuil"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Kingbull Bulldogs pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="25"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="9f56eac22a0fa2f0cc8b540797aebb0c"/>
+            <column name="NAME" value="Symarun Bulldogs"/>
+            <column name="ZIP_CODE" value="P7A 0W2"/>
+            <column name="URL" value="http://www.symarunbulldog.com/"/>
+            <column name="URL_ENCODED" value="Symarun_Bulldogs"/>
+            <column name="LOGO_URL" value="symarun_bulldogs.png"/>
+            <column name="EMAIL" value="thundermountainbulldogs@tbaytel.net"/>
+            <column name="PHONE" value="807-683-9614"/>
+            <column name="DESCRIPTION" value="Dedicated Breeders for over a decade with top winning Bulldogs in health, temperament, and in the show ring.&#10;&#10;Our dogs are our lives. Placing first priority on well adjusted puppies who make loving companions.&#10;&#10;Lifetime support for every puppy we raise, from our family to yours â€” Symarunbulldogs"/>
+            <column name="STREET_ADDRESS" value="210 Mount Baldy Road "/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="48.56536270"/>
+            <column name="LONGITUDE" valueNumeric="-89.11420160"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Ontario"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Thunder Bay District"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Symarun Bulldogs pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="26"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="dd45fce3d559c28ac03a6983cb658ff1"/>
+            <column name="NAME" value="Rawn's Remarkabulls"/>
+            <column name="ZIP_CODE" value="N0G 1M0"/>
+            <column name="URL" value="http://www.rawnsremarkabulls.com"/>
+            <column name="URL_ENCODED" value="Rawns_Remarkabulls"/>
+            <column name="LOGO_URL" value="rawns_remarkabulls.jpg"/>
+            <column name="EMAIL" value=""/>
+            <column name="PHONE" value="519-501-9590"/>
+            <column name="DESCRIPTION" value="Welcome to Rawns Remarkabulls. We are a small family breeder of English Bulldogs, located just west of Mount Forest, Ontario, in a rural setting. Our goal is to produce top quality bulldogs, focusing on health and conformation. We are members in good standing with the Canadian kennel Club.&#10; &#10;  Our bullies are raised in our home, as members of our family, and not in a kennel environment.  "/>
+            <column name="STREET_ADDRESS" value="9643 Road 3 North"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="43.98856430"/>
+            <column name="LONGITUDE" valueNumeric="-81.00920620"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Ontario"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Bruce County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Rawn's Remarkabulls pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="27"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="7c355c57bfac3058cf9a243507ca3f47"/>
+            <column name="NAME" value="Barrie Bulldogs"/>
+            <column name="ZIP_CODE" value="M3J 2V1"/>
+            <column name="URL" value="http://www.barriebulldogs.ca/"/>
+            <column name="URL_ENCODED" value="Barrie_Bulldogs"/>
+            <column name="LOGO_URL" value="barrie_bulldogs.png"/>
+            <column name="EMAIL" value="barriebulldogs@yahoo.ca"/>
+            <column name="PHONE" value="705-896-1245 "/>
+            <column name="DESCRIPTION" value="Our family has been breeding purebred English &amp; French Bulldogs for over 15 years. Our puppies are raised in a family environment and receive a ton of love and affection. We do not keep our dogs in kennels or outside! Our Bulldogs are raised with children and other animals, so they are well socialized from an early age.&#10;&#10;We are a member of the CKC and have based our breeding program on Championship European blood lines.&#10;&#10;All of our French and English Bulldog puppies come registered, with three generation pedigrees and a lifetime of support. All of our puppies are microchipped, dewormed and vet checked prior to leaving our home. We also provide One Year Health Warranty on all of our puppies as well as their vaccination record."/>
+            <column name="STREET_ADDRESS" value="Keele Street "/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="43.74762900"/>
+            <column name="LONGITUDE" valueNumeric="-79.48718100"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Ontario"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Toronto Division"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Toronto"/>
+            <column name="SUBLOCALITY_LEVEL_1" value="North York"/>
+            <column name="META_DESCRIPCION" value="Barrie Bulldogs pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="28"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="4685e8ff5eb8586c17fd27a8253c1fb6"/>
+            <column name="NAME" value="Broomeacres German Shepherds"/>
+            <column name="ZIP_CODE" value="V0R 2M0"/>
+            <column name="URL" value="http://www.broomeacresgermanshepherds.com/"/>
+            <column name="URL_ENCODED" value="Broomeacres_German_Shepherds"/>
+            <column name="LOGO_URL" value="broomeacres_german_shepherds.jpg"/>
+            <column name="EMAIL" value="broomeacresgermanshepherds@gmail.com"/>
+            <column name="PHONE" value=" 250-337-8253"/>
+            <column name="DESCRIPTION" value="Protecting, Serving and Loving since 1980&#10;&#10;BREEDER OF REAL WORKING DOGS, SPORT DOGS AND BEAUTIFUL FAMILY COMPANIONS."/>
+            <column name="STREET_ADDRESS"/>
+            <column name="PO_BOX" valueNumeric="148"/>
+            <column name="LATITUDE" valueNumeric="49.79243000"/>
+            <column name="LONGITUDE" valueNumeric="-125.04845990"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="British Columbia"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Comox Valley"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Merville"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Broomeacres German Shepherds pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="29"/>
+            <column name="COUNTRY_ID" valueNumeric="2"/>
+            <column name="GUID" value="49fb89567ad18b6803e2efc645c98ed9"/>
+            <column name="NAME" value="Eyencandy Bulldogs"/>
+            <column name="ZIP_CODE" value="B0S 1M0"/>
+            <column name="URL" value="http://www.eyecandybulldogs.ca"/>
+            <column name="URL_ENCODED" value="Eyencandy_Bulldogs"/>
+            <column name="LOGO_URL" value="eyecandy_bulldoggirl.jpg"/>
+            <column name="EMAIL" value="eyecandybulldogs@gmail.com"/>
+            <column name="PHONE" value="902-363-2049"/>
+            <column name="DESCRIPTION" value="English Bulldog breeder, Nova Scotia,Canada&#10;&#10;I am Jodi Goudey-Vienneau, a hobby breeder and exhibitor of top quality English Bulldogs in Nova Scotia, Canada. After being out west for ten years, my husband and I are now living in the beautiful Annapolis Valley in Nova Scotia. Since moving back to Nova Scotia we have a baby girl Stella Grace, who was born in Oct 2013. I work for the local hospital and my husban works for the provincial government. This is a hobby and a passion for me. Breeding and showing healthy bulldogs that meet the Canadian Kennel Club Standard is a top priority. Eyecandy Bulldogs is looking forward to showing our bulldogs in Nova Scotia.&#10;&#10;Eyecandy Bulldogs would like to thank Al and Cecil Friesen of Inseines Bulldogs from St. Annes, MB for giving us the opportunity to show and breed such fine dogs with outstanding pedigree.  He took a big leap of faith trusting us to represent the pedigree he worked so hard to build up.  We hope to continue our friendship with Al and Cecil even though we are going to be so far away.&#10;&#10;Eyecandy Bulldogs would also like to thank Lee and Liliane Foster from Lightburn Bulldogs in Manitoba, for providing great advice on showing bulldogs.  It was really great to meet and become friends with such great embassadors of the show scene.&#10;&#10;Thanks to Valerie Lynch from Lovingfriend Bulldogs for all the support and advice on the Bulldog breed.&#10;&#10;Thanks to Trenton Garde for taking such professional pictures of Storm and Lucy's puppies."/>
+            <column name="STREET_ADDRESS" value="Anapolis Valley"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="44.87309300"/>
+            <column name="LONGITUDE" valueNumeric="-65.13852500"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Nova Scotia"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Annapolis County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Lawrencetown"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Eyencandy Bulldogs pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, Canada"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="31"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="7d029757df575f64452f6db94a616fb5"/>
+            <column name="NAME" value="So Cal German Shepherds"/>
+            <column name="ZIP_CODE" value="92584"/>
+            <column name="URL" value="http://www.socalgermanshepherds.com/"/>
+            <column name="URL_ENCODED" value="So-Cal-German-Shepherds"/>
+            <column name="LOGO_URL" value="socal_german_shepherds.gif"/>
+            <column name="EMAIL" value="socalgsd@gmail.com"/>
+            <column name="PHONE" value="(714)886-9473"/>
+            <column name="DESCRIPTION" value="So Cal German Shepherds Strives to Provide you With A healthy Happy Well Socialized Working Show Family Companion.5 generations of family show dogs helps in producing a Beautiful intelligent family member free of common health issues for years to come. "/>
+            <column name="STREET_ADDRESS" value="O.C. and Riverside"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="33.65573870"/>
+            <column name="LONGITUDE" valueNumeric="-117.18529400"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="California"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Riverside County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Menifee"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="So Cal German Shepherds pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="32"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="6e9dabd1c2f24034928c9eded941e524"/>
+            <column name="NAME" value="American Kennels"/>
+            <column name="ZIP_CODE" value="10065"/>
+            <column name="URL" value="http://www.americankennels.com/"/>
+            <column name="URL_ENCODED" value="American-Kennels"/>
+            <column name="LOGO_URL" value="american_kennels_ny.gif"/>
+            <column name="EMAIL" value="info@americankennels.com"/>
+            <column name="PHONE" value="212-838-8460"/>
+            <column name="DESCRIPTION" value="Since 1954, American Kennels has been the world's premier puppy and kitten kennel, providing healthy and happy pets to our clientele from Manhattan to Morocco and beyond.&#10;&#10;Recognized as the undisputed authority in the pet industry, we at American Kennels believe that we are only as strong as the health of our pets and the happiness of our clients, so we make sure that all of our puppies and kittens are under around-the-clock veterinary supervision and gladly provide the customer with the best guarantees in the business."/>
+            <column name="STREET_ADDRESS" value="798 Lexington Av"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="40.76452390"/>
+            <column name="LONGITUDE" valueNumeric="-73.96243270"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="New York"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="New York County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="New York"/>
+            <column name="SUBLOCALITY_LEVEL_1" value="Manhattan"/>
+            <column name="META_DESCRIPCION" value="American Kennels pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="33"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="3ae209168587d7594d83b591ef18d6b6"/>
+            <column name="NAME" value="GÃ¼nbil German Shepherds"/>
+            <column name="ZIP_CODE" value="80118"/>
+            <column name="URL" value="http://www.worldclassgsd.com/"/>
+            <column name="URL_ENCODED" value="GÃ¼nbil-German-Shepherds"/>
+            <column name="LOGO_URL" value="gunbil_german_shepherds.jpg"/>
+            <column name="EMAIL" value=""/>
+            <column name="PHONE" value="303.660.9000"/>
+            <column name="DESCRIPTION" value="Hello, we are the Gunbil family and like my son on the left (Aidan GÃ¼nbil), I also grew up with the love of this magnificent breed the German Shepherd dog. &#10;&#10;My dream as a child was to become a German shepherd breeder, of course people that knew me thought that this was only a young boys fascination and surely he would grow up in pursue of other goals. What they didn't realize is that my first German shepherd puppy named Dingo, left me with a memory that I would cherish a lifetime. &#10;&#10;At GÃ¼nbil German shepherd kennels in Colorado and in Germany our priority is in our dogs, breeding this magnificent breed is a privilege and an honor. Breeding the German Shepherd dog is not just a hobby for us. It is our &quot;passion&quot;, a commitment of excellence, perfection to you and to our dogs, with knowledge, a dedication that start with the breeder and their breeding stock of superior German shepherd males and females."/>
+            <column name="STREET_ADDRESS" value="14360 Arfsten Road"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="39.20076930"/>
+            <column name="LONGITUDE" valueNumeric="-104.91552430"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Colorado"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Douglas County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Larkspur"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="GÃ¼nbil German Shepherds pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="34"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="c98f3956515bc31ef37915bfa8afa492"/>
+            <column name="NAME" value="Fleischerheim German Shepherds"/>
+            <column name="ZIP_CODE" value="95746"/>
+            <column name="URL" value="http://www.fleischerheim.com/"/>
+            <column name="URL_ENCODED" value="Fleischerheim-German-Shepherds"/>
+            <column name="LOGO_URL" value="fleischerheim_german_shepherds.jpg"/>
+            <column name="EMAIL" value="Billsgsd@aol.com"/>
+            <column name="PHONE" value="916-791-9175"/>
+            <column name="DESCRIPTION" value="Our passion during the past 50 years has been to promote and maintain the highest quality standards for German Shepherd Imports and their resultant World Class German Shepherd Puppies. We import and breed to the Worldâ€™s Best German Sieger (Champion) Schutzhund / IPO Trained German Shepherd Dogs available to achieve our goals. &#10;As dedicated German Shepherd Breeders, we utilize these World renown Imports to produce the finest Black &amp; Red large boned German Shepherd Puppies For Sale. These elite Trained German Shepherds also serve our clients as faithful German Shepherd Personal Protection Dogs and loving family Security Dogs."/>
+            <column name="STREET_ADDRESS" value="7125 Morningside Dr"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="38.76498500"/>
+            <column name="LONGITUDE" valueNumeric="-121.15517500"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="California"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Placer County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Granite Bay"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Fleischerheim German Shepherds pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="35"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="f1c7dcc8ea970e88a12ee6e2505455f7"/>
+            <column name="NAME" value="Elite German Shepherds"/>
+            <column name="ZIP_CODE" value="78648"/>
+            <column name="URL" value="http://elitegermanshepherds.com/"/>
+            <column name="URL_ENCODED" value="Elite-German-Shepherds"/>
+            <column name="LOGO_URL" value="elite_german_shepherds.gif"/>
+            <column name="EMAIL" value="elitegsd@yahoo.com"/>
+            <column name="PHONE" value="512-767-4000"/>
+            <column name="DESCRIPTION" value="Our Lifetime Passion  &#10;The German Shepherd&#10;&#10;In my opinion..&#10;The only breed of dog that Can Do It All!  &#10;And they do it with Elegance, Grace &amp; Nobility.  Their Eternal Wisdom, Superior Intelligence and Lifetime Dedication to their Masters place them 2nd to None! Brought the Pig Ears to America.&#10;&#10; &#10;&#10;Had the 1st German Shepherd Dog ever to attempt to be Cloned.&#10; &#10;Designed from Scratch 3 state of the art dog kennels.&#10;Had my kennel copied several times without my permission.&#10;I suppose that's a compliment.&#10;&#10;Taught a friend in another country who had a dog training school how to train a dog in 2 weeks using positive methods of praise and snacks.  It saved his business and created happily trained dogs who were eager to please.&#10;&#10;Spent over 60% of my earnings to purchase bags of dog food to distribute to the stray, starving dogs in Mexico City.  We would lay them on the ground and slice them open and in the morning they were empty.&#10; &#10;Dove into traffic during rush hour to Save a dog that was thrown out of someone's car.  I got the dog, nothing short of a miracle that we weren't killed.&#10; &#10;Donated a champion sired German Shepherd Puppy from a litter which was born after midnight on 9-11 to a Rescue team who had been to the World Trade Center."/>
+            <column name="STREET_ADDRESS" value="Stone Hill Pet Resort"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="29.70653650"/>
+            <column name="LONGITUDE" valueNumeric="-97.65481100"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Texas"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Caldwell County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Luling"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Elite German Shepherds pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="36"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="233477f860aaf967e4b814bf3396e436"/>
+            <column name="NAME" value="My BodyGuard German Shepherd Dogs"/>
+            <column name="ZIP_CODE" value="60152"/>
+            <column name="URL" value="http://www.mybodyguarddogs.com/"/>
+            <column name="URL_ENCODED" value="My-BodyGuard-German-Shepherd-Dogs"/>
+            <column name="LOGO_URL" value="my_bodyguard_german_shepherd_dogs.jpg"/>
+            <column name="EMAIL" value=""/>
+            <column name="PHONE" value="(815) 568-0484"/>
+            <column name="DESCRIPTION" value="My BodyGuard Dogs was established in 1991 by Martin and Julie Saso.  From the start, our mission was to produce German Shepherd puppies with super temperament and working ability.  German Shepherd Dogs have brought us so much joy and have greatly enriched our lives.  It is our belief that every dog owner should have the opportunity to experience the companionship, devotion, and protection of a dog, and no other breed is more suited for this than a German Shepherd Dog.&#10;Our German Shepherd dogs are sought after for family companions, competition work (schutzhund, agility, obedience, herding, rally, etc.), and service work (including police service, personal protection, search and rescue, and service dogs). Only German Shepherd puppies and Dogs of sound health and stable temperament can achieve such high levels of training. Solid character, good nerves, and excellent health also making our German Shepherd Dogs and puppies excellent family companions as well!&#10;In addition to striving to produce quality German Shepherd Dogs that further the breed, we also provide a wide range of training to suit the needs of the owner and their German Shepherd Dogs. We offer training at our facility, located in Marengo, Illinois, with classes conducted both indoors and also outside on our regulation size Schutzhund field."/>
+            <column name="STREET_ADDRESS"/>
+            <column name="PO_BOX" valueNumeric="304"/>
+            <column name="LATITUDE" valueNumeric="42.24763010"/>
+            <column name="LONGITUDE" valueNumeric="-88.61448390"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Illinois"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="McHenry County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Marengo"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="My BodyGuard German Shepherd Dogs pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="37"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="8d172a79a2ebfa6e239239af03e1ba23"/>
+            <column name="NAME" value="Vom Waldenhaus German Shepherd Breeders"/>
+            <column name="ZIP_CODE" value="65556"/>
+            <column name="URL" value="http://www.waldenhaus.com/"/>
+            <column name="URL_ENCODED" value="Vom-Waldenhaus-German-Shepherd-Breeders"/>
+            <column name="LOGO_URL" value="vom-waldenhaus-german-shepherd-breeders-logo.png"/>
+            <column name="EMAIL" value="GSD@Waldenhaus.com"/>
+            <column name="PHONE" value="(417) 453-6601"/>
+            <column name="DESCRIPTION" value="Welcome to Midwest German Shepherds. &lt;br/&gt;&#10;We are located in beautiful Southern Illinois. Our dogs are our pets, and treated as family members. All of our dogs and puppies are played with and socialized by myself, husband, and our three children.&#10;&#10;&#10;&#10;&#10;We are committed to breeding and raising excellent quality German Shepherd dogs for families that want a companion that will be the perfect fit for their unique lifestyle.&#10;&#10;&#10;&#10;We have an excellent selection of dogs that all have the characteristics we feel are important in a family environment.  All of our pups are born in our home and treated as members of the family.  The constant interaction and socialization they receive around the clock makes for stronger nerved, healthier, friendlier, well rounded pups. &#10;&#10;&#10;&#10;&quot;Excellence in German Shepherd Temperament is our Specialty and our Breeding Standard for Over 30 Years&quot;&#10;Divider&#10;Thanks for visiting the Vom Waldenhaus German Shepherd Breeders web site, we would love for you to stay and browse our extensive and informative web site with collections of pictures and vieos of our quality German Shepherds. We truly feel our philosophy in German Shepherd Breeding is fundamentally different from other German Shepherd Breeders and because of this we produce superior German Shepherd Puppies and back every German Shepherd Puppy we sell with a comprehensive Hips and Health Guarantee! &#10;&#10;"/>
+            <column name="STREET_ADDRESS" value="23910 Village Drive"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="37.67566300"/>
+            <column name="LONGITUDE" valueNumeric="-92.34750300"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Missouri"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Laclede County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Richland"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Vom Waldenhaus German Shepherd Breeders pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="38"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="bb599e9d1da52dc7b536dd406d7b2100"/>
+            <column name="NAME" value="Ally K9"/>
+            <column name="ZIP_CODE" value="60543"/>
+            <column name="URL" value="http://www.allyk9.com/"/>
+            <column name="URL_ENCODED" value="Ally-K9"/>
+            <column name="LOGO_URL" value="ally_k9_oswego_illinois.jpg"/>
+            <column name="EMAIL" value=""/>
+            <column name="PHONE" value="630-854-5953"/>
+            <column name="DESCRIPTION" value="The goal of Ally K9 is to pair families, individuals, and agencies with a dog that exceeds their expectations- a companion and working partner sound in both body and mind, properly balanced between drive for the work it was intended to perform and the unyielding desire to please its master.&#10;&#10;After many years participating in or observing different venues of the &quot;working dog world,&quot; German Shepherds in particular, it is my conclusion that the key traits that used to separate the German Shepherd Dog from other breeds, the key traits that made German Shepherds such legendary, noble working &amp; family dogs, are being under-emphasized at best, in breeding programs. At worst, those traits are being almost entirely bred out in favor of producing extremely-driven, often overly-reactive dogs instead of the versatile, loyal, thinking, protective &quot;ally&quot; of a dog that earned The German Shepherd Dog its reputation. &#10;&#10;Ally K9 strives to preserve, promote, and recreate those discerning dogs, and place them in the discerning homes who will appreciate them for the amazing creatures that they are.    "/>
+            <column name="STREET_ADDRESS" value="27 Whitney Way"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="41.65868700"/>
+            <column name="LONGITUDE" valueNumeric="-88.31421200"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Illinois"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Kendall County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Oswego"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Ally K9 pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="39"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="cafcf4fcfe0f4919e09c258f1f633089"/>
+            <column name="NAME" value="Vollmond Shepherds"/>
+            <column name="ZIP_CODE" value="60119"/>
+            <column name="URL" value="http://www.vollmondshepherds.com/"/>
+            <column name="URL_ENCODED" value="Vollmond-Shepherds"/>
+            <column name="LOGO_URL" value="vollmond_shepherds.jpg"/>
+            <column name="EMAIL" value="info@vollmondshepherds.com"/>
+            <column name="PHONE" value="(630) 365-3370"/>
+            <column name="DESCRIPTION" value="We are a hobby German Shepherd breeder located in Illinois just outside of Chicago. We are a breeder of top, world-class quality German Shepherd puppies of West German bloodlines with impeccable Temperaments and type. If you are looking for a German Shepherd puppy or an adult dog suitable for confirmation, obedience, therapy, assistance dog, search and rescue, K-9 training, schutzhund or for the ever present loyal companion... we can help you!! Occasionally, we do have long coat German Shepherd puppies available as well. All litters are raised in our home, well socialized and each held and cuddled several times a day. The result is a pup that is comfortable around people, children, vehicles and other animals. It is not uncommon for our puppies to be housebroken by the time they leave our house.&#10;"/>
+            <column name="STREET_ADDRESS" value="42 W 184 Beith Road"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="41.85029770"/>
+            <column name="LONGITUDE" valueNumeric="-88.49849910"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Illinois"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Kane County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Elburn"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Vollmond Shepherds pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="40"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="8e71f67ece393278255a5e87e94ed467"/>
+            <column name="NAME" value="Sehr Gut Wesen German Shepherds"/>
+            <column name="ZIP_CODE" value="69001"/>
+            <column name="URL" value="http://www.swnebraska.com"/>
+            <column name="URL_ENCODED" value="Sehr-Gut-Wesen-German-Shepherds"/>
+            <column name="LOGO_URL" value="sehr_gut_german_shepherd_dogs.jpg"/>
+            <column name="EMAIL" value="swnebraska@yahoo.com"/>
+            <column name="PHONE" value="308-344-1978"/>
+            <column name="DESCRIPTION" value="At our kennel we do not promote angulated, cookie-cutter sho dogs. We promote stable, security dogs for the home and family."/>
+            <column name="STREET_ADDRESS"/>
+            <column name="PO_BOX" valueNumeric="502"/>
+            <column name="LATITUDE" valueNumeric="40.26336570"/>
+            <column name="LONGITUDE" valueNumeric="-100.66471010"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Nebraska"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Red Willow County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="McCook"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Sehr Gut Wesen German Shepherds pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="41"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="d66a6f7a97e895aa27afc3c3d46dcc9e"/>
+            <column name="NAME" value="Team Huerta Hof"/>
+            <column name="ZIP_CODE" value="61032"/>
+            <column name="URL" value="http://teamhuertahof.com/"/>
+            <column name="URL_ENCODED" value="Team-Huerta-Hof"/>
+            <column name="LOGO_URL" value="team_HUERTA-HOF-Logo.jpg"/>
+            <column name="EMAIL" value="crhuerta@aol.com"/>
+            <column name="PHONE" value=""/>
+            <column name="DESCRIPTION" value="Team Huerta Hof is proud to present some of the finest breedings of German Shepherd Dogs.&#10;We are actively involved in Showing and Training German Shepherd Dogs and puppies, so we can insure them to be fine working dogs.&#10;They are beautiful dogs that excel in the Conformation Ring, on the Schutzhund / IPO Field, as Therapy Dogs, as Service Dogs, as Police K9â€²s and SAR."/>
+            <column name="STREET_ADDRESS" value="115 S Chicago Ave"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="42.27519230"/>
+            <column name="LONGITUDE" valueNumeric="-89.66281110"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Illinois"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Stephenson County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Freeport"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Team Huerta Hof pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="42"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="3d050baa6a234490a716ceb21000ab19"/>
+            <column name="NAME" value="Wyman Kennels"/>
+            <column name="ZIP_CODE" value="48640"/>
+            <column name="URL" value="http://www.wymankennel.com/"/>
+            <column name="URL_ENCODED" value="Wyman-Kennels"/>
+            <column name="LOGO_URL" value="wyman_kennels_german_shepherds.jpg"/>
+            <column name="EMAIL" value=""/>
+            <column name="PHONE" value="(989) 205-9204"/>
+            <column name="DESCRIPTION" value="IF YOU ARE IN SEARCH FOR A PUPPY FROM US FOR UNDER $500.00, DON'T BOTHER CONTACTING US! PUPPIES ARE A DIME A DOZEN IN THE LOCAL NEWSPAPER. MOST LIKELY, THE BREEDERS IN THE NEWSPAPER ARE BACK YARD BREEDERS. JUST SELLING PUPPIES TO &quot;MAKE&quot; MONEY AND DON'T GUARANTEE THEIR PUPPIES.&#10;&#10;Some of you may wonder, why do puppies cost so much.&#10;The reason why is because showing dogs is an expensive hobby. Gas expenses, dog show entries, handler fees and taking care of the dogs in general is not cheap. When we sell a puppy, the money goes back into the dogs for the care and showing of the dogs.&#10;&#10;We are very selective when breeding our dogs. Temperament and health is first.&#10;We will travel out of state to look for that perfect match for our females.&#10;We only breed for ourselves.&#10;After we pick the puppies we may want, they are then available to the public."/>
+            <column name="STREET_ADDRESS" value="1170 S 7 Mile Rd"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="43.57654920"/>
+            <column name="LONGITUDE" valueNumeric="-84.38964340"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Michigan"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Midland County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Midland"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Wyman Kennels pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="43"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="ca7323a367967e6cc1014637e215ca5e"/>
+            <column name="NAME" value="Vom Dreieck German Shepherds"/>
+            <column name="ZIP_CODE" value="60033"/>
+            <column name="URL" value="http://www.vomdreieck.com/"/>
+            <column name="URL_ENCODED" value="Vom-Dreieck-German-Shepherds"/>
+            <column name="LOGO_URL" value="vom_dreieck_german_shepherds.jpg"/>
+            <column name="EMAIL" value=""/>
+            <column name="PHONE" value="262-949-0387"/>
+            <column name="DESCRIPTION" value="Located in northern McHenry County, Illinois...outside of Chicago, Illinois...we have been German Shepherds breeders and involved in Schutzhund since the 1980's.&#10;&#10;During the last 20 years many things have changed, but our focus has remained constant. We are and will remain dedicated to breeding top level performance oriented German Shepherd dogs (both working bloodlines and conformation bloodlines) with temperament and structure true to the standard set by Capt. Max von Stephanitz, founder of the German Shepherd breed.&#10;&#10;While our concentration is predominantly on the working bloodlines, we occasionally encounter a German Shepherd dog from show bloodlines that is of a caliber that we cannot resist. We approach these bloodlines with the same critical eye with which we look at the working bloodlines, breeding only the best in temperament and character, in the hope that we can help to narrow the gap between German Shepherd working lines and show lines."/>
+            <column name="STREET_ADDRESS" value="11119 White Oaks Road"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="42.44447010"/>
+            <column name="LONGITUDE" valueNumeric="-88.61448390"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Illinois"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="McHenry County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Harvard"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Vom Dreieck German Shepherds pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="44"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="11f24314b305eb9398b6006c2b97ca3c"/>
+            <column name="NAME" value="Addicted 2 Bulldogs"/>
+            <column name="ZIP_CODE" value="97386"/>
+            <column name="URL" value="http://www.addicted2bulldogs.com/"/>
+            <column name="URL_ENCODED" value="Addicted-2-Bulldogs"/>
+            <column name="LOGO_URL" value="addicted2bulldogs.png"/>
+            <column name="EMAIL" value="addicted2bulldogs@hotmail.com"/>
+            <column name="PHONE" value="541-367-1113"/>
+            <column name="DESCRIPTION" value="We breed  Bulldogs  for QUALITY not QUANTITY!! If you want the BEST, beautiful, healthy bulldogs look no further.. Every bulldog breeding is planned for Health, Temperment and Conformation according to the AKC standard. Bulldog puppies are not cheap. Our bulldog puppies are all Champion bred and only the highest quality. Health being our first priority. All our bulldogs are a part of our family. We do not put prices on our website and you can not &quot;buy now&quot; with the click of a button. Why? Because we love our bulldog puppies and we care who buys them. You can email us for information but I would much rather talk to you on the phone. We are located in Sweet Home, Oregon.  Alot of time, money and most important LOVE goes into all our bulldogs.. We hope you enjoy our website and we look forward to hearing from you. Warning: there are lots of scams and bad breeders out there these days just waiting to take your money so PLEASE don't be fooled by sob stories and religion to sell you a puppy! Do your homework and get a HEALTHY BULLDOG... "/>
+            <column name="STREET_ADDRESS" value="39069 Highway 228"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="44.36841510"/>
+            <column name="LONGITUDE" valueNumeric="-122.72793320"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Oregon"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Linn County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Sweet Home"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Addicted 2 Bulldogs pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, USA"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="45"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="bbc1f4e37da7767811ae577b40f84db0"/>
+            <column name="NAME" value="Topline Bulldogs"/>
+            <column name="ZIP_CODE" value="27596"/>
+            <column name="URL" value="http://www.toplinebulldogs.com/"/>
+            <column name="URL_ENCODED" value="Topline-Bulldogs"/>
+            <column name="LOGO_URL" value="topline_bulldogs_nc.jpg"/>
+            <column name="EMAIL" value="PNDTPA@AOL.COM"/>
+            <column name="PHONE" value="919-556-0923"/>
+            <column name="DESCRIPTION" value="Topline Bulldogs offers AKC Champion English Bulldog Stud Service (bulldog semen shiped overnight) and Bulldog puppies, bred for optimum health, conformation, and temperament. Topline Bulldogs is located near Raleigh, NC.&#10;BCA HALL OF FAME BREEDER &amp; AKC BREEDER OF MERIT"/>
+            <column name="STREET_ADDRESS" value="150 Fleming Forest Drive"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="36.04526600"/>
+            <column name="LONGITUDE" valueNumeric="-78.47329900"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="North Carolina"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Franklin County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Youngsville"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Topline english bulldog breeders"/>
+            <column name="META_KEYWORDS" value="topline, english, bulldog, breeders"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="46"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="c4418da55765cdf16de7039f5facde6b"/>
+            <column name="NAME" value="Taggarts Bulldogs"/>
+            <column name="ZIP_CODE" value="72143"/>
+            <column name="URL" value="http://www.taggartsbulldogs.com/"/>
+            <column name="URL_ENCODED" value="Taggarts-Bulldogs"/>
+            <column name="LOGO_URL" value="taggarts-bulldogs-ar.jpeg"/>
+            <column name="EMAIL" value="tagbull@prodigy.net"/>
+            <column name="PHONE" value="501-230-9086"/>
+            <column name="DESCRIPTION" value="We are a small Show Kennel of English Bulldogs . We began breeding Bulldogs in 1989. Our focus is on improvement of the breed. What this means to us is that we always make a conscious effort to study the health, temperament, conformation and pedigrees of our dogs, and make any needed improvements when planning our breedings. When we breed, we are always looking for our next home bred champion! As members of the BCA (The Bulldog Club Of America), we follow Strict guidelines and ethics. We offer Champion Bulldog stud service to any of our AKC bulldog studs. We have pet and show prospect bulldog puppies available on occasion and we also offer young adults and retirees that become available to special homes. My husband and I, along with our 3 kids, make sure that our dogs and puppies are well socialized while being raised here in our home.  We hope you enjoy your visit on our web site and we invite you to check back often for changes and updates. Please feel free to call, or E-mail us anytime. &#10;-Deonna Taggart Moore-"/>
+            <column name="STREET_ADDRESS" value="128 Knollwood Dr"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="35.28800200"/>
+            <column name="LONGITUDE" valueNumeric="-91.76064200"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Arkansas"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="White County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Searcy"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="bulldog, breeders, english"/>
+            <column name="META_KEYWORDS" value="taggats, english, bulldog, breeders"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="47"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="f6380ccba4ed98f5122dbc09f7493aae"/>
+            <column name="NAME" value="Debbie's Bulldogs"/>
+            <column name="ZIP_CODE" value="75135"/>
+            <column name="URL" value="http://www.debbiesbulldogs.com/"/>
+            <column name="URL_ENCODED" value="Debbies-Bulldogs"/>
+            <column name="LOGO_URL" value="debbies-bulldogs-usa.jpg"/>
+            <column name="EMAIL" value=""/>
+            <column name="PHONE" value="214-605-1475"/>
+            <column name="DESCRIPTION" value="Debbiesbulldogs is one of the few AKC Certified Bulldog breeders in Texas. &#10;&#10;&#10;&#10;We strive to better the English bulldog breed. Our bullies are very short with large heads. We have been breeding English bulldogs for many years to provide high quality, healthy pure bred bulldogs. The health and temperament of each bulldog is the first and foremost in our mission to bring you the perfect family companion. &#10;&#10;&#10;&#10;All of our dogs are AKC registered and receive a ton of love, attention and lots of socialization. We are a small hobby breeder located thirty-five miles east of Dallas, Texas in Caddo Mills."/>
+            <column name="STREET_ADDRESS" value="5476 Private Road 2227"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="33.08160760"/>
+            <column name="LONGITUDE" valueNumeric="-96.21635970"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Texas"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Hunt County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Caddo Mills"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="bulldog breeder from Texas"/>
+            <column name="META_KEYWORDS" value="debbies, bulldog, breeder, Texas"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="48"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="ec6c0a5c6c3507e46d6b7a0d3a46f68c"/>
+            <column name="NAME" value="Gladiator Bulldog Studs"/>
+            <column name="ZIP_CODE" value="35111"/>
+            <column name="URL" value="https://www.facebook.com/GladiatorBulldogStuds"/>
+            <column name="URL_ENCODED" value="Gladiator-Bulldog-Studs"/>
+            <column name="LOGO_URL" value="gladiator-bulldog-stud-alabama.jpg"/>
+            <column name="EMAIL" value=""/>
+            <column name="PHONE" value="(205) 365-2134"/>
+            <column name="DESCRIPTION" value="AKC Registered Bulldog stud. for AKC registered, healthy, approved dams."/>
+            <column name="STREET_ADDRESS" value="21567 Olan Cir"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="33.28923700"/>
+            <column name="LONGITUDE" valueNumeric="-87.12034300"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Alabama"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Tuscaloosa County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="McCalla"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="bulldog breeder in Alabama"/>
+            <column name="META_KEYWORDS" value="bulldog, dog, breeder, Alabama"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="49"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="aeaf094a312861f4aec8809c92201954"/>
+            <column name="NAME" value="Suburban Bullies"/>
+            <column name="ZIP_CODE" value="75071"/>
+            <column name="URL" value="http://www.suburbanbullies.com/"/>
+            <column name="URL_ENCODED" value="Suburban-Bullies"/>
+            <column name="LOGO_URL" value="suburban-bullies-texas.jpg"/>
+            <column name="EMAIL" value="SuburbanBullies@gmail.com"/>
+            <column name="PHONE" value="614-940-4275"/>
+            <column name="DESCRIPTION" value="Suburban Bullies is home to the most amazing dog breed in the world. English Bulldogs. If you've been searching for quality AKC English Bulldogs for sale, look no further, you've come to the right place.&#10;&#10;Suburban Bullies is located in the Dallas / Fort Worth, TX area. We are a responsible and ethical breeder of English Bulldogs. Our mission, first and foremost, is to produce healthy &amp; happy bulldogs that make great family companions. We strive to produce show quality, healthy, wrinkly, big boned, &amp; family oriented bulldogs. We only breed to champions and studs of the highest quality. Whether you're searching for a show dog or family pet, Suburban Bullies is the breeder for you.&#10;&#10;All of our English Bulldog puppies for sale are raised by and with our family and around our children at our home in Dallas, TX. We strive to produce healthy puppies and are on a never ending quest to improve our blood lines and the English Bulldog breed as a whole. We literally have some of the best English Bulldogs in the world. Our bloodlines are some of the most desireable in the world and include Cherokee, Hilltop, Lemonvom, British Pride, Rembombory and many more."/>
+            <column name="STREET_ADDRESS" value="2921 Kimbrough Lane"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="33.25052630"/>
+            <column name="LONGITUDE" valueNumeric="-96.63174610"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Texas"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Collin County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="McKinney"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="bulldog breeders from Texas"/>
+            <column name="META_KEYWORDS" value="bulldog, breeder, Texas"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="50"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="d8785aefcffc92c9b6db2b8f2052d0d1"/>
+            <column name="NAME" value="Bybee's American Bulldogs"/>
+            <column name="ZIP_CODE" value="92504"/>
+            <column name="URL" value="http://www.bybeesambulls.com"/>
+            <column name="URL_ENCODED" value="Bybees-American-Bulldogs"/>
+            <column name="LOGO_URL" value="bibees-american-bulldogs.png"/>
+            <column name="EMAIL" value="Bybeesambulls@aol.com"/>
+            <column name="PHONE" value="951-361-2634"/>
+            <column name="DESCRIPTION" value="We are a small kennel located in Southern California about an hour from LA.&#10;I really don't like to call us a kennel we are more of an example of bulldog enthusiasts who happen to maybe have a few more pet dogs then the average person!....&#10;We got our first American Bulldog at the beginning of 1990 and that's been the only breed of dog for us since then...24 years in the breed..wow time really does fly! Unlike alot of the new folks who have jumped into bulldogs we will be around still when they are long gone!&#10;It always surprises me how few of us &quot;old school bulldoggers&quot; are actually still here ! &#10;Since we have become very involved in the breed we both go overseas and judge shows and we have put on show's and contributed bulldog articles to Dog Fancy among other things.&#10;&#10;Our first dogs were Suregrip lines Rip N. Woody, Freddie Kreugger, etc., these are the kind of dogs we love and what we have based our breeding program on. We favor mainly larger hybrids/bully dogs with good bone, impressive heads and a balanced temperament.We like dogs how they used to be when we first started&#10;You will never see us breeding to flavour of the week or whatever hyped up dog&quot;the newbies&quot; think will sell..just not the way we do things here. &#10;We take a lot of pride in producing our own dogs that we show and later may put in our program..anyone can buy a dog..producing one for us is where the enjoyment is, seeing the generations of your work progress and getting better. &#10;We do enjoy showing our dogs and have produced many ABA Ch and ABA grand Champions,Ibc Champions and ABRA Champions, bully type, standard and some that are hybrid types..We like to stick to our own dogs rather then going out and buying what ever bulldog line maybe flavour of the week...whatever female is cheap or available.&#10;We are not like most folks in that we have several different styles of American bulldogs..due to my husband and myself having different tastes in dogs... I actually don't think there is anyone in the world that has had a much sucess as us with both types.&#10;We try and meet somewhere in the middle with our hybrid American bulldogs that we both like...but we have some large American Bulldogs and some Giant American Bulldogs that we enjoy having around.&#10;&#10;We only produce a litter for the purpose of improving on what we have and always keep a puppy or two, we always reserve the top picks for our selves from each breeding. Some years we produce no pups and others we may have a few litters, we are not a large kennel and don't keep many dogs ourselves as we like them all to have plenty of time with us in and out of the house. Many of our dogs, especially our studs are raised and live with our friends and we co own or keep breeding rights on them this has proved to work out really well for both us the dog's and there new family.&#10;All of our pups are born and raised in our home and all of our dogs are family members that will live out there lives with us,they are not retired to live with strangers or sold on to someone who wants to have a few litters out of them but remain with us for as long as they are around...this can make it hard on us as it can cause our program to not develop as fast as maybe it could as we just don't have the room for a lot of new dogs but that's fine by us.&#10;I can honestly say I have never sold an adult American Bulldog on to another &quot;breeder&quot; ..I really don't agree with passing dog's around especially bulldogs..&#10;We have had many American Bulldogs through out the years, some that we no longer have are on our site to show you where we started and what direction we're heading in, you will find all our old family members on our foundation page. Special thanks to Kyle Symmes of Suregrip kennels for all his help through out the years and for all our foundation stock. &#10;Please remember that although the American Bulldog is an incredible breed with a lot to offer it is often to much dog for alot of people, they are a dominant guardian breed, can be stubborn and do best with someone who has experience with such types of dogs.They also don't get along with dominant dog's of the same sex..not all of them sometimes there are exceptions but rarely.&#10;Please do your research on the breed before purchasing an American Bulldog and also on the breeder you chose ...not all bulldogs are equal just the same as not all folks who are involved with bulldogs are equal!Remember your breeder should be able to answer any questions you have..that's what there there for ..that's part of what your payed for their help, guidance and knowledge though out the life of your dog...if you don't think they know that much why are you going to them for a puppy?&#10;I am honestly horrified at some of the information people are told about bulldogs..basically anything they want to hear that will help the seller sell them a pup.&#10;In my opinion folks on there first litter with zero experience on bulldogs (or any breed)are not the people I would be buying a dog from..most will be gone in a year or so onto a new breed they can make a buck on and leaving the rest of us to pick up the mess.&#10;Sadly the bulldog has got to be a popular bred and with that we get alot of folks cashing in (or trying to)..honestly I could think of a million breeds that if you were in it for the money would be far more lucrative. &#10;We currently register and show our dogs ABRA...registries seem to come and go it seems one week there popular and then someone gets upset they didnt win and go to a different one, for right now we are very happy with them and there shows.. &#10;We also think the best competition currently is at ABRA shows ...to be a champion with some of the other registries you need only beat 'competition ' which is one other dog! All Champion dogs are not equal... International,ARBA, UKC,ABKC, NKC shows and a few others on the East coast you can champion out on a weekend with little or no competition (here in Ca you may well be the only AB there at one of these other registry's shows!) ...to us that is not a Ch..yes its good practise but certainly not the same as beating competition!"/>
+            <column name="STREET_ADDRESS" value="11570 Park Center Dr "/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="33.90123860"/>
+            <column name="LONGITUDE" valueNumeric="-117.39102470"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="California"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Riverside County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Riverside"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="American Bulldog breeders from California"/>
+            <column name="META_KEYWORDS" value="American, bulldog, breeder, California"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="51"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="c75f8143c544d2fad4cd67acb5b484fe"/>
+            <column name="NAME" value="Cedar Lane Bulldogs"/>
+            <column name="ZIP_CODE" value="73072"/>
+            <column name="URL" value="http://www.cedarlanebulldogs.com/"/>
+            <column name="URL_ENCODED" value="Cedar-Lane-Bulldogs"/>
+            <column name="LOGO_URL" value="cedar-lane-bulldogs-oklahoma.gif"/>
+            <column name="EMAIL" value="cedarlanebulldogs@cox.net"/>
+            <column name="PHONE" value="405-329-0066"/>
+            <column name="DESCRIPTION" value="My interest in bulldogs began in 1965 when my father in law gave us our first bulldog. We eventually bred her and she became a mother of 9 bulldog puppies. From this point on I began to show and breed my bulldogs over the following 12 years. In 1979 I went to work for General Motors and with raising and putting my children through school taking most of my time, I placed all of my bulldogs into good homes. &#10;&#10;In 1988, after all of our children finished college, I purchased several bitch puppies from excellent bloodlines and built a very nice kennel. I truly believe that the bitch is the backbone of a great breeding program. Since 1990 I have finished 10 homebred champions to become a Hall of Fame Breeder. In 1998 I received my AKC judging license to be able to judge this wonderful breed. &#10;I would like to recognize the time and effort that my partner Joyce Wolfe in California has put into showing and finishing several of the dogs, that we bred together. This has helped me achieve the Hall of Fame Breeder Status. She also was responsible for helping me to obtain three outstanding stud dogs.&#10;"/>
+            <column name="STREET_ADDRESS" value="1401 E Cedar Lane Rd"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="35.17812500"/>
+            <column name="LONGITUDE" valueNumeric="-97.41995500"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Oklahoma"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Cleveland County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Norman"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="American breeder of English bulldogs in Oklahoma."/>
+            <column name="META_KEYWORDS" value="bulldog, breeder, American, Oklahoma"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="52"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="a7c3bf1092ff6edce46639bd6b86eaa5"/>
+            <column name="NAME" value="Country Bulls"/>
+            <column name="ZIP_CODE" value="65725"/>
+            <column name="URL" value="http://www.countrybulls.com/"/>
+            <column name="URL_ENCODED" value="Country-Bulls"/>
+            <column name="LOGO_URL" value="country-bulls-missouri.jpeg"/>
+            <column name="EMAIL" value="mocountrybulls@windstream.net"/>
+            <column name="PHONE" value="417-327-7677"/>
+            <column name="DESCRIPTION" value="For fifteen years we have diligently worked to build and improve our bloodlines. We do show our Bulldogs and conformation is the key. So every breeding is carefully thought out. We are always looking for that special show dog but we also are very mindful of health and temperament. We breed to our bulldog Champion males and males that we are showing for their Championships, occasionally we breed to Champion males that other breeders have that we think will compliment our females and improve our line. While doing these things we believe it also adds to the quality of our bulldog puppies that become loved companions to the wonderful homes that are strictly interested in spoiling one of these awesome Bulldogs.&#10; &#10;English Bulldogs are wonderful with children and adults alike. Intelligent, loving and gentle, the English Bulldog will steal your heart away, especially the English Bulldog puppies.&#10; &#10;With their distinctive mugs English Bulldogs have a look all their own that will have you hooked before you realize it, and those adorable bulldog puppy mugs will capture your heart.&#10; &#10;Check out our Puppies Page for pictures of our newest arrivals, and come back often as we post new puppy pictures often.&#10;&#10; If you are looking for a loving companion for yourself or maybe a puppy for your children, the English Bulldog is a great addition to any home. There is no better place to find Bulldog puppies for sale. "/>
+            <column name="STREET_ADDRESS" value="1870 East 530th Road"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="37.47809040"/>
+            <column name="LONGITUDE" valueNumeric="-93.29728880"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Missouri"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Polk County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Pleasant Hope"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="English Bullddog breeders in Missouri, USA"/>
+            <column name="META_KEYWORDS" value="bulldog, breeder, American, Missouri"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="53"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="09744be2df375ad0673ada8aa16c7bf8"/>
+            <column name="NAME" value="Fabelhaft Robobull"/>
+            <column name="ZIP_CODE" value="45662"/>
+            <column name="URL" value="http://fabelhaftfrenchbulldogs.com/"/>
+            <column name="URL_ENCODED" value="Farelhaft-Robobull"/>
+            <column name="LOGO_URL" value="fabelhalft-bulldogs-usa.png"/>
+            <column name="EMAIL" value="fabelhaft@roadrunner.com"/>
+            <column name="PHONE" value="905-685-7626"/>
+            <column name="DESCRIPTION" value="Welcome to FABELHAFT ROBOBULL truly among the finest in the world! We are honored to share the passion we have devoted our lives to, the breeding of the finest of French Bulldogs, within these pages."/>
+            <column name="STREET_ADDRESS" value="1828 Franklin Blvd"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="38.74570000"/>
+            <column name="LONGITUDE" valueNumeric="-82.97900000"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Ohio"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Scioto County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Portsmouth"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="French Bulldog breeders"/>
+            <column name="META_KEYWORDS" value="French, bulldog, breeders"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="54"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="61c585c48a2d526eea056bfe67564061"/>
+            <column name="NAME" value="Six Star Danes"/>
+            <column name="ZIP_CODE" value="92317"/>
+            <column name="URL" value="http://www.6stardanes.com/"/>
+            <column name="URL_ENCODED" value="Six-Star-Danes"/>
+            <column name="LOGO_URL" value="6-star-danes-california.jpg"/>
+            <column name="EMAIL" value="6stardanes@6stardanes.com"/>
+            <column name="PHONE" value="909-337-6707"/>
+            <column name="DESCRIPTION" value="We are members of the &#10;Great Dane Club of California,&#10;Rim Of The World Comfort Pets &amp; the &#10;Mountain Humane Society. We're a small home kennel located in the San Bernardino&#10;Mountains of Southern California.&#10;We've believe in raw feeding and have been doing so for over 10 years.&#10;We specialize in Harlequin &amp; Mantle Great Danes&#10;where they are 'family first!'"/>
+            <column name="STREET_ADDRESS"/>
+            <column name="PO_BOX" valueNumeric="5432"/>
+            <column name="LATITUDE" valueNumeric="34.23839160"/>
+            <column name="LONGITUDE" valueNumeric="-117.21812520"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="California"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="San Bernardino County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Blue Jay"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Great Dane dog breeders in California, USA"/>
+            <column name="META_KEYWORDS" value="great, Dane, dog, breeder, California"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="55"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="b9f141f5a68a953463e12bfdb6941d60"/>
+            <column name="NAME" value="Plumas Golden Retrievers"/>
+            <column name="ZIP_CODE" value="96103"/>
+            <column name="URL" value="http://plumasgoldenretrievers.com/"/>
+            <column name="URL_ENCODED" value="Plumas-Golden-Retrievers"/>
+            <column name="LOGO_URL" value="plumas-golden-retrievers-california.png"/>
+            <column name="EMAIL" value="rnielsen@plumasgoldenretrievers.com"/>
+            <column name="PHONE" value="(530) 386-6895 "/>
+            <column name="DESCRIPTION" value="Plumas Golden Retrievers (&quot;PGR&quot;) is located in the Sierra Nevada Mountains of California in Eastern Plumas County.  We are approximately 40 miles north of Truckee, and 50 miles northwest of Reno. Our home is in Maybe where we have several hundred acres. Fortunately, the Forest Service pays taxes on all but three acres. It is on these three acres that our house sits. The middle fork of the Feather River runs nearby. During normal winters, we have five feet of snow on the ground. Wild life abounds, with regular visits from bears, deer, an occasional mountain lion and lots of geese. Essentially, we live in golden retriever heaven.&#10;We are a small breeder of golden retrievers. We plan to have only one litter a year.  We intend to stay small because we want to provide all of the necessary attention to each litter to ensure the best behaved and socialized puppies possible.  This is more a passion than a business for us.  We own both the sire and dam, and both are on site. "/>
+            <column name="STREET_ADDRESS"/>
+            <column name="PO_BOX" valueNumeric="1856"/>
+            <column name="LATITUDE" valueNumeric="39.77149580"/>
+            <column name="LONGITUDE" valueNumeric="-120.66600440"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="California"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Plumas County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Golden Retrierver breeders in California, USA"/>
+            <column name="META_KEYWORDS" value="golden, retriever, breeders, California"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="56"/>
+            <column name="COUNTRY_ID" valueNumeric="1"/>
+            <column name="GUID" value="d6aa9937affc355708935f8d344243e6"/>
+            <column name="NAME" value="Somerset Golden Retrievers"/>
+            <column name="ZIP_CODE" value="95037"/>
+            <column name="URL" value="http://www.somersetgoldens.com"/>
+            <column name="URL_ENCODED" value="Somerset-Golden-Retrievers"/>
+            <column name="LOGO_URL" value="somerset-golden-retrievers-california.jpg"/>
+            <column name="EMAIL" value="jeanrebeccacampero@gmail.com"/>
+            <column name="PHONE" value="(949)226-9801"/>
+            <column name="DESCRIPTION" value="We live in the state of California just south of the city of San Jose.   We share our home with three goldens and two kitties!   Our home is located on a few acres of land with a fenced in yard and pool for our goldens to swim.   Golden Retrievers are our love and passion.  We enjoy sharing our everyday lives with our Goldens Asti, Gracie and Abbey, and hope to work toward improving this wonderful breed.  We have selected three top quality goldens with wonderful pedigrees that have many champions in their lines.   Our first female Gracie (International/National Junghund Champion Thevenet Amazing Grace) we imported her from Spain - she has many wonderful champion goldens in her family background.   Gracie's Sire is &quot;Hippito&quot;/Ch. Thevenet Lord of the Rings who is owned by Santiago Gadea Castro/Thevenet kennels located in Spain.  We are very thankful to Santi for allowing us to own and love our gorgeous Gracie girl.  Unfortunately, Gracie girl did not pass her cerf eye examination required for breeding so she has been spayed will always be a beloved member of our family.  We have a new little addition to our 'pack' her name is Twin Leaf Autumn Jewel at Somerset aka, Miss Abbey.  I recently flew to North Carolina and spent a few days vacationing there and picked her up.  She rode under my seat on the airplane with me and she was just the best traveler.  Thank you Margie Crable for entrusting us with this precious girl, she is everything I hoped for and more.  &#10;&#10;Our boy/stud Asti/International Champion Talini Chenin Blanc, also comes from many wonderful champions in his pedigree.  He is also a current Pet Partners Certified Therapy Dog and has earned his Canine Good Citizenship.  His Grand-Sire is the stunning &quot;Elliott&quot;/Multi-Champion Ashbury Angel Heart.   Our dogs are part of our family and their puppies will be raised in our home with us at all time and given plenty of love, early socialization, veterinary care, and the attention they will need to develop into happy, outgoing, well socialized members of your family.   Health is our top priority.   Before we breed a litter both parents will have to pass their OFA hips, elbows, and heart tests, and CERF eyes test.   We do Optigen DNA Testing as well.   We are committed to doing everything possible to improve this breed we love so much and to breed only healthy dogs that will give the best chance of producing healthy, happy puppies."/>
+            <column name="STREET_ADDRESS" value="305 Vineyard Town Center No. 373"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="38.46277910"/>
+            <column name="LONGITUDE" valueNumeric="-121.38563810"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="California"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Sacramento County"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Morgan Hill"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Golden Retriever breeders in California"/>
+            <column name="META_KEYWORDS" value="golden, retriever, breeders, California"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="62"/>
+            <column name="COUNTRY_ID" valueNumeric="3"/>
+            <column name="GUID" value="26f3e37a3a3d8d63759ef948769f52b2"/>
+            <column name="NAME" value="Jialiang K-9 Kennel"/>
+            <column name="ZIP_CODE" value="201112"/>
+            <column name="URL" value="http://www.jialiang.com"/>
+            <column name="URL_ENCODED" value="Jialiang_K_9_Kennel"/>
+            <column name="LOGO_URL" value="jialiang_kennel.jpg"/>
+            <column name="EMAIL" value="jialiang@jialiang.com"/>
+            <column name="PHONE" value="+86-21-34110089"/>
+            <column name="DESCRIPTION" value="Jialiang K-9 Kennel Shanghai Inc. is the first private-owned kennel company in China which was founded in 1980 by Mr. Jialiang Wang. Now, it becomes the biggest one in mainland which offers full-service of pet caring. Jialiang K-9 Kennel has a territory covering more than 80,000 mÂ², with clean and beautiful environment and excellent facilities.&#10;&lt;br/&gt;&#10;In addition to breeding, Jialiang K-9 Kennel Shanghai Inc. provides dogs for sale, training and comprehensive services. To maintain world's advanced level of dog training, we often invite western training experts to update our trainersâ€™ knowledge and skills. Jialiang K-9 Kennel Shanghai Inc. is the first private company providing bomb dogs and quarantine dogs for government.&#10;&lt;br/&gt;&#10;Mr. Wang Jialiang, the founder of Jialiang K-9 Kennel, is the first person in mainland China who set up private dog business. His achievement has been reported by Chinese and international media, like CCTV and OTV. "/>
+            <column name="STREET_ADDRESS" value="1858 San Lu Rd&#10;Pudong"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="31.02209490"/>
+            <column name="LONGITUDE" valueNumeric="121.53115460"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="Shanghai"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Shanghai"/>
+            <column name="SUBLOCALITY_LEVEL_1" value="Minhang"/>
+            <column name="META_DESCRIPCION" value="Jialiang K-9 Kennel pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, China"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="63"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="2f08dc833070c2df36a578589dea75ac"/>
+            <column name="NAME" value="Starside Border Collies"/>
+            <column name="ZIP_CODE" value="WN3 5NR"/>
+            <column name="URL" value="http://www.starsidebordercollies.net/"/>
+            <column name="URL_ENCODED" value="Starside_Border_Collies"/>
+            <column name="LOGO_URL" value="starside_border_collies.jpg"/>
+            <column name="EMAIL" value="star.side.t21@btinternet.com"/>
+            <column name="PHONE" value="01942 204856"/>
+            <column name="DESCRIPTION" value="Hi my name is Pat and I share my home with my husband Peter and our son Andrew , border collies ,chinese cresteds and the cats. Our daughter Stephanie has already fled the nest and lives with our son-in-law Dave and grandaughters Mariah and Piper. My eldest son James has also left home and lives with his son Jacob. &#10;Mariah helps me train , prepare and show the dogs .She is developing into a good handler. &#10;I have always had dogs ( for as long as I can remember anyway). I first really noticed Border Collies when my sons started playing rugby and a lady used to work her 4 borders on the playing fields. It looked easy!.So when it came time for another dog my first choice was a border collie and I've never looked back since. &#10;I met Jean Entwistle of Beesting Border Collies at obedience and she introduced me to the world of dog showing.I ordered a blue and white bitch puppy (Beesting Jezabell from Starside) and then started the constant round of ring-craft and puppy training......I'm still learning and always will be! &#10;I have border collies in most of the main colours including ee-red and merles .My passion for coloured border collies is as keen as for correct conformation , temperment and health.There is no point in having the most wonderful blue dog or bitch that is a poor example of the breed &#10;You can find more about my dogs by clicking on their names on the contents page. &#10;Please feel free to wander around the site and to leave your coments in the guest books. &#10;I sometimes have puppies available to approved homes "/>
+            <column name="STREET_ADDRESS" value="29 Loxton Crescent&#10;Hawkley Hall"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="53.52260730"/>
+            <column name="LONGITUDE" valueNumeric="-2.63861580"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Greater Manchester"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Wigan"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Starside Border Collies pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="64"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="27eebd1ffef9ccdeabc99f6a2c00204f"/>
+            <column name="NAME" value="Willosyam Collies and Lancashire Heelers"/>
+            <column name="ZIP_CODE" value="CA25 5DR"/>
+            <column name="URL" value="http://www.willosyam.com/"/>
+            <column name="URL_ENCODED" value="Willosyam_Collies_and_Lancashire_Heelers"/>
+            <column name="LOGO_URL" value="willosyam_border_collies.jpg"/>
+            <column name="EMAIL" value="Satincollie@aol.com"/>
+            <column name="PHONE" value=" +44 (0)190 067 956"/>
+            <column name="DESCRIPTION" value="We are a mother and daughter partnership and jointly own the kennel name Willosyam  taken from the name of our now departed blue merle working sheep dog Willow and the Cumbrian word for home Yam. We live on the west coast of Cumbria on the edge of the beautiful Lake District in the UK and have had working sheep dogs and then Border Collies in our lives for over 15 years.&#10;&#10;We became interested in showing our dogs after a trip to Crufts in 1999 and then spent the following 12 months going to Championship shows with family to watch and learn before getting our first KC registered bitch and starting to show ourselves.&#10;&#10;We bred only occasionally and our aim is to produce Border Collies that have excellent temperaments and meet the breed standard with health as a priority. We choose not to breed on from carriers of the known inherited diseases and will always support efforts to investigate any of the health issues that may be found to affect the breed, having experienced some of these ourselves."/>
+            <column name="STREET_ADDRESS" value="Cleator Moor"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="54.51949200"/>
+            <column name="LONGITUDE" valueNumeric="-3.50788760"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Cumbria"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Cleator Moor"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Willosyam Collies and Lancashire Heelers pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="65"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="ba98f4b39763977c3828b6ef04d7f26b"/>
+            <column name="NAME" value="Cories Border Collies"/>
+            <column name="ZIP_CODE" value="LE9 7TE"/>
+            <column name="URL" value="http://www.cories.co.uk/"/>
+            <column name="URL_ENCODED" value="Cories_Border_Collies"/>
+            <column name="LOGO_URL" value="cories_border_collies_2.JPG"/>
+            <column name="EMAIL" value="ann@cories.co.uk"/>
+            <column name="PHONE" value="01455 888763"/>
+            <column name="DESCRIPTION" value=" Welcome to Cories Border Collies and Australian Kelpies.&#10;Bred and owned by Ann Jordan, who:&#10;&#10;-has been training, working and showing dogs for forty five years.&#10;-is a member of the British Institute of Professional Dog Trainers and the UK Registry of Canine Behaviourists.&#10;-is also a Championship Show Judge awarding CCs in Border Collies in Britain, Europe and overseas.&#10;-has lived in Queensland, Australia, where she met her first Kelpies.&#10;-now offers facilities for anyone to work their dogs on trained Hebridean and cross bred sheep."/>
+            <column name="STREET_ADDRESS" value="The Bungalow &#10;Desford Rd"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="52.58822740"/>
+            <column name="LONGITUDE" valueNumeric="-1.26140280"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Leicestershire"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Thurlaston"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Cories Border Collies pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="66"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="2a92ffa75b5679fe9b9a367572bee01f"/>
+            <column name="NAME" value="Croxlea"/>
+            <column name="ZIP_CODE" value="BS40 8DH"/>
+            <column name="URL" value="http://www.croxlea.co.uk/"/>
+            <column name="URL_ENCODED" value="Croxlea"/>
+            <column name="LOGO_URL" value="croxlea_border_collies.jpg"/>
+            <column name="EMAIL" value="croxlea@btconnect.com"/>
+            <column name="PHONE" value="01275 472978 "/>
+            <column name="DESCRIPTION" value="We are Bob &amp; Jenny Porter, we live in the West Country near Bristol Airport.&#10;&#10;I am Jenny and I have been showing &amp; breeding Border Collies for the last 23 years, I am a small kennel breeding the occasional litter, before this I had German Shepherds, which I competed with in Working Trials."/>
+            <column name="STREET_ADDRESS" value="Parsonage Lane"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="51.37890170"/>
+            <column name="LONGITUDE" valueNumeric="-2.66847350"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="North Somerset"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Winford"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Croxlea pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="67"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="66763b8209769bc24d9b26a3d18997b1"/>
+            <column name="NAME" value="Birkcross"/>
+            <column name="ZIP_CODE" value="CA14 1XS"/>
+            <column name="URL" value="http://www.champdogs.co.uk/breeder/2586"/>
+            <column name="URL_ENCODED" value="Birkcross"/>
+            <column name="LOGO_URL" value="andrew_birkett_border_collies.jpg"/>
+            <column name="EMAIL" value="01900 65722"/>
+            <column name="PHONE" value=""/>
+            <column name="DESCRIPTION" value="Previously Birkvaughan Border collies now going solo.&#10;Aiming to breed heathly fit for function dogs for all activities and happy family pets. &#10;All dogs health tested for all known breed problems."/>
+            <column name="STREET_ADDRESS" value="5 Winscales Road &#10;Crossbarrow "/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="54.64399940"/>
+            <column name="LONGITUDE" valueNumeric="-3.47657150"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Cumbria"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Little Clifton"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Birkcross pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="68"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="26e090fedc763b6fc05a8939179cc8c6"/>
+            <column name="NAME" value="Caldonbeck"/>
+            <column name="ZIP_CODE" value="ST13 7JF"/>
+            <column name="URL" value="http://www.champdogs.co.uk/breeder/16021"/>
+            <column name="URL_ENCODED" value="Caldonbeck"/>
+            <column name="LOGO_URL" value="caldonbeck_border_collies.jpg"/>
+            <column name="EMAIL" value="stoo@cvchucks.co.uk"/>
+            <column name="PHONE" value="01538 361515"/>
+            <column name="DESCRIPTION" value="The Border Collie is my only breed. I breed my dogs to show, but it is as important to me to get sound temperaments, and good health as it is to get a good show dog. All my adults are eye tested, hearing tested and hip scored. They are also, either DNA tested clear for CEA/CH, TNS and CL, or hereditary clear. Puppies sold are eye tested, BAER hearing tested, and are microchipped before they leave. I only use Stud Dogs that are fully health checked to the same standard as my own, and that have sound temperaments."/>
+            <column name="STREET_ADDRESS" value="14 Ashcombe Road "/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="53.06298780"/>
+            <column name="LONGITUDE" valueNumeric="-2.04142770"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Staffordshire"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Cheddleton"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Caldonbeck pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="69"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="43585cca3acc5a90ffd5f48cdb07240d"/>
+            <column name="NAME" value="SUNNYDEAN Border Collies"/>
+            <column name="ZIP_CODE" value="BN27 3DY"/>
+            <column name="URL" value="http://www.sunnydeanbordercollies.co.uk/"/>
+            <column name="URL_ENCODED" value="SUNNYDEAN_Border_Collies"/>
+            <column name="LOGO_URL" value="sunnydean_border_collies.jpg"/>
+            <column name="EMAIL" value="helen@berry8552.freeserve.co.uk"/>
+            <column name="PHONE" value="07516403553 "/>
+            <column name="DESCRIPTION" value="We are a small kennels situated in the small market town of Hailsham in beautiful East Sussex, At the moment we have 5 beautiful Border collies  Merlin, Skye, Stormy, Amber and Kumho and our wonderful Rottweiller Cassie.'"/>
+            <column name="STREET_ADDRESS" value="PADDLESWORTH&#10;WESTERN ROAD"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="50.86300260"/>
+            <column name="LONGITUDE" valueNumeric="0.25258860"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="East Sussex"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Hailsham"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="SUNNYDEAN Border Collies pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="70"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="6943acee2086d2f69274141f5269f09b"/>
+            <column name="NAME" value="Kingsfarm Border Collies"/>
+            <column name="ZIP_CODE" value="DA12 2NX"/>
+            <column name="URL" value="http://www.champdogs.co.uk/breeder/29320"/>
+            <column name="URL_ENCODED" value="Kingsfarm_Border_Collies"/>
+            <column name="LOGO_URL" value="kingsfarm_border_collies.jpg"/>
+            <column name="EMAIL" value="kingsfarm2001@yahoo.co.uk"/>
+            <column name="PHONE" value="07763930360 "/>
+            <column name="DESCRIPTION" value="i started obedience training at 14.the kingsfarm affix was born.i also breed border collies.molly is my first flatcoat ret.she is so easy to live with.and i work her in obedience. she loves her work and her food. i live in the south east.all my dogs are hip scored and eyes tested."/>
+            <column name="STREET_ADDRESS" value="18 Longmeade"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="51.43362140"/>
+            <column name="LONGITUDE" valueNumeric="0.39981090"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Kent"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Gravesend"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Kingsfarm Border Collies pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="71"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="d5271b4372e2f30a42903d09ce13d7e4"/>
+            <column name="NAME" value="MEISTERWERK Border Collies"/>
+            <column name="ZIP_CODE" value="NR9 5QE"/>
+            <column name="URL" value="http://www.champdogs.co.uk/breeder/2634"/>
+            <column name="URL_ENCODED" value="MEISTERWERK_Border_Collies"/>
+            <column name="LOGO_URL" value="mesietwerk_border_collies.jpg"/>
+            <column name="EMAIL" value="meisterwerk2010@googlemail.com"/>
+            <column name="PHONE" value="01603871125 "/>
+            <column name="DESCRIPTION" value="Meisterwerk Shetland sheepdogs and Our Border Collies live indoors as part of our family, competing with success in the breed and agility rings. They have wonderful temperaments and outgoing personalities. All our adult Border Collies are Hip Scored and Eye Tested. We breed the occasional litter, aiming to combine excellent temperament with beauty and brains. All our puppies are born and brought up in the house and are well socialised. They are eye tested at 6 weeks old. Puppies are sold with a life time of ongoing support. We also offer at Stud, to approved bitches, our wonderful Troy (please see Troy page for full details) Our Shetland Shepdogs. Live as part of the Family. Thy have wonderful temperaments out going and so wanting to pleases. Thy all have there heath tests. See Bumble stud page"/>
+            <column name="STREET_ADDRESS" value="6 Kingshead Terrace"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="52.72184930"/>
+            <column name="LONGITUDE" valueNumeric="1.10528990"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Norfolk"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Great Witchingham"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="MEISTERWERK Border Collies pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="72"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="e9b7de3256837e35ffb97f0691a21639"/>
+            <column name="NAME" value="Littlehorn Border Collies"/>
+            <column name="ZIP_CODE" value="DE12 6RF"/>
+            <column name="URL" value="http://littlethorn.co.uk/"/>
+            <column name="URL_ENCODED" value="Littlehorn_Border_Collies"/>
+            <column name="LOGO_URL" value="littlehorn_border_collies.jpg"/>
+            <column name="EMAIL" value="littlethorn@msn.com"/>
+            <column name="PHONE" value="01283 761507"/>
+            <column name="DESCRIPTION" value="We are a small kennel of twelve  dogs, based in Derbyshire, U.K.&#10;&#10;It all started in 1984 when we bought our first Border Collies.  Then someone said you should show that Tri colour bitch.  This bitch was Cories Kalli.&#10;&#10;Our journey in dog showing has become a way of life .which has been very rewarding we have tried to breed a  type of border collie that we like and that judgers would also like.&#10;&#10;Over twenty five  years we have produced many litters.  Not only top winning show dogs but also a crufts winning fly ball dog who is one of the fastest dogs at fly ball in Europe.  We have also bred reliable sheep dogs, fast agility dogs, obedient dogs, field trials dogs and great couch potatoes that love the tele.&#10;&#10;What a time this has been, and many of our dreams have come true.  Thanks to all the judges and well wishers!  It just shows what a small kennel can achieve. &#10;&#10;All our breeding stock is health checked and DNA clear from TNS, CL and CEA  and Unaffected from Glaucoma ,We also hip score and breed from dogs with good temperaments.  "/>
+            <column name="STREET_ADDRESS" value="122 Coton park "/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="52.75613140"/>
+            <column name="LONGITUDE" valueNumeric="-1.60099320"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Derbyshire"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Linton"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Littlehorn Border Collies pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="73"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="792514c7fc4ac397e05d00ee6f976336"/>
+            <column name="NAME" value="Georgina Helyer"/>
+            <column name="ZIP_CODE" value="SP34PA"/>
+            <column name="URL" value="http://www.champdogs.co.uk/breeder/37376"/>
+            <column name="URL_ENCODED" value="Georgina_Helyer"/>
+            <column name="LOGO_URL" value="georgina_helyer_border_collies.jpg"/>
+            <column name="EMAIL" value="Helyerlottmead@aol.com"/>
+            <column name="PHONE" value="07970153550 "/>
+            <column name="DESCRIPTION" value="Breeder of Staffordshire Bull Terriers and Border Collies located in Wiltshire, South West England.&#10;"/>
+            <column name="STREET_ADDRESS" value="Lottmead Farm"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="51.13082620"/>
+            <column name="LONGITUDE" valueNumeric="-1.95038850"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Wiltshire"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Hanging Langford"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Georgina Helyer pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="74"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="86ef2329bbc7e604d98a9426bc7a4d1d"/>
+            <column name="NAME" value="Fernhaven Border Collies"/>
+            <column name="ZIP_CODE" value="SE95JE"/>
+            <column name="URL" value="http://www.fernhavenbc.net/"/>
+            <column name="URL_ENCODED" value="Fernhaven_Border_Collies"/>
+            <column name="LOGO_URL" value="fernhaven_border_collies.jpg"/>
+            <column name="EMAIL" value="fernhavenbc@talktalk.net"/>
+            <column name="PHONE" value="02088594209"/>
+            <column name="DESCRIPTION" value="I live In South East London and I purchased my first Border Collie Gem (Tomozine gem from Fernhaven) in 1988. From her first litter I kept Meg (Fernhaven Theme for a Dream)...She is still going strong at the age of seventeen...In her litter she produced Sp.Ch.Fernhaven Secret Dream for the Mafaldas Kennels in Spain owned by Juana Martinez of which I have a very good friendship..I have also Fernhaven jaysali April Magic.. Bordertown Starmaker for Fernhaven.. Fernhaven Future Dream and all of them have produced some lovely pups for me...At the moment I have a young bitch pup called Fernhaven a star is born who hopefully will produce some nice pups for me in the future..I must mention my lovely bitch Bliss (Bordertown Star Appeal at Fernhaven) who I lost to cancer four years ago..She done me proud in the showring and won many firsts but left me with a lovely legacy being that in one of her litters she produced Sp.Ch.Fernhaven Sliver Star who is also owned by the Mafaldas kennels in Spain and must mention what a superb kennel it is having been over there to see Juana and all her lovely dogs...All my dogs are health tested and the most important thing is that they have good temperaments and go to good homes...All my dogs live in the house and are a part of my family where they are dearly loved..I used to breed Pembroke Corgis but then I got my Border Collie Gem and then after that they took over my life and I have never looked back...I will continue to breed healthy dogs to the best of my ability and hopefully they all have good temperaments and live life to the full..."/>
+            <column name="STREET_ADDRESS" value="1 Ferndown Road"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="51.44567390"/>
+            <column name="LONGITUDE" valueNumeric="0.03671320"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Greater London"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="London"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Fernhaven Border Collies pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="75"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="02974d8a23ffb465a43a91a72f5fffa4"/>
+            <column name="NAME" value="Edwinoak Kennel"/>
+            <column name="ZIP_CODE" value="PE129UJ"/>
+            <column name="URL" value="http://www.champdogs.co.uk/breeder/37670"/>
+            <column name="URL_ENCODED" value="Edwinoak_Kennel"/>
+            <column name="LOGO_URL" value="edwinoaks_border_collies.jpg"/>
+            <column name="EMAIL" value="astonhelen95@gmail.com"/>
+            <column name="PHONE" value="01406258702 "/>
+            <column name="DESCRIPTION" value="Edwinoak is a new kennel name firstly our dogs are our pets and family members ,we do a little obedience with our dogs and have achieved our good citizen awards to gold and silver standard and our rally obedience champ and title .We decided to have our first litter with flick for us to keep a pup and with the stunning Sevi Sh Ch Jupavia seventh heaven ,we are delighted with this litter ."/>
+            <column name="STREET_ADDRESS" value="24 Custom House Street"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="52.76889960"/>
+            <column name="LONGITUDE" valueNumeric="0.19440040"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Lincolnshire"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Sutton Bridge"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Edwinoak Kennel pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+        <insert tableName="BREEDERS">
+            <column name="ID" valueNumeric="76"/>
+            <column name="COUNTRY_ID" valueNumeric="6"/>
+            <column name="GUID" value="623a9d5324ce825b5ce6bcc113e02bb8"/>
+            <column name="NAME" value="Aculsia"/>
+            <column name="ZIP_CODE" value="DE555AH"/>
+            <column name="URL" value="http://www.aculsia.com/"/>
+            <column name="URL_ENCODED" value="Aculsia"/>
+            <column name="LOGO_URL" value="alcusia_border_collies.gif"/>
+            <column name="EMAIL" value="aculsia@sky.com"/>
+            <column name="PHONE" value="01773 831848 "/>
+            <column name="DESCRIPTION" value="we are small family run kennel based in Alfreton ,Derbyshire &#10;we are very lucky to have the 5 pit trails on our door step and huge amounts of country side around us.&#10;our main hobby is showing which is enjoyed by all&#10;of us , &#10;Our breeding has gone on to do well in all activities from working sheep to A in obedience,and flying round the Agility courses to qualifying for crufts for life . &#10;all of our breeding dogs have been D.N.A Tested for CEA &amp; CL &amp; TNS, they are all Hip scored, eye tested, gonioscopy tested unaffected, and most are baer-hearing tested,&#10;puppies some times available ,bought up in the home ,very comprehensive puppy pack"/>
+            <column name="STREET_ADDRESS" value="6 Alfreton Road"/>
+            <column name="PO_BOX"/>
+            <column name="LATITUDE" valueNumeric="53.11555480"/>
+            <column name="LONGITUDE" valueNumeric="-1.37062540"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_1" value="England"/>
+            <column name="ADMINISTRATIVE_AREA_LEVEL_2" value="Derbyshire"/>
+            <column name="COLLOQUIAL_AREA"/>
+            <column name="LOCALITY" value="Westhouses"/>
+            <column name="SUBLOCALITY_LEVEL_1"/>
+            <column name="META_DESCRIPCION" value="Aculsia pet breeder"/>
+            <column name="META_KEYWORDS" value="pet, cat, dog, breeder, UK, United, Kingdom"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114948424-2">
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="1"/>
+            <column name="GUID" value="0f6201ac090be6f96273b26ca2534d59"/>
+            <column name="PROVINCE_NAME" value="Prince Edward Island"/>
+            <column name="PROVINCE_CODE" value="PE"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="2"/>
+            <column name="GUID" value="107c9890820c1d1b2034658e48229de3"/>
+            <column name="PROVINCE_NAME" value="Manitoba"/>
+            <column name="PROVINCE_CODE" value="MB"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="3"/>
+            <column name="GUID" value="2860af87b3b24dc672881987b34e4455"/>
+            <column name="PROVINCE_NAME" value="Nova Scotia"/>
+            <column name="PROVINCE_CODE" value="NS"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="4"/>
+            <column name="GUID" value="42b305c4c8fb8b6d2facf1218f3ccf67"/>
+            <column name="PROVINCE_NAME" value="New Brunswick"/>
+            <column name="PROVINCE_CODE" value="NB"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="5"/>
+            <column name="GUID" value="594de341c303a04de4baa298aba7a820"/>
+            <column name="PROVINCE_NAME" value="Alberta"/>
+            <column name="PROVINCE_CODE" value="AB"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="6"/>
+            <column name="GUID" value="687a9d4e717f6480de0814f66dc7644a"/>
+            <column name="PROVINCE_NAME" value="Quebec"/>
+            <column name="PROVINCE_CODE" value="QC"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="7"/>
+            <column name="GUID" value="733795160b84fb1882c66068f4c1562a"/>
+            <column name="PROVINCE_NAME" value="British Columbia"/>
+            <column name="PROVINCE_CODE" value="BC"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="8"/>
+            <column name="GUID" value="742d2eede02e80c35009d689daf019d4"/>
+            <column name="PROVINCE_NAME" value="Ontario"/>
+            <column name="PROVINCE_CODE" value="ON"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="9"/>
+            <column name="GUID" value="74eb919b7e6475835f3918fb29d963e5"/>
+            <column name="PROVINCE_NAME" value="Northwest Territories"/>
+            <column name="PROVINCE_CODE" value="NT"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="10"/>
+            <column name="GUID" value="a9bfad2785f732da19df32e6dd0a5d3a"/>
+            <column name="PROVINCE_NAME" value="Newfoundland and Labrador"/>
+            <column name="PROVINCE_CODE" value="NL"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="11"/>
+            <column name="GUID" value="b72e6918f4bb8732278fea098efb7151"/>
+            <column name="PROVINCE_NAME" value="Nunavut"/>
+            <column name="PROVINCE_CODE" value="NU"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="12"/>
+            <column name="GUID" value="decc0b7d136d456742e0062830c99017"/>
+            <column name="PROVINCE_NAME" value="Saskatchewan"/>
+            <column name="PROVINCE_CODE" value="SK"/>
+        </insert>
+        <insert tableName="CANADA_PROVINCES">
+            <column name="ID" valueNumeric="13"/>
+            <column name="GUID" value="fd8ceb6764b17b6d8e50756168247ed7"/>
+            <column name="PROVINCE_NAME" value="Yukon Territory"/>
+            <column name="PROVINCE_CODE" value="YT"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114948424-3">
+        <insert tableName="COUNTRIES">
+            <column name="ID" valueNumeric="1"/>
+            <column name="NAME" value="United States of America"/>
+        </insert>
+        <insert tableName="COUNTRIES">
+            <column name="ID" valueNumeric="2"/>
+            <column name="NAME" value="Canada"/>
+        </insert>
+        <insert tableName="COUNTRIES">
+            <column name="ID" valueNumeric="3"/>
+            <column name="NAME" value="China"/>
+        </insert>
+        <insert tableName="COUNTRIES">
+            <column name="ID" valueNumeric="4"/>
+            <column name="NAME" value="India"/>
+        </insert>
+        <insert tableName="COUNTRIES">
+            <column name="ID" valueNumeric="5"/>
+            <column name="NAME" value="Japan"/>
+        </insert>
+        <insert tableName="COUNTRIES">
+            <column name="ID" valueNumeric="6"/>
+            <column name="NAME" value="United Kingdom"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114948424-5">
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="19"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="25"/>
+            <column name="BREEDER_ID" valueNumeric="19"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="75"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="47"/>
+            <column name="BREEDER_ID" valueNumeric="53"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="44"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="17"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="36"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="68"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="40"/>
+            <column name="BREEDER_ID" valueNumeric="62"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="64"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="66"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="63"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="33"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="42"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="21"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="69"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="28"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="29"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="24"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="55"/>
+            <column name="BREEDER_ID" valueNumeric="54"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="76"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="16"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="67"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="23"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="70"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="20"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="32"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="22"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="18"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="73"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="93"/>
+            <column name="BREEDER_ID" valueNumeric="73"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="27"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="31"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="74"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="37"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="40"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="25"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="52"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="49"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="53"/>
+            <column name="BREEDER_ID" valueNumeric="55"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="65"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="38"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="45"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="46"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="51"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="34"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="43"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="39"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="71"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="41"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="53"/>
+            <column name="BREEDER_ID" valueNumeric="56"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="50"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="26"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="23"/>
+            <column name="BREEDER_ID" valueNumeric="72"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="48"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="BREEDER_ID" valueNumeric="35"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_BREEDER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="BREEDER_ID" valueNumeric="47"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114948424-6">
+        <insert tableName="DOG_BREEDS_BY_FORUM">
+            <column name="DOG_BREED_ID" valueNumeric="34"/>
+            <column name="FORUM_ID" valueNumeric="1"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_FORUM">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="FORUM_ID" valueNumeric="2"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_FORUM">
+            <column name="DOG_BREED_ID" valueNumeric="49"/>
+            <column name="FORUM_ID" valueNumeric="3"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_FORUM">
+            <column name="DOG_BREED_ID" valueNumeric="53"/>
+            <column name="FORUM_ID" valueNumeric="4"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114948424-7">
+        <insert tableName="DOG_BREEDS_BY_SHELTER">
+            <column name="DOG_BREED_ID" valueNumeric="53"/>
+            <column name="SHELTER_ID" valueNumeric="99"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_SHELTER">
+            <column name="DOG_BREED_ID" valueNumeric="30"/>
+            <column name="SHELTER_ID" valueNumeric="128"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_SHELTER">
+            <column name="DOG_BREED_ID" valueNumeric="93"/>
+            <column name="SHELTER_ID" valueNumeric="128"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_SHELTER">
+            <column name="DOG_BREED_ID" valueNumeric="31"/>
+            <column name="SHELTER_ID" valueNumeric="128"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_SHELTER">
+            <column name="DOG_BREED_ID" valueNumeric="29"/>
+            <column name="SHELTER_ID" valueNumeric="128"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_SHELTER">
+            <column name="DOG_BREED_ID" valueNumeric="47"/>
+            <column name="SHELTER_ID" valueNumeric="128"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_SHELTER">
+            <column name="DOG_BREED_ID" valueNumeric="8"/>
+            <column name="SHELTER_ID" valueNumeric="128"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_SHELTER">
+            <column name="DOG_BREED_ID" valueNumeric="53"/>
+            <column name="SHELTER_ID" valueNumeric="223"/>
+        </insert>
+        <insert tableName="DOG_BREEDS_BY_SHELTER">
+            <column name="DOG_BREED_ID" valueNumeric="53"/>
+            <column name="SHELTER_ID" valueNumeric="224"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
