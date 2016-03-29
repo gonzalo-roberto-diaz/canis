@@ -4,6 +4,7 @@ package com.canis.dao;
 
 import com.canis.CanisDAOApplication;
 import com.canis.domain.DogBreed;
+import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
 import org.junit.After;
 import org.junit.Before;
@@ -20,6 +21,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
+ * Integration tests for the Dog Breeds
  * Created by Gonzalo on 2/29/2016.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -29,10 +31,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class DogBreedDAOIT {
 
     @Autowired
-    DogBreedsDAO repository;
+    private DogBreedsDAO repository;
 
     @Autowired
-    DogTypesDAO typesRepository;
+    private DogTypesDAO typesRepository;
+
+    @Autowired
+    private DogSizesDAO sizesRepository;
+
 
 
     @Test
@@ -86,19 +92,27 @@ public class DogBreedDAOIT {
 
     @Before
     public void setUp() {
-        DogType primitivesType = new DogType().setId(6l);
+        DogType primitivesType = new DogType().setId(6L);
         typesRepository.save(primitivesType);
-        DogBreed akita = new DogBreed().setName("Akita").setDogType(primitivesType);
+
+        DogSize large = new DogSize().setId(7L).setName("large");
+        sizesRepository.save(large);
+
+
+        DogBreed akita = new DogBreed().setName("Akita").setDogType(primitivesType).setDogSize(large);
         repository.save(akita);
 
-        DogType molossiansType = new DogType().setId(3l);
+        DogType molossiansType = new DogType().setId(3L);
         typesRepository.save(molossiansType);
-        DogBreed bulldog = new DogBreed().setName("Bulldog").setDogType(molossiansType);
+        DogBreed bulldog = new DogBreed().setName("Bulldog").setDogType(molossiansType).setDogSize(large);
         repository.save(bulldog);
 
-        DogType pinschers = new DogType().setId(2l);
+        DogSize small = new DogSize().setId(2L).setName("small");
+        sizesRepository.save(small);
+
+        DogType pinschers = new DogType().setId(2L);
         typesRepository.save(pinschers);
-        DogBreed affenpinscher = new DogBreed().setName("Affenpinscher").setDogType(pinschers);
+        DogBreed affenpinscher = new DogBreed().setName("Affenpinscher").setDogType(pinschers).setDogSize(small);
         repository.save(affenpinscher);
 
         repository.save(akita);
