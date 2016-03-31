@@ -31,6 +31,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
@@ -62,8 +63,8 @@ public class DogBreedsControllerIT {
 
     private URL base;
     private RestTemplate template;
-    private ResponseEntity<DogBreed> insertedAkita;
-    private ResponseEntity<DogBreed> insertedBulldog;
+    private ResponseEntity<DogBreedRequestModel> insertedAkita;
+    private ResponseEntity<DogBreedRequestModel> insertedBulldog;
 
     @Before
     public void setUp() throws Exception {
@@ -87,20 +88,31 @@ public class DogBreedsControllerIT {
 
         DogBreedRequestModel akita = new DogBreedRequestModel().setName("Akita")
                 .setDogType(primitivesModel).setDogSize(largeModel);
-        insertedAkita = template.postForEntity(base.toString().concat("/create/"), akita, DogBreed.class, emptyMap() );
+        fillCorrectDummyRanges(akita);
+        insertedAkita = template.postForEntity(base.toString().concat("/create/"), akita, DogBreedRequestModel.class, emptyMap());
 
         DogBreedRequestModel bulldog = new DogBreedRequestModel().setName("Bulldog")
                 .setDogType(molossersModel).setDogSize(mediumModel);
-        insertedBulldog = template.postForEntity(base.toString().concat("/create/"), bulldog, DogBreed.class, emptyMap() );
+        fillCorrectDummyRanges(bulldog);
+        insertedBulldog = template.postForEntity(base.toString().concat("/create/"), bulldog, DogBreedRequestModel.class, emptyMap() );
 
         DogBreedRequestModel boxer = new DogBreedRequestModel().setName("Boxer")
                 .setDogType(molossersModel).setDogSize(mediumModel);
-        insertedBulldog = template.postForEntity(base.toString().concat("/create/"), boxer, DogBreed.class, emptyMap() );
+        fillCorrectDummyRanges(boxer);
+        insertedBulldog = template.postForEntity(base.toString().concat("/create/"), boxer, DogBreedRequestModel.class, emptyMap() );
 
         DogBreedRequestModel frenchBulldog = new DogBreedRequestModel().setName("French Bulldog")
                 .setDogType(molossersModel).setDogSize(mediumModel);
-        insertedBulldog = template.postForEntity(base.toString().concat("/create/"), frenchBulldog, DogBreed.class, emptyMap() );
+        fillCorrectDummyRanges(frenchBulldog);
+        insertedBulldog = template.postForEntity(base.toString().concat("/create/"), frenchBulldog, DogBreedRequestModel.class, emptyMap() );
 
+    }
+
+    private void fillCorrectDummyRanges(DogBreedRequestModel model){
+        model.setWeightMax(BigDecimal.TEN).setWeightMin(BigDecimal.ONE)
+                .setLifespanMax((short)20).setLifespanMin((short)1)
+                .setServingMax(BigDecimal.TEN).setServingMin(BigDecimal.ONE)
+                .setSizeMin(BigDecimal.ONE).setSizeMax(BigDecimal.TEN);
     }
 
     @After
@@ -171,16 +183,16 @@ public class DogBreedsControllerIT {
         assertThat(responseList.size(), equalTo(2));
         for (HashMap<String, Object> entryMap : responseList ) {
             String name = (String)entryMap.get("name");
-            assertTrue(name.contains("Bull"));
+            assertTrue(name.toUpperCase().contains("BULL"));
         }
 
-        //try lowercase
+        //try uppercase
         response = template.getForEntity(base.toString() + "/readByNameSubstring/ITA/0/100", List.class);
         responseList=  response.getBody();
         assertThat(responseList.size(), equalTo(1));
         for (HashMap<String, Object> entryMap : responseList ) {
             String name = (String)entryMap.get("name");
-            assertTrue(name.contains("ita"));
+            assertTrue(name.toUpperCase().contains("ITA"));
         }
 
 
@@ -189,23 +201,23 @@ public class DogBreedsControllerIT {
 
     @Test
     public void get() throws Exception {
-        ResponseEntity<DogBreed> response = template.getForEntity(base.toString() + "/get/" + insertedAkita.getBody().getId() , DogBreed.class);
+        ResponseEntity<DogBreedRequestModel> response = template.getForEntity(base.toString() + "/get/" + insertedAkita.getBody().getId() , DogBreedRequestModel.class);
         assertEquals(response.getStatusCode(), HttpStatus.OK);
         assertEquals(response.getBody().getName(), "Akita");
     }
 
     @Test
     public void update() throws Exception {
-        DogBreed newAkita = insertedAkita.getBody();
-        DogBreedRequestModel newAkitaModel = DogBreedMapper.domainToRequest(newAkita);
-        newAkitaModel.setName("New medium Molosser Akita");
-        newAkitaModel.setDogSize(new DogSizeRequestModel().setName("medium").setId(5L));
-        newAkitaModel.setDogType(new DogTypeRequestModel().setName("Molosser").setId(3L));
+        DogBreedRequestModel newAkita = insertedAkita.getBody();
+        newAkita.setName("New medium Molosser Akita");
+        newAkita.setDogSize(new DogSizeRequestModel().setName("medium").setId(5L));
+        newAkita.setDogType(new DogTypeRequestModel().setName("Molossers").setId(3L));
+        fillCorrectDummyRanges(newAkita);
 
 
-        RequestEntity request = RequestEntity.put(new URI(base.toString() + "/update/")).accept(MediaType.APPLICATION_JSON).body(newAkitaModel);
+        RequestEntity request = RequestEntity.put(new URI(base.toString() + "/update/")).accept(MediaType.APPLICATION_JSON).body(newAkita);
         //preferred over template.put because the response status can be checked
-        ResponseEntity<DogBreed> res= template.exchange(request, DogBreed.class);
+        ResponseEntity<DogBreedRequestModel> res= template.exchange(request, DogBreedRequestModel.class);
         assertEquals(res.getStatusCode(), HttpStatus.OK);
         assertEquals(res.getBody().getName(), "New medium Molosser Akita");
         assertEquals(res.getBody().getDogSize().getName(), "medium");
@@ -215,8 +227,9 @@ public class DogBreedsControllerIT {
 
         DogBreedRequestModel nonExistent = new DogBreedRequestModel().setId(Long.MAX_VALUE).setName("Nonexistent name")
                 .setDogSize(new DogSizeRequestModel().setId(6L)).setDogType(new DogTypeRequestModel().setId(3L));
+        fillCorrectDummyRanges(nonExistent);
         request = RequestEntity.put(new URI(base.toString() + "/update/")).accept(MediaType.APPLICATION_JSON).body(nonExistent);
-        res= template.exchange(request, DogBreed.class);
+        res= template.exchange(request, DogBreedRequestModel.class);
         assertEquals(res.getStatusCode(), HttpStatus.NOT_FOUND);
 
     }
@@ -233,9 +246,8 @@ public class DogBreedsControllerIT {
 
     @Test
     public void createWithExistingName() throws Exception{
-        DogBreed newAkita = insertedAkita.getBody();
-        DogBreedRequestModel newAkitaModel = DogBreedMapper.domainToRequest(newAkita);
-        newAkitaModel.setName("Akita");
+        DogBreedRequestModel newAkita = insertedAkita.getBody();
+        newAkita.setName("Akita");
 
         RequestEntity request = RequestEntity.post(new URI(base.toString() + "/create/")).accept(MediaType.APPLICATION_JSON).body(newAkita);
         ResponseEntity<DogBreed> res= template.exchange(request, DogBreed.class);

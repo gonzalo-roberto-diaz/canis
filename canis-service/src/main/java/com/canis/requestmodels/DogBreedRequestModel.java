@@ -2,6 +2,7 @@ package com.canis.requestmodels;
 
 import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
+import javax.validation.constraints.NotNull;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -62,35 +63,41 @@ public class DogBreedRequestModel {
 
 
 	private String sheddingText;
-    
 
+    @NotNull
     private BigDecimal servingMin;
-    
 
+    @NotNull
     private BigDecimal servingMax;
 
+    @NotNull
     private BigDecimal sizeMin;
 
-
+    @NotNull
     private BigDecimal sizeMax;
-    
 
+    @NotNull
     private BigDecimal weightMin;
-    
 
+    @NotNull
     private BigDecimal weightMax;
     
 
     private String colors;
 
-
+    @NotNull
 	private short lifespanMax;
 
-
+    @NotNull
 	private short lifespanMin;
 
 
+    @NotNull
     private DogTypeRequestModel dogType;
+
+    @NotNull
+    private DogSizeRequestModel dogSize;
+
 
     public DogSizeRequestModel getDogSize() {
         return dogSize;
@@ -101,7 +108,7 @@ public class DogBreedRequestModel {
         return this;
     }
 
-    private DogSizeRequestModel dogSize;
+
 
 
     public Long getId() {

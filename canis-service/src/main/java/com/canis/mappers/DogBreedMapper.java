@@ -32,6 +32,23 @@ public class DogBreedMapper {
         return model;
     }
 
+    public static DogBreed requestToDomain(DogBreedRequestModel model){
+        DogBreed domain = new DogBreed();
+        BeanUtils.copyProperties(model, domain);
+
+        DogTypeRequestModel dogTypeModel = model.getDogType();
+        DogType dogType = new DogType();
+        BeanUtils.copyProperties(dogTypeModel, dogType);
+        domain.setDogType(dogType);
+
+        DogSizeRequestModel dogSizeModel = model.getDogSize();
+        DogSize dogSize = new DogSize();
+        BeanUtils.copyProperties(dogSizeModel, dogSize);
+        domain.setDogSize(dogSize);
+
+        return domain;
+    }
+
     public static Page<DogBreedRequestModel> domainPageToRequestPage (Page<DogBreed> page){
         Page<DogBreedRequestModel> models = page.map(e->{
             DogBreedRequestModel model = domainToRequest(e);

@@ -4,25 +4,31 @@ import java.util.List;
 
 import com.canis.mappers.DogBreedMapper;
 import com.canis.requestmodels.DogBreedRequestModel;
+import com.canis.rest.validator.DogBreedValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.canis.domain.DogBreed;
 import com.canis.service.DogBreedsService;
- 
+
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/DogBreed")
 public class DogBreedsController {
+
+    @InitBinder
+    protected void initBinder(WebDataBinder binder){
+        binder.setValidator(new DogBreedValidator());
+    }
  
     @Autowired
     DogBreedsService service;  //Service which will do all data retrieval/manipulation work
@@ -77,46 +83,54 @@ public class DogBreedsController {
  
   
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<DogBreed> get(@PathVariable("id") long id) {
+    public ResponseEntity<DogBreedRequestModel> get(@PathVariable("id") long id) {
         DogBreed bean = service.findById(id);
         if (bean == null) {
-            return new ResponseEntity<DogBreed>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<DogBreedRequestModel>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<DogBreed>(bean, HttpStatus.OK);
+        DogBreedRequestModel model =  DogBreedMapper.domainToRequest(bean);
+        return new ResponseEntity<DogBreedRequestModel>(model, HttpStatus.OK);
     }
  
      
     
     @RequestMapping(value = "/create/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<DogBreed> create(@RequestBody DogBreed bean,    UriComponentsBuilder ucBuilder) {
- 
-        if (service.nameExists(bean.getName())) {
-            return new ResponseEntity<DogBreed>(HttpStatus.BAD_REQUEST);
+    public ResponseEntity<DogBreedRequestModel> create(@RequestBody @Valid DogBreedRequestModel model,    UriComponentsBuilder ucBuilder) {
+
+        if (service.nameExists(model.getName())) {
+            return new ResponseEntity<DogBreedRequestModel>(HttpStatus.BAD_REQUEST);
         }
- 
+
+        DogBreed bean = DogBreedMapper.requestToDomain(model);
         bean = service.save(bean);
- 
+
+        model = DogBreedMapper.domainToRequest(bean);
+
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(ucBuilder.path("/Breed/{id}").buildAndExpand(bean.getId()).toUri());
-        return new ResponseEntity<DogBreed>(bean, HttpStatus.CREATED);
+        return new ResponseEntity<DogBreedRequestModel>(model, HttpStatus.CREATED);
     }
  
      
 
      
     @RequestMapping(value = "/update/", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<DogBreed> update(@RequestBody DogBreed breed) {
-        System.out.println("Updating Breed " + breed.getId());
-         
-        DogBreed currentBreed = service.findById(breed.getId());
+    public ResponseEntity<DogBreedRequestModel> update(@RequestBody @Valid DogBreedRequestModel model) {
+
+        DogBreed dogBreed = DogBreedMapper.requestToDomain(model);
+
+        DogBreed currentBreed = service.findById(dogBreed.getId());
          
         if (currentBreed==null) {
-            System.out.println("Breed with id " + breed.getId() + " not found");
-            return new ResponseEntity<DogBreed>(HttpStatus.NOT_FOUND);
+            System.out.println("Breed with id " + model.getId() + " not found");
+            return new ResponseEntity<DogBreedRequestModel>(HttpStatus.NOT_FOUND);
         }
- 
-        service.update(breed);
-        return new ResponseEntity<DogBreed>(currentBreed, HttpStatus.OK);
+
+        service.update(dogBreed);
+
+        model = DogBreedMapper.domainToRequest(dogBreed);
+
+        return new ResponseEntity<DogBreedRequestModel>(model, HttpStatus.OK);
     }
  
     //------------------- Delete a Breed --------------------------------------------------------

@@ -15,10 +15,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.HashMap;
 
 /**
  * Integration tests for the Dog Breeds
@@ -80,6 +83,17 @@ public class DogBreedDAOIT {
         DogBreed akita = repository.findByName("Akita");
         assertNotNull(akita);
         assertEquals(akita.getName(), "Akita");
+    }
+
+    @Test
+    public void findByNameSubstring(){
+        Page<DogBreed> akitaPage = repository.findByNameSubstring("%AKI%", new PageRequest(0, 100));
+        assertNotNull(akitaPage);
+        assertTrue(akitaPage.getTotalElements()>0);
+        akitaPage.forEach(e ->{
+            assertTrue(e.getName().toUpperCase().contains("AKI"));
+          }
+        );
     }
 
 

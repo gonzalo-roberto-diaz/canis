@@ -73,7 +73,9 @@ public class DogBreedsServiceImpl implements DogBreedsService{
 	public Page<DogBreed> readByNameSubstring(String nameSubstring, int offset, int limit, String sortProperty){
 		Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, sortProperty));
 		PageRequest pageRequest = new PageRequest(offset, limit, sort);
-		return dogBreedsDAO.findByNameSubstring("%".concat(nameSubstring.toUpperCase()).concat("%"), pageRequest);
+		String param = "%".concat(nameSubstring.toUpperCase()).concat("%");
+		Page<DogBreed> result = dogBreedsDAO.findByNameSubstring( param, pageRequest);
+		return result;
 	}
 
 	public Page<DogBreed> readByNameInitialSubstring(String initialNameSubstring, int offset, int limit, String sortProperty){
