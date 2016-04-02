@@ -94,7 +94,7 @@ public class DogBreedsController {
  
      
     
-    @RequestMapping(value = "/create/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<DogBreedRequestModel> create(@RequestBody @Valid DogBreedRequestModel model,    UriComponentsBuilder ucBuilder) {
 
         if (service.nameExists(model.getName())) {
@@ -114,7 +114,7 @@ public class DogBreedsController {
      
 
      
-    @RequestMapping(value = "/update/", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/update", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<DogBreedRequestModel> update(@RequestBody @Valid DogBreedRequestModel model) {
 
         DogBreed dogBreed = DogBreedMapper.requestToDomain(model);
