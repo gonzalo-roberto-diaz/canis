@@ -11,32 +11,100 @@
     <changeSet id="canis-01-02-schema-functions" author="gdiaz">
         <sql><![CDATA[DROP FUNCTION IF EXISTS GETDISTANCE;]]></sql>
         <sql splitStatements="false"><![CDATA[
-CREATE FUNCTION `GETDISTANCE`(`deg_lat1` DECIMAL(10,6), `deg_lng1` DECIMAL(10,6), `deg_lat2` DECIMAL(10,6), `deg_lng2` DECIMAL(10,6)) RETURNS double
-    SQL SECURITY INVOKER
-    COMMENT 'distancia en km entre 2 coordenadas'
-BEGIN 
-  DECLARE distance FLOAT;
-  DECLARE delta_lat FLOAT; 
-  DECLARE delta_lng FLOAT; 
-  DECLARE lat1 FLOAT; 
-  DECLARE lat2 FLOAT;
-  DECLARE a FLOAT;
-  SET distance = 0;
-  
-  IF deg_lat1 <> 0 AND deg_lng1 <> 0 THEN
-  /*Convert degrees to radians and get the variables I need.*/
-  SET delta_lat = radians(deg_lat2 - deg_lat1); 
-  SET delta_lng = radians(deg_lng2 - deg_lng1); 
-  SET lat1 = radians(deg_lat1); 
-  SET lat2 = radians(deg_lat2); 
-  /*Formula found here: http://www.movable-type.co.uk/scripts/latlong.html*/
-  SET a = sin(delta_lat/2.0) * sin(delta_lat/2.0) + sin(delta_lng/2.0) * sin(delta_lng/2.0) * cos(lat1) * cos(lat2); 
-  SET distance =  6371 * 2 * atan2(sqrt(a),  sqrt(1-a)); 
-  
-  END IF;
-  RETURN distance;
-END
-]]>
-</sql>
-    </changeSet>	
+          CREATE FUNCTION `GETDISTANCE`(`deg_lat1` DECIMAL(10,6), `deg_lng1` DECIMAL(10,6), `deg_lat2` DECIMAL(10,6), `deg_lng2` DECIMAL(10,6)) RETURNS double
+              SQL SECURITY INVOKER
+              COMMENT 'distancia en km entre 2 coordenadas'
+          BEGIN 
+            DECLARE distance FLOAT;
+            DECLARE delta_lat FLOAT; 
+            DECLARE delta_lng FLOAT; 
+            DECLARE lat1 FLOAT; 
+            DECLARE lat2 FLOAT;
+            DECLARE a FLOAT;
+            SET distance = 0;
+            
+            IF deg_lat1 <> 0 AND deg_lng1 <> 0 THEN
+            /*Convert degrees to radians and get the variables I need.*/
+            SET delta_lat = radians(deg_lat2 - deg_lat1); 
+            SET delta_lng = radians(deg_lng2 - deg_lng1); 
+            SET lat1 = radians(deg_lat1); 
+            SET lat2 = radians(deg_lat2); 
+            /*Formula found here: http://www.movable-type.co.uk/scripts/latlong.html*/
+            SET a = sin(delta_lat/2.0) * sin(delta_lat/2.0) + sin(delta_lng/2.0) * sin(delta_lng/2.0) * cos(lat1) * cos(lat2); 
+            SET distance =  6371 * 2 * atan2(sqrt(a),  sqrt(1-a)); 
+            
+            END IF;
+            RETURN distance;
+          END
+          ]]>
+        </sql>
+        <sql><![CDATA[DROP PROCEDURE IF EXISTS CALCULATE_CUPS;]]></sql>
+        <!--
+        <sql splitStatements="false"><![CDATA[
+          CREATE PROCEDURE `CALCULATE_CUPS`(IN `WEIGHT_MAX` DECIMAL(6,2), IN `WEIGHT_MIN` DECIMAL(6,2), OUT CUPS_MAX DECIMAL(6,2), OUT CUPS_MIN DECIMAL(6,2)) 
+          SQL SECURITY INVOKER
+          COMMENT 'RECOMMENDED FOOD INTAKE IN CUPS, ACCORDING TO DOG WEIGHT'
+          BEGIN 
+            DECLARE AVG_WEIGHT DECIMAL(6,2);
+            
+            SET AVG_WEIGHT = (WEIGHT_MAX + WEIGHT_MIN) / 2 ;
+            IF (AVG_WEIGHT > 45.4) THEN
+              SET CUPS_MAX = 6;
+              SET CUPS_MIN = 8;
+            ELSEIF (AVG_WEIGHT > 34.5) THEN
+              SET CUPS_MAX = 4.75;
+              SET CUPS_MIN = 6;
+            ELSEIF (AVG_WEIGHT > 23.1) THEN
+              SET CUPS_MAX = 3.75;
+              SET CUPS_MIN = 4.75;
+           ELSEIF (AVG_WEIGHT > 16.3) THEN
+              SET CUPS_MAX = 2.75;
+              SET CUPS_MIN = 3.75;
+            ELSEIF (AVG_WEIGHT > 9.5) THEN
+              SET CUPS_MAX = 1.75;
+              SET CUPS_MIN = 2.75;
+            ELSEIF (AVG_WEIGHT > 5.9) THEN
+              SET CUPS_MAX = 1.25;
+              SET CUPS_MIN = 1.75;
+            ELSE
+              SET CUPS_MAX = 0.5;
+              SET CUPS_MIN = 1.25;        
+            END IF;
+          END
+          ]]>
+        </sql>
+      -->
+        <createProcedure encoding="utf8" procedureName="CALCULATE_CUPS">
+              CREATE PROCEDURE `CALCULATE_CUPS`(IN `WEIGHT_MAX` DECIMAL(6,2), IN `WEIGHT_MIN` DECIMAL(6,2), OUT CUPS_MAX DECIMAL(6,2), OUT CUPS_MIN DECIMAL(6,2)) 
+              SQL SECURITY INVOKER
+              COMMENT 'RECOMMENDED FOOD INTAKE IN CUPS, ACCORDING TO DOG WEIGHT'
+              BEGIN 
+                DECLARE AVG_WEIGHT DECIMAL(6,2);
+                
+                SET AVG_WEIGHT = (WEIGHT_MAX + WEIGHT_MIN) / 2 ;
+                IF (AVG_WEIGHT > 45.4) THEN
+                  SET CUPS_MAX = 6;
+                  SET CUPS_MIN = 8;
+                ELSEIF (AVG_WEIGHT > 34.5) THEN
+                  SET CUPS_MAX = 4.75;
+                  SET CUPS_MIN = 6;
+                ELSEIF (AVG_WEIGHT > 23.1) THEN
+                  SET CUPS_MAX = 3.75;
+                  SET CUPS_MIN = 4.75;
+               ELSEIF (AVG_WEIGHT > 16.3) THEN
+                  SET CUPS_MAX = 2.75;
+                  SET CUPS_MIN = 3.75;
+                ELSEIF (AVG_WEIGHT > 9.5) THEN
+                  SET CUPS_MAX = 1.75;
+                  SET CUPS_MIN = 2.75;
+                ELSEIF (AVG_WEIGHT > 5.9) THEN
+                  SET CUPS_MAX = 1.25;
+                  SET CUPS_MIN = 1.75;
+                ELSE
+                  SET CUPS_MAX = 0.5;
+                  SET CUPS_MIN = 1.25;        
+                END IF;
+              END;
+        </createProcedure>
+    </changeSet>
 </databaseChangeLog>
