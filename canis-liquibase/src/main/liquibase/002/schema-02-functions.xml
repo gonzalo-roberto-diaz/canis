@@ -39,41 +39,6 @@
           ]]>
         </sql>
         <sql><![CDATA[DROP PROCEDURE IF EXISTS CALCULATE_CUPS;]]></sql>
-        <!--
-        <sql splitStatements="false"><![CDATA[
-          CREATE PROCEDURE `CALCULATE_CUPS`(IN `WEIGHT_MAX` DECIMAL(6,2), IN `WEIGHT_MIN` DECIMAL(6,2), OUT CUPS_MAX DECIMAL(6,2), OUT CUPS_MIN DECIMAL(6,2)) 
-          SQL SECURITY INVOKER
-          COMMENT 'RECOMMENDED FOOD INTAKE IN CUPS, ACCORDING TO DOG WEIGHT'
-          BEGIN 
-            DECLARE AVG_WEIGHT DECIMAL(6,2);
-            
-            SET AVG_WEIGHT = (WEIGHT_MAX + WEIGHT_MIN) / 2 ;
-            IF (AVG_WEIGHT > 45.4) THEN
-              SET CUPS_MAX = 6;
-              SET CUPS_MIN = 8;
-            ELSEIF (AVG_WEIGHT > 34.5) THEN
-              SET CUPS_MAX = 4.75;
-              SET CUPS_MIN = 6;
-            ELSEIF (AVG_WEIGHT > 23.1) THEN
-              SET CUPS_MAX = 3.75;
-              SET CUPS_MIN = 4.75;
-           ELSEIF (AVG_WEIGHT > 16.3) THEN
-              SET CUPS_MAX = 2.75;
-              SET CUPS_MIN = 3.75;
-            ELSEIF (AVG_WEIGHT > 9.5) THEN
-              SET CUPS_MAX = 1.75;
-              SET CUPS_MIN = 2.75;
-            ELSEIF (AVG_WEIGHT > 5.9) THEN
-              SET CUPS_MAX = 1.25;
-              SET CUPS_MIN = 1.75;
-            ELSE
-              SET CUPS_MAX = 0.5;
-              SET CUPS_MIN = 1.25;        
-            END IF;
-          END
-          ]]>
-        </sql>
-      -->
         <createProcedure encoding="utf8" procedureName="CALCULATE_CUPS">
               CREATE PROCEDURE `CALCULATE_CUPS`(IN `WEIGHT_MAX` DECIMAL(6,2), IN `WEIGHT_MIN` DECIMAL(6,2), OUT CUPS_MAX DECIMAL(6,2), OUT CUPS_MIN DECIMAL(6,2)) 
               SQL SECURITY INVOKER
@@ -105,6 +70,32 @@
                   SET CUPS_MIN = 1.25;        
                 END IF;
               END;
+        </createProcedure>
+        <createProcedure encoding="utf8" procedureName="UPDATE_CUPS">
+          CREATE PROCEDURE `UPDATE_CUPS` ()
+          SQL SECURITY INVOKER
+          BEGIN
+              DECLARE done INT DEFAULT FALSE;
+              DECLARE DBR_ID INT(10);
+              declare CUPS_MIN DECIMAL(6,2);
+              declare CUPS_MAX DECIMAL(6,2);
+              declare WEMIN DECIMAL(6,2);
+              declare WEMAX DECIMAL(6,2);
+              declare cur cursor for select ID, WEIGHT_MIN, WEIGHT_MAX from DOG_BREEDS;
+              DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+              open cur;
+
+              start_loop: LOOP
+                  fetch cur into DBR_ID, WEMIN, WEMAX;
+              IF done THEN 
+                    LEAVE start_loop; 
+              END IF;
+                  CALL CALCULATE_CUPS(WEMIN, WEMAX, CUPS_MIN, CUPS_MAX);
+                  UPDATE DOG_BREEDS SET SERVING_MAX = CUPS_MAX, SERVING_MIN = CUPS_MIN WHERE ID = DBR_ID;
+              END loop;
+              close cur;
+          END;
         </createProcedure>
     </changeSet>
 </databaseChangeLog>
