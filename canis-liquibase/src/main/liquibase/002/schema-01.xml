@@ -142,9 +142,6 @@
             <column defaultValueNumeric="0" name="APARTMENTS" type="SMALLINT(5)">
                 <constraints nullable="false"/>
             </column>
-            <column defaultValueNumeric="0" name="KIDS" type="SMALLINT(5)">
-                <constraints nullable="false"/>
-            </column>
             <column defaultValueNumeric="1" name="ENABLED" type="SMALLINT(5)">
                 <constraints nullable="false"/>
             </column>
