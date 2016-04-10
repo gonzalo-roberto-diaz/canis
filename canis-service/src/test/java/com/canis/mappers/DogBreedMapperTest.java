@@ -37,13 +37,11 @@ public class DogBreedMapperTest {
                 .setDogType(type)
                 .setDogSize(size)
                 .setActiveRank(3).setActiveText("Very active")
-                .setSafeAroundKids(false)
                 .setWeightMax(BigDecimal.TEN)
                 .setWeightMin(BigDecimal.ONE);
         DogBreedRequestModel model = DogBreedMapper.domainToRequest(dogBreed);
 
         assertEquals(model.getActiveRank(), dogBreed.getActiveRank());
-        assertEquals(model.isSafeAroundKids(), dogBreed.isSafeAroundKids());
         assertEquals(model.getWeightMax(), dogBreed.getWeightMax());
         assertEquals(model.getActiveRank(), dogBreed.getActiveRank());
 
