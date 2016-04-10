@@ -32,10 +32,7 @@ public class DogBreed {
     
     @Column(name="APARTMENTS")
     private boolean isAptForApartments;
-    
-    @Column(name="KIDS")
-    private boolean isSafeAroundKids;
-    
+
     @Column(name="GUARDIAN_RANK")
     private int guardianRank;
     
@@ -151,15 +148,6 @@ public class DogBreed {
 
     public DogBreed setAptForApartments(boolean aptForApartments) {
         isAptForApartments = aptForApartments;
-        return this;
-    }
-
-    public boolean isSafeAroundKids() {
-        return isSafeAroundKids;
-    }
-
-    public DogBreed setSafeAroundKids(boolean safeAroundKids) {
-        isSafeAroundKids = safeAroundKids;
         return this;
     }
 
