@@ -26,4 +26,4 @@ spring:
       hbm2ddl.auto: none
       ejb.naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
       database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    show_sql: true
+    show_sql: false
