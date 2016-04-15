@@ -108,6 +108,23 @@ public class DogBreedsControllerIT {
 
     }
 
+    @Test
+    public void createWithoutSizeOrServing(){
+        dogTypesService.save(new DogType().setId(4L).setName("Terriers"));
+        DogTypeRequestModel terriersModel = new DogTypeRequestModel().setId(4L).setName("Terriers");
+
+        DogBreedRequestModel welshTerrier = new DogBreedRequestModel().setName("Welsh Terrier")
+                .setDogType(terriersModel);
+
+        welshTerrier.setWeightMax(BigDecimal.TEN).setWeightMin(BigDecimal.ONE)
+                .setLifespanMax((short)20).setLifespanMin((short)1)
+                .setSizeMin(BigDecimal.ONE).setSizeMax(BigDecimal.TEN);
+
+        //should not throw validation error for not having dog size of serving size
+        ResponseEntity<DogBreedRequestModel> insertedWelshTerrier = template.postForEntity(base.toString().concat("/create/"), welshTerrier, DogBreedRequestModel.class, emptyMap());
+        assertEquals(insertedWelshTerrier.getStatusCode(), HttpStatus.CREATED);
+    }
+
     private void fillCorrectDummyRanges(DogBreedRequestModel model){
         model.setWeightMax(BigDecimal.TEN).setWeightMin(BigDecimal.ONE)
                 .setLifespanMax((short)20).setLifespanMin((short)1)

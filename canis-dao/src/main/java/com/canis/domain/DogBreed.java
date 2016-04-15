@@ -102,7 +102,7 @@ public class DogBreed {
 
 
     @ManyToOne
-    @JoinColumn(name="DOG_SIZE_ID", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name="DOG_SIZE_ID", referencedColumnName = "ID", nullable = true)
     private DogSize dogSize;
 
 

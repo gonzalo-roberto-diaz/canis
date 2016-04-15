@@ -47,9 +47,15 @@ public class DogBreedValidator implements Validator {
         DogBreedRequestModel model = (DogBreedRequestModel)target;
         if (model.getLifespanMax()<model.getLifespanMin()){
             errors.reject("wrong.lifespan.range");
-        }else if(model.getServingMax().compareTo(model.getServingMin())<0){
-            errors.reject("wrong.serving.size.range");
-        }else if (model.getWeightMax().compareTo(model.getWeightMin())<0){
+        }
+
+        if (model.getServingMin()!=null && model.getServingMax()!=null){
+            if(model.getServingMax().compareTo(model.getServingMin())<0) {
+                errors.reject("wrong.serving.size.range");
+            }
+        }
+
+        if (model.getWeightMax().compareTo(model.getWeightMin())<0){
             errors.reject("wrong.weight.range");
         }else if (model.getSizeMax().compareTo(model.getSizeMin())<0){
             errors.reject("wrong.size.range");

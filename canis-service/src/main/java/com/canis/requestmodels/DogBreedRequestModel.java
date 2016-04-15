@@ -64,10 +64,8 @@ public class DogBreedRequestModel {
 
 	private String sheddingText;
 
-    @NotNull
     private BigDecimal servingMin;
 
-    @NotNull
     private BigDecimal servingMax;
 
     @NotNull
@@ -95,7 +93,6 @@ public class DogBreedRequestModel {
     @NotNull
     private DogTypeRequestModel dogType;
 
-    @NotNull
     private DogSizeRequestModel dogSize;
 
 

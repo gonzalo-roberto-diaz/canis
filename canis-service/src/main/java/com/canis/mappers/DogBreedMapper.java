@@ -25,9 +25,11 @@ public class DogBreedMapper {
         model.setDogType(dogTypeModel);
 
         DogSize dogSize = domain.getDogSize();
-        DogSizeRequestModel dogSizeModel = new DogSizeRequestModel();
-        BeanUtils.copyProperties(dogSize, dogSizeModel);
-        model.setDogSize(dogSizeModel);
+        if (dogSize != null) {
+            DogSizeRequestModel dogSizeModel = new DogSizeRequestModel();
+            BeanUtils.copyProperties(dogSize, dogSizeModel);
+            model.setDogSize(dogSizeModel);
+        }
 
         return model;
     }
@@ -42,9 +44,11 @@ public class DogBreedMapper {
         domain.setDogType(dogType);
 
         DogSizeRequestModel dogSizeModel = model.getDogSize();
-        DogSize dogSize = new DogSize();
-        BeanUtils.copyProperties(dogSizeModel, dogSize);
-        domain.setDogSize(dogSize);
+        if (dogSizeModel!=null) {
+            DogSize dogSize = new DogSize();
+            BeanUtils.copyProperties(dogSizeModel, dogSize);
+            domain.setDogSize(dogSize);
+        }
 
         return domain;
     }

@@ -36,6 +36,7 @@ import org.springframework.validation.Validator;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.ValidatorFactory;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Set;
 
@@ -61,10 +62,12 @@ public class DogBreedsValidatorTest {
         dogBreedValidator = new DogBreedValidator();
     }
 
-    @Ignore
     @Test
-    public void nulls() throws Exception {
+    public void logicalValidation() throws Exception {
         DogBreedRequestModel model = new DogBreedRequestModel();
+        model.setSizeMin(BigDecimal.ONE).setSizeMax(BigDecimal.TEN)
+                .setLifespanMin((short)10).setLifespanMax((short)1)  //should fail
+                .setWeightMax(BigDecimal.ONE).setWeightMin(BigDecimal.TEN);
         Errors errors =  new BeanPropertyBindingResult(model, "DogBreedModel");
         dogBreedValidator.validate(model, errors);
         assertTrue(errors.hasErrors());
