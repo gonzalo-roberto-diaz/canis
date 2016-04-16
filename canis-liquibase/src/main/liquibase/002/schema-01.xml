@@ -111,12 +111,8 @@
             <column name="SIZE_MAX" type="DECIMAL(6, 2)"/>
             <column name="WEIGHT_MIN" type="DECIMAL(6, 2)"/>
             <column name="WEIGHT_MAX" type="DECIMAL(6, 2)"/>
-            <column defaultValueNumeric="1.00" name="SERVING_MIN" type="DECIMAL(6, 2)">
-                <constraints nullable="false"/>
-            </column>
-            <column defaultValueNumeric="1.00" name="SERVING_MAX" type="DECIMAL(6, 2)">
-                <constraints nullable="false"/>
-            </column>
+            <column defaultValueNumeric="1.00" name="SERVING_MIN" type="DECIMAL(6, 2)"/>
+            <column defaultValueNumeric="1.00" name="SERVING_MAX" type="DECIMAL(6, 2)"/>
             <column name="FRIENDLY_RANK" type="SMALLINT(5)"/>
             <column name="FRIENDLY_TEXT" type="TEXT"/>
             <column name="ACTIVE_RANK" type="SMALLINT(5)"/>
