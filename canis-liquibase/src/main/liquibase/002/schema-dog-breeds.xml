@@ -9,18 +9,38 @@
                 <constraints nullable="false"/>
             </column>
             <column name="COLORS" type="VARCHAR(200)"/>
-            <column name="SIZE_MIN" type="DECIMAL(6, 2)"/>
-            <column name="SIZE_MAX" type="DECIMAL(6, 2)"/>
-            <column name="WEIGHT_MIN" type="DECIMAL(6, 2)"/>
-            <column name="WEIGHT_MAX" type="DECIMAL(6, 2)"/>
+            <column name="SIZE_MIN" type="DECIMAL(6, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SIZE_MAX" type="DECIMAL(6, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="WEIGHT_MIN" type="DECIMAL(6, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="WEIGHT_MAX" type="DECIMAL(6, 2)">
+                <constraints nullable="false"/>
+            </column>
             <column defaultValueNumeric="1.00" name="SERVING_MIN" type="DECIMAL(6, 2)"/>
             <column defaultValueNumeric="1.00" name="SERVING_MAX" type="DECIMAL(6, 2)"/>
-            <column name="FRIENDLY_RANK" type="SMALLINT(5)"/>
-            <column name="FRIENDLY_TEXT" type="TEXT"/>
-            <column name="ACTIVE_RANK" type="SMALLINT(5)"/>
-            <column name="ACTIVE_TEXT" type="TEXT"/>
-            <column name="TRAINING_RANK" type="SMALLINT(5)"/>
-            <column name="TRAINING_TEXT" type="TEXT"/>
+            <column name="FRIENDLY_RANK" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FRIENDLY_TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACTIVE_RANK" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACTIVE_TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRAINING_RANK" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>>
+            <column name="TRAINING_TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
             <column name="GUARDIAN_RANK" type="SMALLINT(5)">
                 <constraints nullable="false"/>
             </column>
@@ -46,7 +66,9 @@
             <column name="SHEDDING_TEXT" type="TEXT">
                 <constraints nullable="false"/>
             </column>
-            <column name="SHEDDING_RANK" type="SMALLINT(5)"/>
+            <column name="SHEDDING_RANK" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
             <column name="LIFESPAN_MIN" type="SMALLINT(5)"/>
             <column name="LIFESPAN_MAX" type="SMALLINT(5)"/>
             <column name="DOG_TYPE_ID" type="INT(10)">
