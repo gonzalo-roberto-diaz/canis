@@ -9,8 +9,12 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 		
 
-		<include file="src/main/liquibase/002/schema-01.xml"  relativeToChangelogFile="false" />
+		
+        <include file="src/main/liquibase/002/schema-pre-dog-breeds.xml"  relativeToChangelogFile="false" />
+        <include file="src/main/liquibase/002/schema-dog-breeds.xml"  relativeToChangelogFile="false" />
+
 	    <include file="src/main/liquibase/002/schema-02-functions.xml"  relativeToChangelogFile="false" />
+	    
 	    <include file="src/main/liquibase/002/data-01-disable-fks.xml"  relativeToChangelogFile="false" />
 	    <include file="src/main/liquibase/002/data-breeders.sql"  relativeToChangelogFile="false" />
 	    <include file="src/main/liquibase/002/data-countries.sql"  relativeToChangelogFile="false" />

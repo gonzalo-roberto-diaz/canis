@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+    <changeSet author="Gonzalo (generated)" id="1458114932733-5">
+        <createTable tableName="DOG_BREEDS">
+            <column autoIncrement="true" name="ID" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COLORS" type="VARCHAR(200)"/>
+            <column name="SIZE_MIN" type="DECIMAL(6, 2)"/>
+            <column name="SIZE_MAX" type="DECIMAL(6, 2)"/>
+            <column name="WEIGHT_MIN" type="DECIMAL(6, 2)"/>
+            <column name="WEIGHT_MAX" type="DECIMAL(6, 2)"/>
+            <column defaultValueNumeric="1.00" name="SERVING_MIN" type="DECIMAL(6, 2)"/>
+            <column defaultValueNumeric="1.00" name="SERVING_MAX" type="DECIMAL(6, 2)"/>
+            <column name="FRIENDLY_RANK" type="SMALLINT(5)"/>
+            <column name="FRIENDLY_TEXT" type="TEXT"/>
+            <column name="ACTIVE_RANK" type="SMALLINT(5)"/>
+            <column name="ACTIVE_TEXT" type="TEXT"/>
+            <column name="HEALTHY_RANK" type="SMALLINT(5)"/>
+            <column name="HEALTHY_TEXT" type="TEXT"/>
+            <column name="TRAINING_RANK" type="SMALLINT(5)"/>
+            <column name="TRAINING_TEXT" type="TEXT"/>
+            <column name="GUARDIAN_RANK" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GUARDIAN_TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GROOMING_RANK" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GROOMING_TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PICTURE_URL" type="VARCHAR(200)"/>
+            <column name="VIDEO_URL" type="VARCHAR(300)"/>
+            <column defaultValueNumeric="0" name="APARTMENTS" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1" name="ENABLED" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DOG_SIZE_ID" type="INT(10)"/>
+            <column name="DOG_SHEDDING_AMOUNT_ID" type="INT(10)"/>
+            <column name="SHEDDING_TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SHEDDING_RANK" type="SMALLINT(5)"/>
+            <column name="LIFESPAN_MIN" type="SMALLINT(5)"/>
+            <column name="LIFESPAN_MAX" type="SMALLINT(5)"/>
+            <column name="DOG_TYPE_ID" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-22">
+        <addUniqueConstraint columnNames="NAME" constraintName="DOG_BREED_NAME" deferrable="false" disabled="false" initiallyDeferred="false" tableName="DOG_BREEDS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-29">
+        <addForeignKeyConstraint baseColumnNames="BREEDER_ID" baseTableName="DOG_BREEDS_BY_BREEDER" constraintName="FK_DOG_BREEDS_BY_BREEDER_BREEDERS" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="BREEDERS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-30">
+        <addForeignKeyConstraint baseColumnNames="DOG_BREED_ID" baseTableName="DOG_BREEDS_BY_BREEDER" constraintName="FK_DOG_BREEDS_BY_BREEDER_DOG_BREEDS" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="DOG_BREEDS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-31">
+        <addForeignKeyConstraint baseColumnNames="DOG_BREED_ID" baseTableName="DOG_BREEDS_BY_SHELTER" constraintName="FK_DOG_BREEDS_BY_SHELTER_DOG_BREEDS" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="DOG_BREEDS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-32">
+        <addForeignKeyConstraint baseColumnNames="SHELTER_ID" baseTableName="DOG_BREEDS_BY_SHELTER" constraintName="FK_DOG_BREEDS_BY_SHELTER_SHELTER_ID" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="SHELTERS"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-33">
+        <addForeignKeyConstraint baseColumnNames="DOG_SIZE_ID" baseTableName="DOG_BREEDS" constraintName="FK_DOG_BREEDS_DOG_SIZES" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="DOG_SIZES"/>
+    </changeSet>
+    <changeSet author="Gonzalo (generated)" id="1458114932733-34">
+        <addForeignKeyConstraint baseColumnNames="DOG_TYPE_ID" baseTableName="DOG_BREEDS" constraintName="FK_DOG_BREEDS_DOG_TYPES" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="DOG_TYPES"/>
+    </changeSet>
+</databaseChangeLog>
