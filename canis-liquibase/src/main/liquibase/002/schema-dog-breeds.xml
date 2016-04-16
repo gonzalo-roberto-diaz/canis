@@ -19,8 +19,6 @@
             <column name="FRIENDLY_TEXT" type="TEXT"/>
             <column name="ACTIVE_RANK" type="SMALLINT(5)"/>
             <column name="ACTIVE_TEXT" type="TEXT"/>
-            <column name="HEALTHY_RANK" type="SMALLINT(5)"/>
-            <column name="HEALTHY_TEXT" type="TEXT"/>
             <column name="TRAINING_RANK" type="SMALLINT(5)"/>
             <column name="TRAINING_TEXT" type="TEXT"/>
             <column name="GUARDIAN_RANK" type="SMALLINT(5)">
