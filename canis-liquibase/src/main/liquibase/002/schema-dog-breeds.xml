@@ -21,8 +21,12 @@
             <column name="WEIGHT_MAX" type="DECIMAL(6, 2)">
                 <constraints nullable="false"/>
             </column>
-            <column defaultValueNumeric="1.00" name="SERVING_MIN" type="DECIMAL(6, 2)"/>
-            <column defaultValueNumeric="1.00" name="SERVING_MAX" type="DECIMAL(6, 2)"/>
+            <column defaultValueNumeric="1.00" name="SERVING_MIN" type="DECIMAL(6, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1.00" name="SERVING_MAX" type="DECIMAL(6, 2)">
+                <constraints nullable="false"/>
+            </column>
             <column name="FRIENDLY_RANK" type="SMALLINT(5)">
                 <constraints nullable="false"/>
             </column>
@@ -53,24 +57,33 @@
             <column name="GROOMING_TEXT" type="TEXT">
                 <constraints nullable="false"/>
             </column>
-            <column name="PICTURE_URL" type="VARCHAR(200)"/>
-            <column name="VIDEO_URL" type="VARCHAR(300)"/>
+            <column name="PICTURE_URL" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VIDEO_URL" type="VARCHAR(300)">
+                <constraints nullable="false"/>
+            </column>
             <column defaultValueNumeric="0" name="APARTMENTS" type="SMALLINT(5)">
                 <constraints nullable="false"/>
             </column>
             <column defaultValueNumeric="1" name="ENABLED" type="SMALLINT(5)">
                 <constraints nullable="false"/>
             </column>
-            <column name="DOG_SIZE_ID" type="INT(10)"/>
-            <column name="DOG_SHEDDING_AMOUNT_ID" type="INT(10)"/>
+            <column name="DOG_SIZE_ID" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
             <column name="SHEDDING_TEXT" type="TEXT">
                 <constraints nullable="false"/>
             </column>
             <column name="SHEDDING_RANK" type="SMALLINT(5)">
                 <constraints nullable="false"/>
             </column>
-            <column name="LIFESPAN_MIN" type="SMALLINT(5)"/>
-            <column name="LIFESPAN_MAX" type="SMALLINT(5)"/>
+            <column name="LIFESPAN_MIN" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LIFESPAN_MAX" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
             <column name="DOG_TYPE_ID" type="INT(10)">
                 <constraints nullable="false"/>
             </column>
