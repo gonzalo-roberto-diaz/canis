@@ -7,8 +7,8 @@ package com.canis.rest.controller;
 
 import com.canis.CanisRestApplication;
 import com.canis.domain.DogBreed;
-import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
+import com.canis.domain.enums.DogSize;
 import com.canis.requestmodels.DogBreedRequestModel;
 import com.canis.service.DogBreedsService;
 import org.junit.Before;
@@ -58,12 +58,10 @@ public class DogBreedsControllerTest {
     @Test
     public void list() throws Exception {
         DogType primitives = new DogType().setId(6L).setName("Primitives");
-        DogSize large = new DogSize().setId(7L).setName("large");
-        DogBreed akita = new DogBreed().setId(1L).setName("Akita").setDogType(primitives).setDogSize(large);
+        DogBreed akita = new DogBreed().setId(1L).setName("Akita").setDogType(primitives).setDogSize(DogSize.LARGE);
 
         DogType molossers = new DogType().setId(6L).setName("Molossers");
-        DogSize medium = new DogSize().setId(5L).setName("medium");
-        DogBreed bulldog = new DogBreed().setId(2L).setDogType(molossers).setName("Bulldog").setDogSize(medium);
+        DogBreed bulldog = new DogBreed().setId(2L).setDogType(molossers).setName("Bulldog").setDogSize(DogSize.MEDIUM);
 
         Page<DogBreed> page = new PageImpl<>(Arrays.asList(akita, bulldog));
 
@@ -76,11 +74,11 @@ public class DogBreedsControllerTest {
                 .andExpect(jsonPath("$[0].id", is(1)))
                 .andExpect(jsonPath("$[0].name", is("Akita")))
                 .andExpect(jsonPath("$[0].dogType.name", is("Primitives")))
-                .andExpect(jsonPath("$[0].dogSize.name", is("large")))
+                .andExpect(jsonPath("$[0].dogSize", is(DogSize.LARGE.name())))
                 .andExpect(jsonPath("$[1].id", is(2)))
                 .andExpect(jsonPath("$[1].name", is("Bulldog")))
                 .andExpect(jsonPath("$[1].dogType.name", is("Molossers")))
-                .andExpect(jsonPath("$[1].dogSize.name", is("medium")));
+                .andExpect(jsonPath("$[1].dogSize", is(DogSize.MEDIUM.name())));
 
         verify(todoServiceMock, times(1)).read(0, 100, "name");
         verifyNoMoreInteractions(todoServiceMock);

@@ -3,8 +3,8 @@ package com.canis.service;
 
 import com.canis.CanisServiceApplication;
 import com.canis.domain.DogBreed;
-import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
+import com.canis.domain.enums.DogSize;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,8 +35,6 @@ public class DogBreedServiceIT {
     @Autowired
     private DogTypesService dogTypesService;
 
-    @Autowired
-    private DogSizesService dogSizesService;
 
 
     void list(){
@@ -126,23 +124,19 @@ public class DogBreedServiceIT {
         dogTypesService.save(primitivesType);
         dogTypesService.save(molossiansType);
 
-        DogSize largeSize = new DogSize().setId(7L);
-        DogSize mediumSize = new DogSize().setId(5L);
-
-        dogSizesService.save(largeSize);
-        dogSizesService.save(mediumSize);
 
 
 
 
-        DogBreed akita = new DogBreed().setName("Akita").setDogType(primitivesType).setDogSize(largeSize);
+
+        DogBreed akita = new DogBreed().setName("Akita").setDogType(primitivesType).setDogSize(DogSize.LARGE);
         service.save(akita);
 
 
-        DogBreed bulldog = new DogBreed().setName("Bulldog").setDogType(molossiansType).setDogSize(mediumSize);
+        DogBreed bulldog = new DogBreed().setName("Bulldog").setDogType(molossiansType).setDogSize(DogSize.MEDIUM);
         service.save(bulldog);
 
-        DogBreed bullmastiff = new DogBreed().setName("Bullmastiff").setDogType(molossiansType).setDogSize(largeSize);
+        DogBreed bullmastiff = new DogBreed().setName("Bullmastiff").setDogType(molossiansType).setDogSize(DogSize.LARGE);
         service.save(bullmastiff);
     }
 

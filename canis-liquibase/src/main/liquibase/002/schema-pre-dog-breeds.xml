@@ -117,16 +117,6 @@
             <column name="SHELTER_ID" type="INT(10)"/>
         </createTable>
     </changeSet>
-    <changeSet author="Gonzalo (generated)" id="1458114932733-9">
-        <createTable tableName="DOG_SIZES">
-            <column autoIncrement="true" name="ID" type="INT(10)">
-                <constraints primaryKey="true"/>
-            </column>
-            <column defaultValue="" name="NAME" type="VARCHAR(50)">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-    </changeSet>
     <changeSet author="Gonzalo (generated)" id="1458114932733-10">
         <createTable tableName="DOG_TYPES">
             <column autoIncrement="true" name="ID" type="INT(10)">

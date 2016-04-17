@@ -3,13 +3,11 @@ package com.canis.rest.controller;
 
 import com.canis.CanisRestApplication;
 import com.canis.domain.DogBreed;
-import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
+import com.canis.domain.enums.DogSize;
 import com.canis.mappers.DogBreedMapper;
 import com.canis.requestmodels.DogBreedRequestModel;
-import com.canis.requestmodels.DogSizeRequestModel;
 import com.canis.requestmodels.DogTypeRequestModel;
-import com.canis.service.DogSizesService;
 import com.canis.service.DogTypesService;
 import org.junit.After;
 import org.junit.Before;
@@ -55,8 +53,6 @@ public class DogBreedsControllerIT {
     @Autowired
     private DogTypesService dogTypesService;
 
-    @Autowired
-    private DogSizesService dogSizesService;
 
     @Value("${local.server.port}")
     private int port;
@@ -72,37 +68,32 @@ public class DogBreedsControllerIT {
         dogTypesService.save(new DogType().setId(3L).setName("Molossers"));
         dogTypesService.save(new DogType().setId(6L).setName("Primitives"));
 
-        dogSizesService.save(new DogSize().setId(7L).setName("large"));
-        dogSizesService.save(new DogSize().setId(5L).setName("medium"));
-
-
         this.base = new URL("http://localhost:" + port + "/DogBreed");
         template = new TestRestTemplate();
 
         //post a couple. A reference to the return values is kept
         DogTypeRequestModel molossersModel = new DogTypeRequestModel().setId(3L).setName("Molossers");
         DogTypeRequestModel primitivesModel = new DogTypeRequestModel().setId(6L).setName("Primitives");
-        DogSizeRequestModel largeModel = new DogSizeRequestModel().setId(7L).setName("large");
-        DogSizeRequestModel mediumModel = new DogSizeRequestModel().setId(5L).setName("medium");
+
 
 
         DogBreedRequestModel akita = new DogBreedRequestModel().setName("Akita")
-                .setDogType(primitivesModel).setDogSize(largeModel);
+                .setDogType(primitivesModel).setDogSize(DogSize.LARGE);
         fillCorrectDummyRanges(akita);
         insertedAkita = template.postForEntity(base.toString().concat("/create/"), akita, DogBreedRequestModel.class, emptyMap());
 
         DogBreedRequestModel bulldog = new DogBreedRequestModel().setName("Bulldog")
-                .setDogType(molossersModel).setDogSize(mediumModel);
+                .setDogType(molossersModel).setDogSize(DogSize.MEDIUM);
         fillCorrectDummyRanges(bulldog);
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), bulldog, DogBreedRequestModel.class, emptyMap() );
 
         DogBreedRequestModel boxer = new DogBreedRequestModel().setName("Boxer")
-                .setDogType(molossersModel).setDogSize(mediumModel);
+                .setDogType(molossersModel).setDogSize(DogSize.MEDIUM);
         fillCorrectDummyRanges(boxer);
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), boxer, DogBreedRequestModel.class, emptyMap() );
 
         DogBreedRequestModel frenchBulldog = new DogBreedRequestModel().setName("French Bulldog")
-                .setDogType(molossersModel).setDogSize(mediumModel);
+                .setDogType(molossersModel).setDogSize(DogSize.MEDIUM);
         fillCorrectDummyRanges(frenchBulldog);
         insertedBulldog = template.postForEntity(base.toString().concat("/create/"), frenchBulldog, DogBreedRequestModel.class, emptyMap() );
 
@@ -143,7 +134,6 @@ public class DogBreedsControllerIT {
             template.delete(base.toString() + "/delete/" +  Integer.toString(id));
         }
         dogTypesService.deleteAll();
-        dogSizesService.deleteAll();
     }
 
 
@@ -227,7 +217,6 @@ public class DogBreedsControllerIT {
     public void update() throws Exception {
         DogBreedRequestModel newAkita = insertedAkita.getBody();
         newAkita.setName("New medium Molosser Akita");
-        newAkita.setDogSize(new DogSizeRequestModel().setName("medium").setId(5L));
         newAkita.setDogType(new DogTypeRequestModel().setName("Molossers").setId(3L));
         fillCorrectDummyRanges(newAkita);
 
@@ -237,13 +226,13 @@ public class DogBreedsControllerIT {
         ResponseEntity<DogBreedRequestModel> res= template.exchange(request, DogBreedRequestModel.class);
         assertEquals(res.getStatusCode(), HttpStatus.OK);
         assertEquals(res.getBody().getName(), "New medium Molosser Akita");
-        assertEquals(res.getBody().getDogSize().getName(), "medium");
+        assertEquals(res.getBody().getDogSize(), DogSize.LARGE);
         assertEquals(res.getBody().getDogType().getName(), "Molossers");
 
 
 
         DogBreedRequestModel nonExistent = new DogBreedRequestModel().setId(Long.MAX_VALUE).setName("Nonexistent name")
-                .setDogSize(new DogSizeRequestModel().setId(6L)).setDogType(new DogTypeRequestModel().setId(3L));
+                .setDogSize(DogSize.LARGE).setDogType(new DogTypeRequestModel().setId(3L));
         fillCorrectDummyRanges(nonExistent);
         request = RequestEntity.put(new URI(base.toString() + "/update/")).accept(MediaType.APPLICATION_JSON).body(nonExistent);
         res= template.exchange(request, DogBreedRequestModel.class);

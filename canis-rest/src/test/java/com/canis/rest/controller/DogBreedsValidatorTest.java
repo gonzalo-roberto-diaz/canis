@@ -7,7 +7,6 @@ package com.canis.rest.controller;
 
 import com.canis.CanisRestApplication;
 import com.canis.domain.DogBreed;
-import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
 import com.canis.requestmodels.DogBreedRequestModel;
 import com.canis.rest.validator.DogBreedValidator;

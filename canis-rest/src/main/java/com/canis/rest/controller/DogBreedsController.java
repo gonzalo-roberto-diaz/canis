@@ -5,6 +5,7 @@ import java.util.List;
 import com.canis.mappers.DogBreedMapper;
 import com.canis.requestmodels.DogBreedRequestModel;
 import com.canis.rest.validator.DogBreedValidator;
+import com.canis.service.DogBreedsCalculations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
@@ -31,7 +32,10 @@ public class DogBreedsController {
     }
  
     @Autowired
-    DogBreedsService service;  //Service which will do all data retrieval/manipulation work
+    private DogBreedsService service;  //Service which will do all data retrieval/manipulation work
+
+    @Autowired
+    private DogBreedsCalculations dogBreedsCalculations;
 
 
     @RequestMapping(value = "/readByDogType/{dogTypeId}/{offset}/{limit}", method = RequestMethod.GET)
@@ -97,9 +101,13 @@ public class DogBreedsController {
     @RequestMapping(value = "/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<DogBreedRequestModel> create(@RequestBody @Valid DogBreedRequestModel model,    UriComponentsBuilder ucBuilder) {
 
+        dogBreedsCalculations.applyCalculations(model);
+
         if (service.nameExists(model.getName())) {
             return new ResponseEntity<DogBreedRequestModel>(HttpStatus.BAD_REQUEST);
         }
+
+
 
         DogBreed bean = DogBreedMapper.requestToDomain(model);
         bean = service.save(bean);

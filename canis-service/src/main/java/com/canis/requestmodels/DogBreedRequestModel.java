@@ -1,7 +1,8 @@
 package com.canis.requestmodels;
 
-import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
+import com.canis.domain.enums.DogSize;
+
 import javax.validation.constraints.NotNull;
 
 import javax.persistence.*;
@@ -93,14 +94,14 @@ public class DogBreedRequestModel {
     @NotNull
     private DogTypeRequestModel dogType;
 
-    private DogSizeRequestModel dogSize;
+    private DogSize dogSize;
 
 
-    public DogSizeRequestModel getDogSize() {
+    public DogSize getDogSize() {
         return dogSize;
     }
 
-    public DogBreedRequestModel setDogSize(DogSizeRequestModel dogSize) {
+    public DogBreedRequestModel setDogSize(DogSize dogSize) {
         this.dogSize = dogSize;
         return this;
     }

@@ -21,7 +21,6 @@
 	    <include file="src/main/liquibase/002/data-canada-geo.sql"  relativeToChangelogFile="false" />
 	    <include file="src/main/liquibase/002/data-geo-usa.sql"  relativeToChangelogFile="false" />
 	    <include file="src/main/liquibase/002/data-shelters.sql"  relativeToChangelogFile="false" />
-	    <include file="src/main/liquibase/002/data-dog-sizes.sql"  relativeToChangelogFile="false" />
 	    <include file="src/main/liquibase/002/data-dog-breeds.sql"  relativeToChangelogFile="false" />
 	    <include file="src/main/liquibase/002/data-text-resources.sql"  relativeToChangelogFile="false" />
 	    <include file="src/main/liquibase/002/data-forums.sql"  relativeToChangelogFile="false" />

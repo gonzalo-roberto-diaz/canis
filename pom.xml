@@ -54,5 +54,6 @@
      <module>canis-dao</module>
      <module>canis-service</module>
      <module>canis-rest</module>
+     <module>canis-utils</module>
   </modules>
 </project>

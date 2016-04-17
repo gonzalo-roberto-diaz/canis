@@ -1,10 +1,8 @@
 package com.canis.mappers;
 
 import com.canis.domain.DogBreed;
-import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
 import com.canis.requestmodels.DogBreedRequestModel;
-import com.canis.requestmodels.DogSizeRequestModel;
 import com.canis.requestmodels.DogTypeRequestModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Bean;
@@ -24,13 +22,6 @@ public class DogBreedMapper {
         BeanUtils.copyProperties(dogType, dogTypeModel);
         model.setDogType(dogTypeModel);
 
-        DogSize dogSize = domain.getDogSize();
-        if (dogSize != null) {
-            DogSizeRequestModel dogSizeModel = new DogSizeRequestModel();
-            BeanUtils.copyProperties(dogSize, dogSizeModel);
-            model.setDogSize(dogSizeModel);
-        }
-
         return model;
     }
 
@@ -42,13 +33,6 @@ public class DogBreedMapper {
         DogType dogType = new DogType();
         BeanUtils.copyProperties(dogTypeModel, dogType);
         domain.setDogType(dogType);
-
-        DogSizeRequestModel dogSizeModel = model.getDogSize();
-        if (dogSizeModel!=null) {
-            DogSize dogSize = new DogSize();
-            BeanUtils.copyProperties(dogSizeModel, dogSize);
-            domain.setDogSize(dogSize);
-        }
 
         return domain;
     }

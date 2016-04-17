@@ -4,8 +4,8 @@ package com.canis.dao;
 
 import com.canis.CanisDAOApplication;
 import com.canis.domain.DogBreed;
-import com.canis.domain.DogSize;
 import com.canis.domain.DogType;
+import com.canis.domain.enums.DogSize;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,8 +39,7 @@ public class DogBreedDAOIT {
     @Autowired
     private DogTypesDAO typesRepository;
 
-    @Autowired
-    private DogSizesDAO sizesRepository;
+
 
 
 
@@ -109,24 +108,20 @@ public class DogBreedDAOIT {
         DogType primitivesType = new DogType().setId(6L);
         typesRepository.save(primitivesType);
 
-        DogSize large = new DogSize().setId(7L).setName("large");
-        sizesRepository.save(large);
 
 
-        DogBreed akita = new DogBreed().setName("Akita").setDogType(primitivesType).setDogSize(large);
+        DogBreed akita = new DogBreed().setName("Akita").setDogType(primitivesType).setDogSize(DogSize.LARGE);
         repository.save(akita);
 
         DogType molossiansType = new DogType().setId(3L);
         typesRepository.save(molossiansType);
-        DogBreed bulldog = new DogBreed().setName("Bulldog").setDogType(molossiansType).setDogSize(large);
+        DogBreed bulldog = new DogBreed().setName("Bulldog").setDogType(molossiansType).setDogSize(DogSize.LARGE);
         repository.save(bulldog);
 
-        DogSize small = new DogSize().setId(2L).setName("small");
-        sizesRepository.save(small);
 
         DogType pinschers = new DogType().setId(2L);
         typesRepository.save(pinschers);
-        DogBreed affenpinscher = new DogBreed().setName("Affenpinscher").setDogType(pinschers).setDogSize(small);
+        DogBreed affenpinscher = new DogBreed().setName("Affenpinscher").setDogType(pinschers).setDogSize(DogSize.SMALL);
         repository.save(affenpinscher);
 
         repository.save(akita);

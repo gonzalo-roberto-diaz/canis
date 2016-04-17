@@ -1,16 +1,10 @@
 package com.canis.domain;
 
+import com.canis.domain.enums.*;
+
 import java.math.BigDecimal;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table (name="DOG_BREEDS")
@@ -100,10 +94,9 @@ public class DogBreed {
     @JoinColumn(name="DOG_TYPE_ID", referencedColumnName = "ID", nullable = false)
     private DogType dogType;
 
-
-    @ManyToOne
-    @JoinColumn(name="DOG_SIZE_ID", referencedColumnName = "ID", nullable = true)
-    private DogSize dogSize;
+    @Column(name = "DOG_SIZE_ID")
+    @Convert (converter = DogSizeConverter.class)
+    private com.canis.domain.enums.DogSize dogSize;
 
 
     public Long getId() {
@@ -349,11 +342,11 @@ public class DogBreed {
         return this;
     }
 
-    public DogSize getDogSize() {
+    public com.canis.domain.enums.DogSize getDogSize() {
         return dogSize;
     }
 
-    public DogBreed setDogSize(DogSize dogSize) {
+    public DogBreed setDogSize(com.canis.domain.enums.DogSize dogSize) {
         this.dogSize = dogSize;
         return this;
     }
