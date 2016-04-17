@@ -44,6 +44,7 @@ public class DogBreedCalculationsTest {
         DogBreedRequestModel model = new DogBreedRequestModel();
         model.setWeightMin(BigDecimal.valueOf(25.00));
         model.setWeightMax(BigDecimal.valueOf(30.00));
+        model.setDogSize(DogSize.NOT_SPECIFIED);
         dogBreedsCalculations.calculateDogSize(model);
         assertEquals(model.getDogSize(), DogSize.LARGE);
     }
