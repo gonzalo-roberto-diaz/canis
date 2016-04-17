@@ -31,7 +31,9 @@ public class DogSizeConverter implements AttributeConverter<DogSize, Integer> {
      */
     @Override
     public DogSize convertToEntityAttribute(Integer dbData) {
+        if (dbData == null) return DogSize.NOT_SPECIFIED;
         switch (dbData){
+            case 0: return DogSize.NOT_SPECIFIED;
             case 1: return DogSize.TOY;
             case 2: return DogSize.SMALL;
             case 5: return DogSize.MEDIUM;

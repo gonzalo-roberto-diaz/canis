@@ -29,7 +29,7 @@ public class CheckDogSizes implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         //updateCupSizes();
-        //updateDogSizes();
+        updateDogSizes();
     }
 
     /**
