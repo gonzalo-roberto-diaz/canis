@@ -105,9 +105,9 @@ public class DogBreedsControllerIT {
         DogTypeRequestModel terriersModel = new DogTypeRequestModel().setId(4L).setName("Terriers");
 
         DogBreedRequestModel welshTerrier = new DogBreedRequestModel().setName("Welsh Terrier")
-                .setDogType(terriersModel);
-
-        welshTerrier.setWeightMax(BigDecimal.TEN).setWeightMin(BigDecimal.ONE)
+                .setDogType(terriersModel)
+                .setDogSize(DogSize.NOT_SPECIFIED)
+                .setWeightMax(BigDecimal.TEN).setWeightMin(BigDecimal.ONE)
                 .setLifespanMax((short)20).setLifespanMin((short)1)
                 .setSizeMin(BigDecimal.ONE).setSizeMax(BigDecimal.TEN);
 

@@ -51,7 +51,7 @@ public class DogBreedsCalculationsImpl implements DogBreedsCalculations {
 	}
 
     public void calculateDogSize(DogBreedRequestModel model){
-        if (model.getDogSize()!=DogSize.NOT_SPECIFIED){
+        if (model.getDogSize()!= null &&  model.getDogSize()!=DogSize.NOT_SPECIFIED ){
             return;
         }
 
